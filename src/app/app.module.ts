@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { MademoComponent } from './mademo/mademo.component';
 import { LesnomComponent } from './lesnom/lesnom.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MademoComponent,
     LesnomComponent,
-    EtudiantComponent
+    EtudiantComponent,
+    SidebarComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
