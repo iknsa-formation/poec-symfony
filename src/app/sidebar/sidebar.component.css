@@ -1,0 +1,8 @@
+aside {
+    background-color: beige;
+    display: inline-block;
+    
+}
+aside li{
+    list-style:none;
+}
