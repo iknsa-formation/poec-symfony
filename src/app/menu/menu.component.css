@@ -1,0 +1,13 @@
+nav.menu li{
+    list-style:none;
+    display: inline;
+    margin: 5%;
+    color: #fff;
+}
+nav.menu li a{
+    text-decoration: none;
+    color: #fff;
+}
+nav.menu ul{
+    background-color: darkslategray;
+}
