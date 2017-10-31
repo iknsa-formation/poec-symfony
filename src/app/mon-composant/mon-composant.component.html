@@ -1,0 +1,28 @@
+<div class="block">
+    <h1>liste des etudiants</h1>
+    <ul>
+        <li *ngFor="let x of numbers ">
+            {{x.nom}}
+        </li>
+    </ul>
+</div>
+
+<h1>plus que 10
+</h1>    
+<ul>
+    <li *ngFor="let x of numbers">
+        <span *ngIf="x.moyenne >=10">
+            {{x.nom | uppercase}} avec une moyenne de {{x.moyenne}}
+        </span>
+    </li>
+</ul>
+
+<h1>moins de 10
+</h1>    
+<ul>
+    <li *ngFor="let x of numbers">
+        <span *ngIf="x.moyenne < 10">
+            {{x.nom}}avec une moyenne de {{x.moyenne}}
+        </span>
+    </li>
+</ul>

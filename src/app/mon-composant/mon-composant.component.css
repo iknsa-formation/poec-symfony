@@ -1,0 +1,12 @@
+h1 {
+    color:red
+}
+
+.block {
+    border: 10px solid;
+    border-style: double;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
