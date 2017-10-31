@@ -1,0 +1,21 @@
+<h1>Les étudiants :</h1>
+<ul>
+    <li *ngFor="let unEtu of etudiants">
+        {{unEtu.nom}}
+    </li>
+</ul><h1>Les Admis :</h1>
+<ul>
+    <li *ngFor="let unEtu of etudiants">
+        <span *ngIf="unEtu.moyen > 9">
+            {{unEtu.nom}}
+        </span>
+    </li>
+</ul>
+<h1>Les non Admis :</h1>
+<ul>
+    <li *ngFor="let unEtu of etudiants">
+        <span *ngIf="unEtu.moyen <10">
+            {{unEtu.nom}}
+        </span>
+    </li>
+</ul>

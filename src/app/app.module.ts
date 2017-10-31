@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MademoComponent } from './mademo/mademo.component';
+import { LesnomComponent } from './lesnom/lesnom.component';
+import { EtudiantComponent } from './etudiant/etudiant.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MademoComponent,
+    LesnomComponent,
+    EtudiantComponent
   ],
   imports: [
     BrowserModule,
