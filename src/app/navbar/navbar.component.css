@@ -1,0 +1,33 @@
+.area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+ /* -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;*/
+    justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.navbar > .list > .item {
+
+  /*-ms-flex-negative: 0;
+  flex-shrink: 0;*/
+  height: 64px;
+  line-height: 64px;
+  padding-left: 60px;
+  padding-right: 60px;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 14px;
+}
+/*
+.navbar > .list > .item.-link {
+  line-height: 68px;
+  color: #555;
+  border-bottom: 4px solid transparent;
+}
+*/

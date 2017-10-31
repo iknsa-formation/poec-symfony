@@ -1,27 +1,29 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">Liste des étudiants</div>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des étudiants</div>
+      <div class="panel-body">
+        <ul *ngFor="let student of students"  >
+         <li>{{student.name | uppercase}}</li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">Liste des étudiants admis</div>
     <div class="panel-body">
-      <ul *ngFor="let student of students"  >
-       <li>{{student.name}}</li>
+      <ul *ngFor="let student of students" >
+        <li *ngIf="student.moyenne > 10">{{student.name}} avec une moyenne de {{student.moyenne}}</li>
       </ul>
     </div>
-</div>
-
-<div class="panel panel-success">
-  <div class="panel-heading">Liste des étudiants admis</div>
-  <div class="panel-body">
-    <ul *ngFor="let student of students" >
-      <li *ngIf="student.moyenne > 10">{{student.name}} avec une moyenne de {{student.moyenne}}</li>
-    </ul>
   </div>
-</div>
 
-<div class="panel panel-danger">
-  <div class="panel-heading">Liste des étudiants non admis</div>
-  <div class="panel-body">
-    <ul *ngFor="let student of students" >
-      <li *ngIf="student.moyenne < 10">{{student.name}} avec une moyenne de {{student.moyenne}}</li>
-    </ul>
+  <div class="panel panel-danger">
+    <div class="panel-heading">Liste des étudiants non admis</div>
+    <div class="panel-body">
+      <ul *ngFor="let student of students" >
+        <li *ngIf="student.moyenne < 10">{{student.name}} avec une moyenne de {{student.moyenne}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 

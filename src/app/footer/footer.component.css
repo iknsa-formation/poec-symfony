@@ -1,0 +1,43 @@
+#myFooter {
+  padding-top: 32px;
+  background-color: #eee;
+}
+#myFooter .container {
+  text-align: center;
+}
+
+#myFooter ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+#myFooter li {
+  display: inline-block;
+  margin: 0px 15px;
+  line-height: 2;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+/*
+#myFooter .footer-social {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #eee;
+}
+.fa-facebook-f:before, .fa-facebook:before {
+  content: "\f09a";
+}
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+
+.fa-twitter:before {
+  content: "\f099";
+}
+*/
+
