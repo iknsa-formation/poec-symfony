@@ -10,46 +10,11 @@
 </head>
 <body>
 
-<div class="container-fluid">
-	<div class="col-md-10 col-md-offset-1">
-<div class="panel panel-primary">
-  <div class="panel-heading">Liste des étudiants </div>
-  <div class="panel-body">
-      <span *ngFor="let etudiant of etudiants">
-    	{{etudiant.nom}}
-    </span>
-  </div>
-</div>
 
-
-<div class="panel panel-success">
-  <div class="panel-heading">étudiants admis </div>
-  <div class="panel-body">
-      <ul *ngFor="let etudiant of etudiants">
-      	<span *ngIf="etudiant.moyenne > 10">
-      		{{etudiant.nom}} avec une moyenne de {{etudiant.moyenne}} 
-      	</span>
-  
-    </ul>
-  </div>
-</div>
-
-
-<div class="panel panel-danger">
-  <div class="panel-heading">étudiants non-admis </div>
-  <div class="panel-body">
-      <ul *ngFor="let etudiant of etudiants">
-      	<span *ngIf="etudiant.moyenne < 10">
-      		{{etudiant.nom}} avec une moyenne de {{etudiant.moyenne}} 
-      	</span>
-  
-    </ul>
-  </div>
-</div>
-
-
-</div>
-</div>
+<app-header></app-header>
+<app-section></app-section>
+<app-body></app-body>
+<app-footer></app-footer>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
