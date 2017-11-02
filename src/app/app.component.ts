@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
  shopping;
-  title = 'App Ng2 : Records of Sport';
+  title = 'App Ng2 : Records of Sport 2017/2018';
 
   ngOnInit() {
     this.shopping = true

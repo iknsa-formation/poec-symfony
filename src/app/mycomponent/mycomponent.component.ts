@@ -31,7 +31,6 @@ goalLess:boolean = true;
 
   hidden(){
      return  this.myVar = !this.myVar
-    // console.log(this.var);
   }
 
 }

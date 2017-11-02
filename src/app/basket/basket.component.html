@@ -5,27 +5,26 @@
     </li> 
   </ul>
 
-<h2 class="title2" (click)="goalPlus = !goalPlus"> + 10buts</h2>
+<h2 class="title2" (click)="goalPlus = !goalPlus"> + 200 pts</h2>
 <ul *ngIf="players.length > 0" [hidden]="goalPlus"  class="list">
   <li *ngFor="let player of players">
-    <div *ngIf="player.buts >= 10">
+    <div *ngIf="player.points >= 200">
     <h4>{{player.name}}</h4>
-    <p>{{player.buts}} buts en {{player.match}} matchs</p>
+    <p>{{player.points}} points en {{player.match}} matchs</p>
   </div>
   </li> 
 </ul>
 
 
-<h2 class="title3" (click)="goalLess = !goalLess"> - 10buts</h2>
+<h2 class="title3" (click)="goalLess = !goalLess"> - 200 pts</h2>
 <ul *ngIf="players.length > 0" [hidden]="goalLess" class="list">
   <li *ngFor="let player of players">
-    <div *ngIf="player.buts < 10">
+    <div *ngIf="player.points < 200">
     <h4>{{player.name}}</h4>
-    <p>{{player.buts}} buts en {{player.match}} matchs</p>
+    <p>{{player.points}} points en {{player.match}} matchs</p>
   </div>
   </li> 
 </ul>
 
 <h2 *ngIf="players.length === 0"> Il n'ya pas de statistiques, pour le moment ! </h2>
-<!-- {{yes}}  -->
-<!-- <div class="element"></div> -->
+
