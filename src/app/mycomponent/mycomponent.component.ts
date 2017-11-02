@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mycomponent',
@@ -11,6 +11,8 @@ myVar = true;
 players: any[];
 goalPlus:boolean = true;
 goalLess:boolean = true;
+@Input() yes;
+
   constructor() { 
     
   }

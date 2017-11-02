@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'My ng2 app of Statistic Football';
+export class AppComponent implements OnInit {
+ shopping;
+  title = 'App Ng2 : Records of Sport';
+
+  ngOnInit() {
+    this.shopping = true
+  }
+
 }
