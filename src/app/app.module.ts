@@ -8,21 +8,51 @@ import { MonComposantComponent } from './mon-composant/mon-composant.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { MessagesComponent } from './messages/messages.component';
+
+import { RouterModule, Routes } from '@angular/router';
+
+
+
+
+
+  const appRoutes: Routes = [
+  {
+  path: '',
+  component: MonComposantComponent
+  },
+  
+  {
+  path: 'contact',
+  component: ContactComponent
+  },
+  {
+  path: 'messages',
+  component: MessagesComponent
+  }
+  ]
+  
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MonComposantComponent,
+    ContactComponent,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MessagesComponent,
   ],
   imports: [
-    BrowserModule,
+   RouterModule.forRoot (appRoutes),
+   BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
