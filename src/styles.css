@@ -7,3 +7,8 @@ body,html,app-root{
 
 *{margin: 0;padding: 0;}
 app-sidebar ul,nav,footer{text-align: center;}
+app-sidebar{background-color: #395f5f;float: left;height: 100%;width: 20%;}
+.body{
+    height: 100%;
+}
+app-vote{height: 100%;width: 100%;}
