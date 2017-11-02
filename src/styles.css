@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files 
 */
+.container-fluid,body,html{
+    height: 100%;
+}
+.footer{
+    font-size: 10px;
+    color:#fff;
+    background-color: #1c2f2f;
+    height: 20%;
+    text-align: center;
+}
