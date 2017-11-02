@@ -1,3 +1,10 @@
-.footer {
-    margin-left: 20%; 
+footer {
+    background-color: bisque;
+    width: 80%;
+    height: 200px;
+    padding-left: 15%;
+    margin: 2%;
+    font-size: 3.8rem;
+    color: #25283D;
+
 }
