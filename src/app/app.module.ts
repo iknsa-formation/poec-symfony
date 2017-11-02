@@ -10,6 +10,7 @@ import { EtudiantComponent } from './etudiant/etudiant.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { VoteComponent } from './vote/vote.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     EtudiantComponent,
     SidebarComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    VoteComponent
   ],
   imports: [
     BrowserModule,
