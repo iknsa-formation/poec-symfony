@@ -1,0 +1,21 @@
+span{
+	margin-left:30%;
+}
+
+ul{
+	margin-left:30%;
+}
+
+nav{
+	position:relative;
+	background-color: black;
+}
+
+ul li a:nth-child(1) {
+	background-color: black;
+	color:white;
+}
+
+li{
+	margin-left: 100px;
+}
