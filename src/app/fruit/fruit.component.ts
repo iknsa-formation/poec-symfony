@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-be-fruit',
-  template: '<h2>Be Fruit ! </h2>' +
-  '<ul><li *ngFor="let fruit of fruits">{{fruit}}</li></ul>',
+  templateUrl: './fruit.component.html',
   styleUrls: ['./fruit.component.css']
 })
 export class FruitComponent implements OnInit {
