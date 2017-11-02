@@ -1,0 +1,17 @@
+.w3-bar-item{
+	text-align: center;
+	color: #fff;
+}
+
+.w3-button{
+	line-height: 50px;
+}
+.w3-bar-block{
+ 	height: 500px;
+ 	background-color: #0E1752;
+	border-color: #0E1752;
+ }
+ .w3-sidebar{
+ 	background-color: #0E1752;
+	border-color: #0E1752;
+ }
