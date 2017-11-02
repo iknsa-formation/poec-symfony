@@ -1,0 +1,12 @@
+aside {
+    color: red;
+    display: inline-block;
+    border: solid red 2px;
+    margin-left: 10px;
+    
+}
+aside ul{text-align: center;}
+aside li{
+    list-style:none;
+    padding: 30px 10px 15px 10px;
+}
