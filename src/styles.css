@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    height: 100%;
+body,html,app-root{
+    background-color: #fff;
+    height: 100% !important;
+    
 }
+
+*{margin: 0;padding: 0;}
+app-sidebar ul,nav,footer{text-align: center;}

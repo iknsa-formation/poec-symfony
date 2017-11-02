@@ -1,8 +1,12 @@
 aside {
-    background-color: beige;
+    background-color: #395f5f;
     display: inline-block;
-    
+    min-height: 60%;
+    height: 100%;
+    width: 20%;
+    color: #fff;
 }
+aside ul{text-align: center;}
 aside li{
     list-style:none;
 }

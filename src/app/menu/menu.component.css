@@ -9,5 +9,6 @@ nav.menu li a{
     color: #fff;
 }
 nav.menu ul{
-    background-color: darkslategray;
+    
 }
+section{height: 5%;background-color: black;padding-top: 2%;}
