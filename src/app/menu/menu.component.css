@@ -1,5 +1,8 @@
+
+
+
 span{
-	margin-left:30%;
+
 }
 
 ul{
@@ -9,6 +12,8 @@ ul{
 nav{
 	position:relative;
 	background-color: black;
+
+
 }
 
 ul li a:nth-child(1) {
@@ -19,3 +24,8 @@ ul li a:nth-child(1) {
 li{
 	margin-left: 100px;
 }
+
+@media screen and (max-width: 900px) { 
+	width:100%;
+}
+

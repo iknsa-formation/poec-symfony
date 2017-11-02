@@ -1,6 +1,47 @@
+
 footer{
 	margin-top:50%;
 	margin-left: 14%;
 	border: 4px solid grey;
 	margin-right: 18px;
+}
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
+@media screen and (max-width: 1280px){
+	footer{
+	margin-top:50%;
+	margin-left: 14%;
+	border: 4px solid grey;
+	margin-right: 18px;
+}
+}
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px){
+	footer{
+	margin-top:50%;
+	margin-left: 14%;
+	border: 4px solid grey;
+	margin-right: 18px;
+}
+}
+
+/* Sur les téléviseurs */
+@media tv{
+	footer{
+	margin-top:50%;
+	margin-left: 14%;
+	border: 4px solid grey;
+	margin-right: 18px;
+}
+}
+
+/* Sur tous types d'écrans orientés verticalement */
+@media all and (orientation: portrait){
+	footer{
+	margin-top:50%;
+	margin-left: 14%;
+	border: 4px solid grey;
+	margin-right: 18px;
+}
 }
