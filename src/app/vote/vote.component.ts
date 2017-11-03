@@ -14,7 +14,6 @@ ajoutLien(lien,titre){
     let unLien = lien;
     let unTitre = titre;
     this.listeLiens.push({"lien":lien,"titre":titre,"vote":0});
-    //alert(this.listeLiens.length);
 }
     ajoutVoix(unIndice){
         this.listeLiens[unIndice].vote++;

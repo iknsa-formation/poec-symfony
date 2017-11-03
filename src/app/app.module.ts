@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
+import { UsersService } from './service/users.service';
 
 import { AppComponent } from './app.component';
 import { MademoComponent } from './mademo/mademo.component';
@@ -13,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { VoteComponent } from './vote/vote.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [{
     path:"",
@@ -38,7 +40,8 @@ const appRoutes: Routes = [{
     MenuComponent,
     FooterComponent,
     VoteComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ const appRoutes: Routes = [{
     HttpModule,
       RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
