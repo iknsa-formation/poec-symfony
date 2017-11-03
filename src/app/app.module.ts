@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { VoteComponent } from './vote/vote.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [{
     path:"",
@@ -36,7 +37,8 @@ const appRoutes: Routes = [{
     SidebarComponent,
     MenuComponent,
     FooterComponent,
-    VoteComponent
+    VoteComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
