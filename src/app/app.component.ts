@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = '';
+export class UserComponent implements OnInit {
+
+    private user: User[];
+  
+}
+
+
+contructor (private us:usersService){}
+
+ngOninit(){
+    this.user = this.us.getUsers();
+
 }

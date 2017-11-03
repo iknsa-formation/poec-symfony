@@ -13,16 +13,35 @@ import { AcueilComponentComponent } from './acueil-component/acueil-component.co
 import { AboutComponentComponent } from './about-component/about-component.component';
 import { ContactComponentComponent } from './contact-component/contact-component.component';
 import { AcueilSubmenuComponent } from './acueil-submenu/acueil-submenu.component';
+import { AboutEnfant1Component } from './about-enfant1/about-enfant1.component';
+import { AboutEnfant2Component } from './about-enfant2/about-enfant2.component';
+import { UserComponent } from './user/user.component';
+import { UserService } from './service/users.service';
 
 
 const appRoutes: Routes = [
 {
+    path:'',
+    redirectTo:'acueil', pathMatch: 'full'
+},
+
+{
     path:'acueil',
     component: AcueilComponentComponent
-},
+ },
 {
     path:'about',
-    component: AboutComponentComponent
+    component: AboutComponentComponent,
+    children: [
+        {
+            path: 'about-enfant1', 
+            component: AboutEnfant1Component
+        },
+        {
+            path: 'about-enfant2',
+            component: AboutEnfant2Component
+        }
+    ]
 },
 {
     path:'contact',
@@ -41,7 +60,10 @@ const appRoutes: Routes = [
     AcueilComponentComponent,
     AboutComponentComponent,
     ContactComponentComponent,
-    AcueilSubmenuComponent
+    AcueilSubmenuComponent,
+    AboutEnfant1Component,
+    AboutEnfant2Component,
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -49,9 +71,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
 
