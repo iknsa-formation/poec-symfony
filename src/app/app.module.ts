@@ -12,16 +12,25 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { RouterModule, Routes } from '@angular/router'; 
+import { RouterModule, Routes } from '@angular/router';
+
 
 const appRoutes: Routes = [
 {
   path: '',
+  redirectTo: 'home', pathMatch: 'full'
+},
+{
+  path: 'home',
   component: HomeComponent
 },
 {
   path: 'about',
-  component: AboutComponent
+  component: AboutComponent,
+    children: [
+      {path: 'child-one', component: ContactComponent},
+      {path: 'child-two', component: HomeComponent}
+    ]
 },
 {
   path: 'contact',
