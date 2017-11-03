@@ -10,8 +10,11 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { MessagesComponent } from './messages/messages.component';
+import { BelleComponent } from './belle/belle.component';
+import { MonfilsComponent } from './monfils/monfils.component';
 
 import { RouterModule, Routes } from '@angular/router';
+
 
 
 
@@ -29,7 +32,15 @@ import { RouterModule, Routes } from '@angular/router';
   },
   {
   path: 'messages',
-  component: MessagesComponent
+  component: MessagesComponent,
+  children:[
+  {path: 'monfils', component: MonfilsComponent}
+  ]
+  },
+  
+  {
+  path: 'belle',
+  component: BelleComponent
   }
   ]
   
@@ -44,6 +55,8 @@ import { RouterModule, Routes } from '@angular/router';
     FooterComponent,
     HeaderComponent,
     MessagesComponent,
+    BelleComponent,
+    MonfilsComponent,
   ],
   imports: [
    RouterModule.forRoot (appRoutes),

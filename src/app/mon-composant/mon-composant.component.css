@@ -3,10 +3,7 @@ h1 {
 }
 
 .block {
-    border: 10px solid;
-    border-style: double;
+    border: 5px solid;
     text-align: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
 }
