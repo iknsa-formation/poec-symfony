@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Liste des utilisateurs</div>
+<table class="table">
+
+<tr *ngFor="let user of users">
+	<td>{{user.firstName}}</td>
+	<td>{{user.lastName}}</td>
+	<td>{{user.email}}</td>
+</tr>
+
+</table>
+</div>

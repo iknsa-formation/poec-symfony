@@ -14,6 +14,13 @@ import { ContactComponent } from './contact/contact.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+/*
+* Importation des Users
+*/
+
+import { UserComponent } from './user/user.component';
+import { UsersService } from './service/users.service';
+
 
 const appRoutes: Routes = [
 {
@@ -29,7 +36,7 @@ const appRoutes: Routes = [
   component: AboutComponent,
     children: [
       {path: 'child-one', component: ContactComponent},
-      {path: 'child-two', component: HomeComponent}
+      {path: 'child-two', component: UserComponent}
     ]
 },
 {
@@ -48,6 +55,7 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    UserComponent,
   ],
   imports: [
 
@@ -56,7 +64,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
