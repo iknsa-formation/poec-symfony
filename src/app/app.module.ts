@@ -13,7 +13,12 @@ import { TennisComponent } from 'app/tennis/tennis.component';
 import { PlayersService } from 'app/services/players.service';
 
 const appRoutes:Routes = [
-  {path:'', component: MycomponentComponent},
+  {path:'', redirectTo:'myhome', pathMatch:'full'},  
+  {path:'myhome', component: MycomponentComponent,
+  //  children:[
+  //    {path:'childone', component:TennisComponent},
+  //  ] 
+},
   {path:'basket', component:BasketComponent},
   {path:'tennis', component:TennisComponent}
 ]

@@ -8,11 +8,11 @@ export class PlayersService {
   constructor() { }
 
   getPlayers(): Promise<Array<Player>> {
-    return Promise.resolve(PlayerOfBasket)
+    return Promise.resolve(PlayerOfBasket);
   }
 
   getTennisman(): Promise<Array<Player>> {
-    return Promise.resolve(PlayerOfTennis)
+    return Promise.resolve(PlayerOfTennis);
   }
 
 }
