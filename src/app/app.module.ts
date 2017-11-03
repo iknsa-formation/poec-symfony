@@ -19,6 +19,13 @@ const appRoutes: Routes = [{
 },{
     path:"vote",
     component:VoteComponent
+},{
+    path:"about",
+    component:MademoComponent,
+    children:[
+        {path:"chil-one",component:EtudiantComponent},
+        {path:"chil-two",component:LesnomComponent}
+    ]
 }];
 @NgModule({
   declarations: [
