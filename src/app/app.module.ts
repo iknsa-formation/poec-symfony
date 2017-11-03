@@ -22,10 +22,10 @@ const appRoutes: Routes = [{
     component:VoteComponent
 },{
     path:"about",
-    component:MademoComponent,
+    component:AboutComponent,
     children:[
-        {path:"chil-one",component:EtudiantComponent},
-        {path:"chil-two",component:LesnomComponent}
+        {path:"child-one",component:EtudiantComponent},
+        {path:"child-two",component:LesnomComponent}
     ]
 }];
 @NgModule({
