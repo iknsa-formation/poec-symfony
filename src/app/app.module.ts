@@ -23,6 +23,9 @@ const appRoutes: Routes = [{
     path:"vote",
     component:VoteComponent
 },{
+    path:"contact",
+    component:ContactComponent
+},{
     path:"about",
     component:AboutComponent,
     children:[
