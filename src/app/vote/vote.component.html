@@ -1,0 +1,38 @@
+<h1>Ajout d'un Lien:</h1>
+<label name="title">Titre:</label>
+<input id="txt" #txt type="text" placeholder="Saisir le title">
+<label name="link">Link:</label>
+<input id="txtLink" #txtLink type="text" placeholder="Saisir le lien">
+<button id="btnValider" (click)="ajoutLien(txt.value,txtLink.value)">Valider</button>
+<div *ngIf="listeLiens.length < 1">
+    <p>Aucun lien</p>
+</div>
+<span *ngIf="listeLiens.length > 0">
+    <ul class="row">
+        <li class="col-md-12" *ngFor="let dataLien of listeLiens;let i = index;">
+            <div>
+                <span class="col-md-1">
+                    <h2>{{dataLien.vote}}</h2> <p>point(s)</p>
+                </span>
+                <span class="col-md-11">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>{{dataLien.titre}}</h3>
+                            <div>
+                                {{dataLien.lien}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-2">
+                            <a (click)="ajoutVoix(i)">UpVote</a>
+                        </span>
+                        <span class="col-md-2">
+                            <a (click)="supprimerVoix(i)">DownVote</a>
+                        </span>
+                    </div>
+                </span>
+            </div>
+        </li>
+    </ul>
+</span>
