@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PlayersService } from 'app/services/players.service';
+import { Player } from 'app/model/player.model';
 
 @Component({
   selector: 'app-mycomponent',
@@ -8,29 +10,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MycomponentComponent implements OnInit {
 child = "Hello word";
 myVar = true;
-players: any[];
+players;
 goalPlus:boolean = true;
 goalLess:boolean = true;
 @Input() yes;
 
-  constructor() { 
+  constructor(public playerService :PlayersService) { 
     
   }
 
   ngOnInit() {
-    this.players = [
-      {name:'Messi', match:17, buts:12},
-      {name:'Dybala', match:17, buts:13},
-      {name:'Ronaldo', match:17, buts:8},
-      {name:'Bazile', match:17, buts:9},
-      {name:'Cavani', match:17, buts:10},
-      {name:'Neymar', match:17, buts:6},
-      {name:'Zlatan', match:17, buts:6}
-  ]
+  this.players = this.playerService.getFootballers().then(data => this.players = data);
   }
 
   hidden(){
      return  this.myVar = !this.myVar
   }
+
 
 }

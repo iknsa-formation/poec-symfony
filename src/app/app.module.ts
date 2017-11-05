@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BasketComponent } from './basket/basket.component';
 import { TennisComponent } from 'app/tennis/tennis.component';
 import { PlayersService } from 'app/services/players.service';
+import { MycomponentdetailsComponent } from './mycomponentdetails/mycomponentdetails.component';
 
 const appRoutes:Routes = [
   {path:'', redirectTo:'myhome', pathMatch:'full'},  
@@ -19,8 +20,12 @@ const appRoutes:Routes = [
   //    {path:'childone', component:TennisComponent},
   //  ] 
 },
+  {path:'myhome/:id/:sport', component:MycomponentdetailsComponent},
   {path:'basket', component:BasketComponent},
-  {path:'tennis', component:TennisComponent}
+  {path:'basket/:id/:sport', component:MycomponentdetailsComponent },
+  {path:'tennis', component:TennisComponent},
+  {path:'tennis/:id/:sport', component:MycomponentdetailsComponent}
+  
 ]
 
 @NgModule({
@@ -30,7 +35,8 @@ const appRoutes:Routes = [
     MenuComponent,
     FooterComponent,
     BasketComponent,
-    TennisComponent
+    TennisComponent,
+    MycomponentdetailsComponent
   ],
   imports: [
     BrowserModule,

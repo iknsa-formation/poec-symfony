@@ -1,8 +1,8 @@
-<h2  class="title">Liste des joueurs</h2>
+<h2 class="title">Liste des joueurs</h2>
 <ul *ngIf="players.length > 0" class="list">
     <li *ngFor="let player of players">
-      <h4>{{player.name}}</h4>
-    </li> 
+        <h4><a [routerLink]="['/myhome', player.name, player.sport]">{{player.name}}</a></h4>
+      </li> 
   </ul>
 
 <h2 class="title2" (click)="goalPlus = !goalPlus"> + 10buts</h2>
@@ -14,17 +14,24 @@
   </div>
   </li> 
 </ul>
+{{yes}}
 
 
 <h2 class="title3" (click)="goalLess = !goalLess"> - 10buts</h2>
 <ul *ngIf="players.length > 0" [hidden]="goalLess" class="list">
   <li *ngFor="let player of players">
     <div *ngIf="player.buts < 10">
-    <h4>{{player.name}}</h4>
-    <p>{{player.buts}} buts en {{player.match}} matchs</p>
+        <h4>>{{player.name}}</h4>
+        <p>{{player.buts}} buts en {{player.match}} matchs</p>
   </div>
   </li> 
 </ul>
+
+<!-- <nav>
+  <a [routerLink]="['childone']">Basket</a> 
+  <a [routerLink]="['/']">Retour</a>  
+</nav> -->
+<!-- <router-outlet></router-outlet> -->
 
 <h2 *ngIf="players.length === 0"> Il n'ya pas de statistiques, pour le moment ! </h2>
 

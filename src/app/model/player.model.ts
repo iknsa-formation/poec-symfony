@@ -3,5 +3,6 @@ export class Player {
     match: number;
     buts?:number;
     points?:number;
-    victoires?:number
+    victoires?:number;
+    sport?:string;
   }

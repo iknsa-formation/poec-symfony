@@ -16,8 +16,7 @@ export class BasketComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.players = this.playerService.getPlayers().then(data => this.players = data);
-    console.log(this.players)
+    this.players = this.playerService.getBasketers().then(data => this.players = data);
   }
 
 }

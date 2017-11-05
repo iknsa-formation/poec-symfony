@@ -1,8 +1,8 @@
 <h2  class="title">Liste des joueurs</h2>
 <ul *ngIf="players.length > 0" class="list">
     <li *ngFor="let player of players">
-      <h4>{{player.name}}</h4>
-    </li> 
+        <h4><a [routerLink]="['/tennis', player.name, player.sport]">{{player.name}}</a></h4>
+      </li> 
   </ul>
 
 <h2 class="title2" (click)="goalPlus = !goalPlus"> + 9 victoires</h2>

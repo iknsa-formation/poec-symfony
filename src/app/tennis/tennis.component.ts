@@ -16,7 +16,6 @@ export class TennisComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.players = this.playerService.getTennisman().then(data => this.players = data);
-    console.log(this.players)
+    this.players = this.playerService.getTennismans().then(data => this.players = data);
   }
 }

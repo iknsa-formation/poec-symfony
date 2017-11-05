@@ -1,18 +1,33 @@
 import { Injectable } from '@angular/core';
 import {Player} from '../model/player.model';
-import { PlayerOfBasket, PlayerOfTennis } from '../mock/mock-players'
+import { PlayerOfBasket, PlayerOfTennis, playerOfFootball } from '../mock/mock-players'
 
 @Injectable()
 export class PlayersService {
 
   constructor() { }
 
-  getPlayers(): Promise<Array<Player>> {
-    return Promise.resolve(PlayerOfBasket);
+  getFootballers(): Promise<Array<Player>> {
+    return Promise.resolve(playerOfFootball);
   }
 
-  getTennisman(): Promise<Array<Player>> {
+  getFootballer(name:string) {
+    return playerOfFootball.find(x => name === x.name )
+  }
+
+  getBasketers(): Promise<Array<Player>> {
+    return Promise.resolve(PlayerOfBasket);
+  }
+  getBasketer(name:string){
+    return PlayerOfBasket.find(x => name === x.name)
+  }
+
+  getTennismans(): Promise<Array<Player>> {
     return Promise.resolve(PlayerOfTennis);
+  }
+
+  getTennisman(name:string){
+    return PlayerOfTennis.find(x => name === x.name)
   }
 
 }

@@ -1,10 +1,10 @@
 <h2  class="title">Liste des joueurs</h2>
 <ul *ngIf="players.length > 0" class="list">
     <li *ngFor="let player of players">
-      <h4>{{player.name}}</h4>
-    </li> 
+        <h4><a [routerLink]="['/basket', player.name, player.sport]">{{player.name}}</a></h4>
+      </li> 
   </ul>
-
+  
 <h2 class="title2" (click)="goalPlus = !goalPlus"> + 200 pts</h2>
 <ul *ngIf="players.length > 0" [hidden]="goalPlus"  class="list">
   <li *ngFor="let player of players">
@@ -25,6 +25,9 @@
   </div>
   </li> 
 </ul>
-
+<div #myDiv>
+    <button class="btn btn-primary" (click)="onChangeBackground(myDiv)">Change style</button>
+</div>
 <h2 *ngIf="players.length === 0"> Il n'ya pas de statistiques, pour le moment ! </h2>
+
 
