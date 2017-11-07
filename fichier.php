@@ -1,57 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>JavaScript Course - IKNSA</title>
-    <link rel="stylesheet" href="css/styles.css">
+<?php
 
-  </head>
-  <body>
-    <!-- Page Content -->
-    <header>
-        <div class="logo"><img src="img/logo.png" alt="Logo"></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home Page</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    $bonjour = 'Bonjour';
+    $number = 3;
+    echo $bonjour.'<br>'.$number.'<br>';
 
-        <div class="breadcrumb">
-            <span>You are here</span>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page.html">About Us</a></li>
-            </ul>
-        </div>
-    </header>
-    
 
-    <main>
-        <h1>My big website</h1>
-<?php echo "Je suis le PHP" ?>
-        <section>
-            my big freaking slider
-        </section>
 
-        <section>
-            <article>
-                <h2>Picture</h2>
-                <img src="img/webserver.gif" alt="un dessin">
-                <p>Un big de dessin</p>
-            </article>
-            <article>
-                <h2>girl</h2>
-                <img src="img/img2.png" alt="un dessin">
-                <p>Le couple parfait!</p>
-            </article>
-           
-        </section>
-    </main>
+    $Prenom = 'Moussa';
+    $Age    = '28 ans';
+    $Profession = 'informaticien';
 
-    <footer>
-        copyright @iknsa.com
-    </footer>
-  </body>
-</html>
+  // Affichage
+   echo 'Bonjour ' . $Prenom . ', tu as ' . $Age . ' et ta profession est ' . $Profession . '.<br>';
+  
+$var0 = "Moussa";
+$var1 = "Camara";
+$var3 = 5.5 ;
+$var2 = $var1;
+$mois = array("octobre","novembre","décembre");
+
+//$maVoiture = new $car;
+//$maConnexion = mysql_connect("monServeur", "monNom","MonPass");
+
+
+echo $var0.'<br>';
+echo $var1.'<br>';
+echo $var2.'<br>';
+echo $var3.'<br>';
+
+printf($var0);
+print_r($mois);
+
+?>
