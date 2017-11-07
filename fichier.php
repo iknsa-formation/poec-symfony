@@ -1,34 +1,15 @@
 <?php
 
-    $bonjour = 'Bonjour';
-    $number = 3;
-    echo $bonjour.'<br>'.$number.'<br>';
-
-
-
     $Prenom = 'Moussa';
+    $Nom = 'Camara';
     $Age    = '28 ans';
     $Profession = 'informaticien';
 
-  // Affichage
-   echo 'Bonjour ' . $Prenom . ', tu as ' . $Age . ' et ta profession est ' . $Profession . '.<br>';
-  
-$var0 = "Moussa";
-$var1 = "Camara";
-$var3 = 5.5 ;
-$var2 = $var1;
-$mois = array("octobre","novembre","décembre");
 
-//$maVoiture = new $car;
-//$maConnexion = mysql_connect("monServeur", "monNom","MonPass");
+  // Concanétation
+  echo 'Bonjour ' . $Prenom. ' ' .$Nom . ', tu as ' . $Age . ' et ta profession est ' . $Profession . '.<br>';
 
-
-echo $var0.'<br>';
-echo $var1.'<br>';
-echo $var2.'<br>';
-echo $var3.'<br>';
-
-printf($var0);
-print_r($mois);
-
+  // Interpolation
+  echo 'Bonjour $Prenom <br>';
+  echo "Bonjour $Prenom";
 ?>
