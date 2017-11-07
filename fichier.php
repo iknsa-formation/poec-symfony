@@ -39,46 +39,31 @@
      <div class="jumbotron">
 
         <?php
-        /* condition if else*/
-            $age = 22;
-            if($age >= 18){
-                echo "Vous êtes majeur.<br>";
-            }else{
-                    echo "Vous êtes mineur.<br>";
-                }
-
-            /* condition if elseif else*/
-           $nombre = -4;
-            if($nombre == 0){    
-                echo "le nombre est égal à zéro";
-            }elseif($nombre > 0){
-                echo "le nombre est positif";
-                }else{
-                echo "le nombre est négatif";
-            }
-
-
-            /* Switch case*/
-            /*$nbClick = 2;
-            switch($nbClick)
-            {
-                case 1:
-                echo 'passera pas dedans';
-                break;
-                case 2:
-                echo 'Enfin le bon nombre';
-                break;
-                case 3:
-                echo 'Le numéro est dépassé. On est déjà sorti du switch';
-                break;
-                default:
-                'Message par défaut si la condition n’est jamais satisfaite';
+        /* Boucles - while*/
+       /* echo '<h3> Boucle while </h3>';
+          $INDEX = 0;
+            while($INDEX < 3) {
+            echo 'J\'AIME LE PHP - '.$INDEX.'<br>';
+            $INDEX++; // INCRÉMENTATION
             }*/
 
-            /*Les ternaires*/
-            /*$age = 17;
-            $majeur = ($age >= 18) ? 'OK' : 'KO';
-            echo "<br>".$majeur;*/
+        /* Boucles -  for */
+       /* echo '<h3> Boucle for </h3>';
+            for ($i=0; $i < 3; $i++) { 
+               echo 'J\'AIME LE PHP - '.$i.'<br>';
+            }*/
+
+         echo '<h3> Boucle do while </h3>';
+         // Déclaration et initialisation du compteur
+        $i = 0;
+        // Boucle générant la table de multiplication du 8
+        do
+        {
+         echo 'J\'AIME LE PHP - '.$i.'<br>';
+          // Incrémentation du compteur
+          $i++;
+        }
+        while($i < 0);   
         ?>
      </div>
 
