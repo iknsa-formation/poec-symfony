@@ -40,54 +40,19 @@
 
         <?php
 
-        // Tableau numérique
-       $etudiant = array("Moussa", "Khalid", "Moustakime", "Noémie");
-       // Affichage tableaux 
-       /*echo $etudiant[0].'<br>';
-        echo $etudiant[1].'<br>';
-        echo $etudiant[2].'<br>';
-        echo $etudiant[3].'<br>';*/
-
-        // Affichage du tableaux avec boucle
-      /* for($i = 0;$i < 4; $i++){
-        echo $etudiant[$i] . "<br />";
-        }*/
-
-        //Tableaux associatif
-
-        $infos = array (
-            'prenom' => 'Moussa',
-            'nom' => 'Camara',
-            'age' => '28',
-            'adresse' => 'Quelque part',
-        );
-
-        //affichage de l'élément nom
-       // echo $infos['nom'];
-
-       /* foreach($infos as $key => $value)
-        {
-            echo $key.':   ' . $value.'<br />';
-        }*/
-
-        $personnes = array(
-            1 => array('prenom' => 'Moussa', 'nom' => 'Camara', 'telephone' => '0123456789'),
-            2 => array('prenom' => 'Khalid', 'nom' => 'Sookia', 'telephone' => '06147895544'),
-            3 => array('prenom' => 'Moustakime', 'nom' => 'Kifia', 'telephone' => '071454565454')
-        );
-        echo $personnes[1]['prenom']; //Moussa 
-
-        foreach($personnes as $key1 => $value)
-        {
-          echo "personne n°:" . $key1 . "<br />";
-
-            foreach ($value as $key2=>$value2)
-
-            {
-              echo $key2 .": <strong>" . $value2 . "</strong><br />\n";
+            function direBonjour(){
+                echo "Bonjour tout le monde !";
             }
-        }
-    ?>
+
+            direBonjour();
+
+            function addition($nombre1, $nombre2){
+                $resultat=$nombre1 + $nombre2;
+                return $resultat;
+            }
+
+           echo addition(15,1);
+        ?>
      </div>
 
 
