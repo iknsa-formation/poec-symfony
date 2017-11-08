@@ -12,35 +12,6 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
 
         echo '<strong> Super ! j\'ai réussi à me connecter à ma base de donnée </strong><br>';
     }
-
-   if (isset($_POST['firstname']) &&  isset($_POST['lastname']) &&  isset($_POST['adresse']) &&  isset($_POST['fonction'])){
-
-        $prenom = $_POST['firstname'];
-        $nom = $_POST['lastname'];
-        $adresse = $_POST['adresse'];
-        $fonction = $_POST['fonction'];
-
-        echo "Prénom: " .$prenom . "<br>";
-        echo "Nom: " .$nom;
-        echo "Adresse: " .$adresse;
-        echo "Fonction: " .$fonction;
-
-        /*
-        * Instertion dans la base de donnée
-        */
-
-        $sql = "INSERT INTO users(firstname,lastname,adresse,fonction) VALUES('".$prenom."','".$nom."','".$adresse."','".$fonction."')";
-        
-        $resultat = mysqli_query ($connection,$sql);
-
-        if ($resultat) {
-           echo "<script>alert(\"Les données ont été bienn enregistrées en base\")</script>"; 
-         } else {
-            die ('Erreur SQL !'.$sql.'<br />'.mysql_error());
-         }
-
-        mysqli_close($connection);
-    }
 ?>
 
 <!DOCTYPE html>
@@ -73,43 +44,60 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
         </div>
     </header>
 
-     <main>
-        <h1>Get in touch</h1>
-        <form method="post" action="fichier.php">
-            <div class="form-group zoneRadio">
-                <label>Title</label>
-                <input type="radio" name="title" tabindex="1"><span>Mr.</span>
-                <input type="radio" name="title" tabindex="2"><span>Mrs.</span>
-                <input type="radio" name="title" tabindex="3"><span>Miss.</span>
-            </div>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Fonction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <?php
 
-            <div class="form-group">
-                <label for="firstname">FirstName*:</label>
-                <input type="text" name="firstname" id="firstname" tabindex="4">
-            </div>
+                $sql = "SELECT * FROM USERS";
+                $resultat = mysqli_query ($connection,$sql);
 
-            <div class="form-group">
-                <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" id="lastname">
-            </div>
+                /*
+                * mysqli_fetch_row()result->fetch_row() Récupère une ligne de résultat sous forme de tableau indexé
+                */
+                //while ($row = mysqlI_fetch_row($resultat)) {
 
-            <div class="form-group">
-                <label for="adresse">Adresse:</label>
-                <input type="text" name="adresse" id="adresse">
-            </div>
-                 <div class="form-group">
-                    <label for="fonction">Fonction:</label>
-                    <input type="text" name="fonction" id="fonction">
-                </div>
-            
-            <div class="required-fields">
-                *: Required fields
-            </div>
-            <div class="form-group">
-                <input type="submit" value="SEND">
-            </div>
-        </form>
-    </main>
+                /*
+                * mysqli_fetch_assoc()mysqli->fetch_assoc() Récupère une ligne de résultat sous forme de tableau associatif
+                */
+                while ($row = mysqli_fetch_assoc($resultat)) {
+            ?>
+          <th><?php 
+            //echo "{$row[0]}\n"; 
+            echo "{$row['id']}\n"; 
+          ?></th>
+          <td><?php 
+            //echo "{$row[0]}\n"; 
+            echo "{$row['firstname']}\n"; 
+            ?></td>
+          <td><?php 
+            //echo "{$row[2]}\n"; 
+            echo "{$row['lastname']}\n"; 
+            ?></td>
+          <td><?php 
+            //echo "{$row[3]}\n"; 
+            echo "{$row['adresse']}\n"; 
+            ?></td>
+          <td><?php 
+            //echo "{$row[3]}\n"; 
+            echo "{$row['fonction']}\n"; 
+            ?></td>
+        </tr>
+        <?php 
+            }
+                mysqlI_free_result($resultat);
+            ?>
+      </tbody>
+    </table>
 
  <footer>
         copyright @iknsa.com
