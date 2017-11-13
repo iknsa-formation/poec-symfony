@@ -23,8 +23,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'page2',
-    component:Page2Component
-  }
+    component:Page2Component, component:Page2,
+    children: [
+      { path: 'page1component', component: Page1Component },
+      { path: 'page2component', component: Page2Component }
+    ]
+  },
 ];
 
 @NgModule({
@@ -48,4 +52,3 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
