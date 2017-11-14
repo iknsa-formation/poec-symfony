@@ -1,0 +1,29 @@
+body
+{
+	margin:0;
+}
+ul
+{
+    background-color:grey;
+    border-radius:2px;
+    margin-top:0px;
+}
+
+li 
+{
+    display: inline;
+    list-style-type: none;
+}
+li a
+{
+	
+	color:black;
+
+}
+
+div.content
+{
+	background-color:grey;
+	display:inline-block;
+	margin:auto;
+}
