@@ -34,12 +34,34 @@
 			return $res;
 		}
 
-		echo addition(10,5)."<br>";
+		function verifieNum($num){
+			// Pour Police
+			if(substr($num,0,2) == 17){
+				return "Police";
+			}elseif(substr($num,0,2) == 18){// Pour Pompier
+				return "Pompier";
+			}else{
+				if(substr($num,0,2) == 01){// Pour Fix
+					return "Fix";
+				}elseif(substr($num,0,2) == 08){// Pour Surtaxé
+					return "Surtaxé";
+				}else{// Pour Mobile
+					if(substr($num,0,2) == 06){
+						return "Mobile";
+					}else{
+						return "Incorrect";
+					}
+				}
+			}
+		}
+
+		/*echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
 		echo multiplication(5,6)."<br>";
 		echo modulo(4,2)."<br>";
 		echo division(5,2)."<br>";
-		echo exponentielle(10,2)."<br>";
+		echo exponentielle(10,2)."<br>";*/
+		echo verifieNum(18)."<br>";
 		?>
 	</body>
 <html>
