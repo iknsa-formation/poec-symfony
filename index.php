@@ -68,6 +68,20 @@
 				echo $key." : ".$value."<br>" ;
 			}
 		}
+		function boucle2DimAssos(){
+			$etudiant = array(
+				1=>(array("nom"=>"Camara","prenom"=>"Moussa","telephone"=>"0123456789")),
+				2=>(array("nom"=>"Sookia","prenom"=>"Khalid","telephone"=>"0614654586")),
+				3=>(array("nom"=>"Moustakime","prenom"=>"Kifia","telephone"=>"071454565454"))
+			);
+
+			foreach ($etudiant as $key => $value) {
+				echo "<br>Personne : ".$key."<br>";
+				foreach ($value as $key2 => $value2) {
+					echo $key2." : ".$value2."<br>" ;
+				}
+			}
+		}
 
 		/*echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
@@ -76,8 +90,9 @@
 		echo division(5,2)."<br>";
 		echo exponentielle(10,2)."<br>";
 		echo verifieNum(18)."<br>";
-		boucleFor()."<br>";*/
-		boucleAssos()."<br>";
+		boucleFor()."<br>";
+		boucleAssos()."<br>";*/
+		boucle2DimAssos()."<br>";
 		?>
 	</body>
 <html>
