@@ -20,21 +20,17 @@ define('DBNAME','Contact');
 define('DBUSER', 'root');
 define('DBPWD', '');
 
+// Connexion à la BDD
 $connection = mysqli_connect(DBSERVER, DBUSER ,DBPWD, DBNAME);
 
-// Check connection
+// Check la connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-
-$_SESSION['contact'] = array (
-	1 => array("prenom" => "Moussa", "nom" => "Camara", "telephone" => "0120556406"),
-	2 => array("prenom" => "Khalid", "nom" => "Sookia", "telephone" => "0154454421"),
-	3 => array("prenom" => "Moustakime", "nom" => "Kifya", "telephone" => "0698536587"),
-);
-
+// Stockage de la requête dans la variable $resultat
+$resultat = mysqli_query($connection, 'SELECT * FROM contact LIMIT 0, 10');
 
 ?>
 
@@ -42,21 +38,19 @@ $_SESSION['contact'] = array (
 	<table id="myTable" class="table table-striped table-hover">
 		<thead class="thead-dark">
 			<tr>
-			    <th>prenom</th>
-				<th>nom</th>
-				<th>tel</th>
+			  <th>prenom</th>
+			  <th>nom</th>
+			  <th>tel</th>
 			</tr>
 		</thead>
-
-		<tbody>
+		<tbody>			
 		<?php
-			foreach ($_SESSION['contact'] as $key) {
-				echo "<tr> ";
-				foreach ($key as $value) {
-			       echo "<td>" . $value . "</td>";  
-			  	}
-			  	echo "</tr>";
+
+			while($donnees = mysqli_fetch_assoc($resultat))
+			{
+				echo "<tr><td>" . $donnees['nom'] . "</td><td>" . $donnees['prenom'] . "</td><td>" .$donnees['tel']. "</td></tr>"; 
 			}
+
 		?>
 		</tbody>
 	</table>
