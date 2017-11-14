@@ -52,6 +52,7 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
           <th scope="col">Last Name</th>
           <th scope="col">Adresse</th>
           <th scope="col">Fonction</th>
+          <th scope="col">Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -71,26 +72,39 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
                 */
                 while ($row = mysqli_fetch_assoc($resultat)) {
             ?>
-          <th><?php 
-            //echo "{$row[0]}\n"; 
-            echo "{$row['id']}\n"; 
-          ?></th>
-          <td><?php 
-            //echo "{$row[0]}\n"; 
-            echo "{$row['firstname']}\n"; 
-            ?></td>
-          <td><?php 
-            //echo "{$row[2]}\n"; 
-            echo "{$row['lastname']}\n"; 
-            ?></td>
-          <td><?php 
-            //echo "{$row[3]}\n"; 
-            echo "{$row['adresse']}\n"; 
-            ?></td>
-          <td><?php 
-            //echo "{$row[3]}\n"; 
-            echo "{$row['fonction']}\n"; 
-            ?></td>
+          <th>
+            <?php 
+                //echo "{$row[0]}\n"; 
+                echo "{$row['id']}\n"; 
+          ?>
+          </th>
+          <td>
+            <?php 
+                //echo "{$row[0]}\n"; 
+                echo "{$row['firstname']}\n"; 
+            ?>
+            </td>
+          <td>
+            <?php 
+                //echo "{$row[2]}\n"; 
+                echo "{$row['lastname']}\n"; 
+            ?>
+            </td>
+          <td>
+            <?php 
+                //echo "{$row[3]}\n"; 
+                echo "{$row['adresse']}\n"; 
+            ?>
+            </td>
+          <td>
+            <?php 
+                //echo "{$row[3]}\n"; 
+                echo "{$row['fonction']}\n"; 
+            ?>
+            </td>
+            <td>
+            <a href="edit.php?id=<?php echo $row['id'] ?>">Modifier</a>
+            </td>
         </tr>
         <?php 
             }
