@@ -1,7 +1,7 @@
 
 <body>
 	<?php  
-		include('php/number_check.php');
+		include('php2/number_check.php');
 	?>
 <h1 style>Exos php</h1>
 <?php

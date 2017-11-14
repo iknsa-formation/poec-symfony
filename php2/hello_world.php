@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php
-	include 'C:\wamp64\www\first_dir\composants\navbar.php';
- 	include 'C:\wamp64\www\first_dir\composants\header.html';
+	include 'C:\wamp64\www\php2\composants\navbar.php';
+ 	include 'C:\wamp64\www\php2\composants\header.html';
  	echo "hello_world";
 ?> 
 </body>
