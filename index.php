@@ -82,7 +82,7 @@
 				}
 			}
 		}
-
+		include "include.html";
 		/*echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
 		echo multiplication(5,6)."<br>";
@@ -93,6 +93,8 @@
 		boucleFor()."<br>";
 		boucleAssos()."<br>";*/
 		boucle2DimAssos()."<br>";
+		
+		require "require.html";
 		?>
 	</body>
 <html>
