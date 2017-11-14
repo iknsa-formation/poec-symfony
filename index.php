@@ -21,8 +21,15 @@
 				  echo $key2 ."===>" . $value2 . "</strong><br />\n";
 				}
 			}
+			echo "<br><br>";
+			
 			?>
+			
+			
 		</div>
+		<div style="margin-top:5%"><?php
+			require 'test.php';
+				?></div>
 
 
 	</body>
