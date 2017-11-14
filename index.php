@@ -1,8 +1,12 @@
 <!doctype html>
 <html>
-	<head></head>
+	<head>
+		<title>php</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
 	<body>
-		<div style="background-color:orange;border-radius:5%;border:2px solid black;text-align:center">
+		<div class="test">
 			<?php
 			$personnes = array(
 				1=>array('prenom' => 'moussa','nom' => 'camara','telephone' => '012345679'),
@@ -21,7 +25,7 @@
 			echo "<br><br>";
 			?>
 		</div>
-		<div style="margin-top:5%"><?php
+		<div class="test2"><?php
 			require 'test.php';
 				?></div>
 	</body>

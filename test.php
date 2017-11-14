@@ -1,4 +1,4 @@
-<div style="border:2px solid black;border-radius:5%;background-color:lightblue;text-align:center">	
+<div class="test3">	
 <b>	
 <?php
 
