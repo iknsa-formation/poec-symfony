@@ -55,13 +55,21 @@
 			}
 		}
 
+		function boucleFor(){
+			$etudiant = array("Moussa","Khalid","LOL","GOAT");
+			for($i=0;$i<count($etudiant);$i++){
+				echo $etudiant[$i]."<br>";
+			}
+		}
+
 		/*echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
 		echo multiplication(5,6)."<br>";
 		echo modulo(4,2)."<br>";
 		echo division(5,2)."<br>";
-		echo exponentielle(10,2)."<br>";*/
-		echo verifieNum(18)."<br>";
+		echo exponentielle(10,2)."<br>";
+		echo verifieNum(18)."<br>";*/
+		boucleFor()."<br>";
 		?>
 	</body>
 <html>
