@@ -4,52 +4,26 @@
 
 	<body>
 
-		<div style="border:2px solid black;"><?php
-				
-				
-				
-				
-				$numero = 07;
-					
-					switch ($numero){
-						case 18:
-								echo "vous appeller les pompier";
-								break;
-						case 17:
-							echo "vous apeller la police";
-								break;
-						case 06:
-							echo "vous apeller un mobile";
-							break;
-						case  01||07:
-							echo "vous appeller un fixe";
-							break;
-						default:
-							echo "vous vous ete trompper ";
-							
-							
-					}
-		echo "<br/>";
-		
-		$nombre = 18;
-		if($nombre === 17){
-			echo "vous appeller la police";
-		}
-		elseif($nombre===18){
-			echo"vous appeller les pompier";
-		}
-		elseif($nombre===06){
-			echo "vous appeller un mobile";
-		}
-		elseif($nombre===01||$nombre===02||$nombre===08){
-			echo "vous appeller un fix";
-		}
-		else{
-			echo"vous vous ete trompper";
-		}
-		
-			?></div>
-		
+		<div style="background-color:orange;border-radius:5%;border:2px solid black;text-align:center">
+			<?php
+			
+			$personnes = array(
+				1=>array('prenom' => 'moussa','nom' => 'camara','telephone' => '012345679'),
+				2=>array('prenom' => 'khalid','nom' => 'sooda','telephone' => '01234678'),
+				3=>array('prenom' => 'khalid','nom' => 'sooda','telephone' => '012346785')
+			);
+			
+			foreach($personnes as $key1 => $value)
+			{
+			  echo "personne n°:" . $key1 . "<br />";
+				foreach ($value as $key2=>$value2)
+				{
+				  echo $key2 ."===>" . $value2 . "</strong><br />\n";
+				}
+			}
+			?>
+		</div>
+
 
 	</body>
 
