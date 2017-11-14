@@ -32,41 +32,50 @@ $resultat = mysqli_query($connection, 'SELECT * FROM contact LIMIT 0, 10');
 ?>
 
 <div class="container">
-<div class="col-md-6">
-	<table id="myTable" class="table table-striped table-hover">
-		<thead class="thead-dark">
-			<tr>
-			  <th>prenom</th>
-			  <th>nom</th>
-			  <th>tel</th>
-			</tr>
-		</thead>
-		<tbody>			
-		<?php
+	<div class="col-md-7">
 
-		while($donnees = mysqli_fetch_assoc($resultat))
-		{
-			echo "<tr><td>" . $donnees['nom'] . "</td><td>" . $donnees['prenom'] . "</td><td>" .$donnees['tel']. "</td></tr>"; 
+		<?php
+		require 'form.php';
+		?>
+
+		<h2>Mes contacts</h2>
+		<table id="myTable" class="table table-striped table-hover">
+			<thead class="thead-dark">
+				<tr>
+				  <th>prenom</th>
+				  <th>nom</th>
+				  <th>tel</th>
+				</tr>
+			</thead>
+			<tbody>			
+			<?php
+
+			while($donnees = mysqli_fetch_assoc($resultat))
+			{
+				echo "<tr><td>" . $donnees['nom'] . "</td><td>" . $donnees['prenom'] . "</td><td>" .$donnees['tel']. "</td></tr>"; 
+			}
+
+			?>
+			</tbody>
+		</table>
+	</div>
+
+	<?php
+
+	if (!empty($_POST['inputNom']) && !empty($_POST['inputPrenom']) && !empty($_POST['inputTel'])) {
+
+		if (is_string($_POST['inputNom']) && is_string($_POST['inputPrenom']) && is_int($_POST['inputTel'])) {
+			// Préparation de la requête
+			$req_pre = mysqli_prepare($connection, 'INSERT INTO contact (nom, prenom, tel) VALUES ( ?, ?, ?)');
+			mysqli_stmt_bind_param($req_pre, "ssi", $_POST['inputNom'], $_POST['inputPrenom'], $_POST['inputTel']);
+
+			// Execution de la requête
+			mysqli_stmt_execute($req_pre);
 		}
 
-		?>
-		</tbody>
-	</table>
-</div>
+	}
 
-
-<?php
-require 'form.php';
-
-// Préparation de la requête
-$req_pre = mysqli_prepare($connection, 'INSERT INTO contact (nom, prenom, tel) VALUES ( ?, ?, ?)');
-mysqli_stmt_bind_param($req_pre, "ssi", $_POST['inputNom'], $_POST['inputPrenom'], $_POST['inputTel']);
-
-// Execution de la requête
-mysqli_stmt_execute($req_pre);
-?>
-
-
+	?>
 
 </div><!-- /Container-->
 
