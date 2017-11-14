@@ -61,6 +61,13 @@
 				echo $etudiant[$i]."<br>";
 			}
 		}
+		function boucleAssos(){
+			$etudiant = array("nom"=>"Moussa","prenom"=>"Khalid","level"=>"GOAT");
+
+			foreach ($etudiant as $key => $value) {
+				echo $key." : ".$value."<br>" ;
+			}
+		}
 
 		/*echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
@@ -68,8 +75,9 @@
 		echo modulo(4,2)."<br>";
 		echo division(5,2)."<br>";
 		echo exponentielle(10,2)."<br>";
-		echo verifieNum(18)."<br>";*/
-		boucleFor()."<br>";
+		echo verifieNum(18)."<br>";
+		boucleFor()."<br>";*/
+		boucleAssos()."<br>";
 		?>
 	</body>
 <html>
