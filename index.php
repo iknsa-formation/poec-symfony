@@ -94,10 +94,10 @@
 		function listEtu($list){
 			foreach ($list as $key => $value) {
 				echo "<tr>";
-				echo "<td>".$key."<td>";
-				echo "<td>".$value["prenom"]."<td>";
-				echo "<td>".$value["nom"]."<td>";
-				echo "<td>".$value["moyen"]."<td>";
+				echo "<td>".$key."</td>";
+				echo "<td>".$value["prenom"]."</td>";
+				echo "<td>".$value["nom"]."</td>";
+				echo "<td>".$value["moyen"]."</td>";
 				echo "</tr>";
 			}
 		}
@@ -105,10 +105,10 @@
 			foreach ($list as $key => $value) {
 				if($value["moyen"] > 9){
 					echo "<tr>";
-					echo "<td>".$key."<td>";
-					echo "<td>".$value["prenom"]."<td>";
-					echo "<td>".$value["nom"]."<td>";
-					echo "<td>".$value["moyen"]."<td>";
+					echo "<td>".$key."</td>";
+					echo "<td>".$value["prenom"]."</td>";
+					echo "<td>".$value["nom"]."</td>";
+					echo "<td>".$value["moyen"]."</td>";
 					echo "</tr>";
 				}
 			}
@@ -117,10 +117,10 @@
 			foreach ($list as $key => $value) {
 				if($value["moyen"] < 10){
 					echo "<tr>";
-					echo "<td>".$key."<td>";
-					echo "<td>".$value["prenom"]."<td>";
-					echo "<td>".$value["nom"]."<td>";
-					echo "<td>".$value["moyen"]."<td>";
+					echo "<td>".$key."</td>";
+					echo "<td>".$value["prenom"]."</td>";
+					echo "<td>".$value["nom"]."</td>";
+					echo "<td>".$value["moyen"]."</td>";
 					echo "</tr>";
 				}
 			}
@@ -139,9 +139,9 @@
 		require "require.html";*/
 		?>
 <html>
-<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
 	<body>
 		<span>
 			<h3>Liste des etudiants</h3>
@@ -150,13 +150,12 @@
 					<tr>
 						<th>id</th>
 						<th>prenom</th>
+						<th>nom</th>
 						<th>moyen</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<?php listEtu(listeEtudiantExam()); ?>
-					</tr>
+					<?php listEtu(listeEtudiantExam()); ?>
 				</tbody>
 			</table>
 
@@ -166,13 +165,12 @@
 					<tr>
 						<th>id</th>
 						<th>prenom</th>
+						<th>nom</th>
 						<th>moyen</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<?php trieEtuAdmis(listeEtudiantExam()); ?>
-					</tr>
+					<?php trieEtuAdmis(listeEtudiantExam()); ?>
 				</tbody>
 			</table>
 
@@ -181,12 +179,11 @@
 				<thead class="">
 					<th>id</th>
 					<th>prenom</th>
+					<th>nom</th>
 					<th>moyen</th>
 				</thead>
 				<tbody>
-					<tr>
-						<?php trieEtuNonAdmis(listeEtudiantExam()); ?>
-					</tr>
+					<?php trieEtuNonAdmis(listeEtudiantExam()); ?>
 				</tbody>
 			</table>
 		</span>
