@@ -53,27 +53,27 @@
 
                while ($row = mysqli_fetch_object($resultat)) {
             ?>
-			<form name="form" id="form" enctype="multipart/form-data" method="post" action="update.php">
+      			<form name="form" id="form" enctype="multipart/form-data" method="post" action="update.php">
 	          	<td>
 	          		<input type="hidden" name="id" value="<?php echo $id;?>">
 	          		<input type="text" class="form-control" name="firstname" placeholder="Username" value="<?php echo $row->firstname;?>">
 	            </td>
 	          	<td>
 	            	<input type="text" class="form-control" name="lastname" placeholder="Username" value="<?php echo $row->lastname;?>">
-	         	</td>
-	         	<td>
-	            	<input type="text" class="form-control" name="adresse" placeholder="Username" value="<?php echo $row->adresse;?>">
+  	         	</td>
+  	         	<td>
+  	            	<input type="text" class="form-control" name="adresse" placeholder="Username" value="<?php echo $row->adresse;?>">
 	           	</td>
 	          	<td>
 	            	<input type="text" class="form-control" name="fonction" placeholder="Username" value="<?php echo $row->fonction;?>">
 	            </td>	
-	        </tr>
-	        <?php 
-	            }
-	              mysqli_free_result($resultat);
-	        ?>
-        	<input type="submit" class="btn btn-primary">
-			</form>
+      	</tr>
+      	        <?php 
+      	            }
+      	              mysqli_free_result($resultat);
+      	        ?>
+              	<input type="submit" class="btn btn-primary">
+      			</form>
       </tbody>
     </table>
  	<footer>
