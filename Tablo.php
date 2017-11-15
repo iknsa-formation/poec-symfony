@@ -56,6 +56,11 @@
     }
  }
  ?>
-
+ <br>
+ <br>
+<h3>Travail sur "Include" et "Require"</h3>
+<?php
+include "Accueil.html";
+?>
 </body>
 </html>
