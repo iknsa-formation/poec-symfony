@@ -1,6 +1,4 @@
-<html>
-	<body>
-		<?php 
+<?php 
 		function tp1(){
 			$string = "String";
 			$int = 1;
@@ -82,8 +80,53 @@
 				}
 			}
 		}
-		include "include.html";
-		/*echo addition(10,5)."<br>";
+
+		function listeEtudiantExam(){
+			$etudiant = array(
+				1 => array("prenom" => "Moussa", "nom" => "Camara","moyen" => 15), 
+				2 => array("prenom" => "Khalid", "nom" => "Sookia","moyen" => 19), 
+				3 => array("prenom" => "Noemie", "nom" => "Kifia","moyen" => 9), 
+				4 => array("prenom" => "Joan", "nom" => "Dupont","moyen" => 7), 
+				5 => array("prenom" => "Alex", "nom" => "cool","moyen" => 10), 
+			);
+			return $etudiant;
+		}
+		function listEtu($list){
+			foreach ($list as $key => $value) {
+				echo "<tr>";
+				echo "<td>".$key."<td>";
+				echo "<td>".$value["prenom"]."<td>";
+				echo "<td>".$value["nom"]."<td>";
+				echo "<td>".$value["moyen"]."<td>";
+				echo "</tr>";
+			}
+		}
+		function trieEtuAdmis($list){
+			foreach ($list as $key => $value) {
+				if($value["moyen"] > 9){
+					echo "<tr>";
+					echo "<td>".$key."<td>";
+					echo "<td>".$value["prenom"]."<td>";
+					echo "<td>".$value["nom"]."<td>";
+					echo "<td>".$value["moyen"]."<td>";
+					echo "</tr>";
+				}
+			}
+		}
+		function trieEtuNonAdmis($list){
+			foreach ($list as $key => $value) {
+				if($value["moyen"] < 10){
+					echo "<tr>";
+					echo "<td>".$key."<td>";
+					echo "<td>".$value["prenom"]."<td>";
+					echo "<td>".$value["nom"]."<td>";
+					echo "<td>".$value["moyen"]."<td>";
+					echo "</tr>";
+				}
+			}
+		}
+		/*include "include.html";
+		echo addition(10,5)."<br>";
 		echo soustraction(10,2)."<br>";
 		echo multiplication(5,6)."<br>";
 		echo modulo(4,2)."<br>";
@@ -91,10 +134,61 @@
 		echo exponentielle(10,2)."<br>";
 		echo verifieNum(18)."<br>";
 		boucleFor()."<br>";
-		boucleAssos()."<br>";*/
+		boucleAssos()."<br>";
 		boucle2DimAssos()."<br>";
-		
-		require "require.html";
+		require "require.html";*/
 		?>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+	<body>
+		<span>
+			<h3>Liste des etudiants</h3>
+			<table class="table">
+				<thead class="">
+					<tr>
+						<th>id</th>
+						<th>prenom</th>
+						<th>moyen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php listEtu(listeEtudiantExam()); ?>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Liste des admis</h3>
+			<table class="table">
+				<thead class="">
+					<tr>
+						<th>id</th>
+						<th>prenom</th>
+						<th>moyen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php trieEtuAdmis(listeEtudiantExam()); ?>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Liste des non admis</h3>
+			<table class="table">
+				<thead class="">
+					<th>id</th>
+					<th>prenom</th>
+					<th>moyen</th>
+				</thead>
+				<tbody>
+					<tr>
+						<?php trieEtuNonAdmis(listeEtudiantExam()); ?>
+					</tr>
+				</tbody>
+			</table>
+		</span>
 	</body>
 <html>
