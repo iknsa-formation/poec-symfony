@@ -54,10 +54,12 @@
                         elseif($num == 15)
                             echo "<i>C'est le SAMU</i>";
                     }
-                
+                    
                     echo "<br/>";
                     echo "<br/>";
 
+                    //---------------------------------------------------------
+                
                     $tab = array("Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
 
                     echo "<b>Liste de mon tableau:</b> <br/>";
@@ -78,6 +80,9 @@
                 
                     echo "<br/>";
                     echo "<br/>";
+                
+                    //----------------------------------------------------------
+                
                     echo "<b>Fonctions: </b><br/>";
                     
                     function addition($nb1,$nb2){
@@ -122,6 +127,36 @@
                     echo modulo(100,3)."<br/>";
                     echo division(120,4)."<br/>";
                     echo carre(10,2)."<br/>";*/
+                        
+                    echo "<br/>";
+                    echo "<br/>";
+                
+                    //---------------------------------------------------------------
+                
+                    $etudiants = array(
+                        "1"=>array("Nom"=>"Camara", "Prenom"=>"Moussa", "Moyenne"=>"15"), 
+                        "2"=>array("Nom"=>"Sookia", "Prenom"=>"Khaled", "Moyenne"=>"19"),
+                        "3"=>array("Nom"=>"Kifia", "Prenom"=>"Noémie", "Moyenne"=>"9"),
+                        "4"=>array("Nom"=>"Dupont", "Prenom"=>"Jean", "Moyenne"=>"7"),
+                        "5"=>array("Nom"=>"Good", "Prenom"=>"Alex", "Moyenne"=>"10")
+                    );
+                
+                    foreach($etudiants as $id => $info){
+                        //echo $id."<br/>";
+                        
+                        foreach($info as $nom => $moyenne){
+                            echo $nom.": ".$moyenne."<br/>";
+                            
+                            if($nom === "Moyenne"){
+                                //echo $moyenne."<br/>";
+                                
+                                if($moyenne >= 10)
+                                    echo "<b>admis</b><br/><br/>";
+                                else
+                                    echo "<b>non admis</b><br/><br/>";
+                            }
+                        }
+                    }
 
                 ?>
 
