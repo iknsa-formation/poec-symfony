@@ -1,17 +1,5 @@
 <?php
-define('DBSERVER', 'localhost');
-define('DBNAME', 'poec-symfony');
-define('DBUSER', 'root');
-define('DBPASS', '');
-
-$connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
-
-     if (!$connection) {
-        die('<strong> Impossible de se possible, veuillez revoir les accés</strong><br>');
-    } else {
-
-        echo '<strong> Super ! j\'ai réussi à me connecter à ma base de donnée </strong><br>';
-    }
+    require_once 'db.php';
 ?>
 
 <!DOCTYPE html>
@@ -74,32 +62,32 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
             ?>
           <th>
             <?php 
-                //echo "{$row[0]}\n"; 
-                echo "{$row['id']}\n"; 
+                //echo $row[0]; 
+                echo $row['id']; 
           ?>
           </th>
           <td>
             <?php 
-                //echo "{$row[0]}\n"; 
-                echo "{$row['firstname']}\n"; 
+                //echo $row[0]; 
+                echo $row['firstname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo "{$row[2]}\n"; 
-                echo "{$row['lastname']}\n"; 
+                //echo $row[2]; 
+                echo $row['lastname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo "{$row[3]}\n"; 
-                echo "{$row['adresse']}\n"; 
+                //echo $row[3]}; 
+                echo $row['adresse']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo "{$row[3]}\n"; 
-                echo "{$row['fonction']}\n"; 
+                //echo $row[3]}; 
+                echo $row['fonction']; 
             ?>
             </td>
             <td>
@@ -108,7 +96,7 @@ $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
         </tr>
         <?php 
             }
-                mysqlI_free_result($resultat);
+                mysqli_free_result($resultat);
             ?>
       </tbody>
     </table>
