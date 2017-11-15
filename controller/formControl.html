@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>test de formulaires avec javascript</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+  </head>
+  <body>
+
+<form>
+  <div class="col-md-6 mb-3">
+    <label for="inputNom">Nom</label>
+    <input id="nom" name="inputNom" type="text" class="form-control" required">
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label for="inputPrenom">Prenom</label>
+    <input id="prenom" name="inputPrenom" type="text" class="form-control" required">
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label for="inputMail">Mail</label>
+    <input id="mail" name="inputMail" type="text" class="form-control" required">
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label for="inputTel">Tel</label>
+    <input id="tel" name="inputTel" type="text" class="form-control" required">
+  </div>
+
+    <input id="envoi" type="submit" value="Valider"/>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    var $nom = $('#nom'),
+        $mail = $('#mail'),
+        $prenom = $('#prenom'),
+        $tel = $('#tel');
+
+        $nom.blur(function() {
+          if($(this).val().length < 2 || $(this).val().length > 25 ) {
+            $(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+          }
+          else {
+            $(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+          }
+        }) 
+
+        $mail.blur(function() {
+          var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+          // On utilise la méthode test(str) de l'objet RegExp pour la vérification
+          if(!regex.test($(this).val())) {
+            $(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+          }
+          else {
+            $(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+          }
+        })
+
+        $tel.blur(function() {
+          var tel = parseInt($(this).val());
+          console.log(tel);
+          // N'accepte que les numéros français (peut être modifié)
+          if(isNaN(tel) || tel.length < 10 || tel.length > 10) {
+            $(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+          }
+          else {
+            $(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+          }
+        }) 
+});
+</script>    
+  </body>
+    </html>
