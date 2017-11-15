@@ -1,6 +1,6 @@
 <?php
-	 	include 'C:\wamp64\www\php2\composants\navbar.php';
-	 	include 'C:\wamp64\www\php2\composants\header.html';
+	 	include 'C:\composants\navbar.php';
+	 	include 'C:\composants\header.html';
 ?>
 
 <body>
