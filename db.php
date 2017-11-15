@@ -15,10 +15,10 @@ define('DBPASS', '');
 //$connection = new mysqli($servername, $username, $password, $dbname);
 $connection = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
 
-     if (!$connection) {
+    /* if (!$connection) {
         die('<strong> Impossible de se possible, veuillez revoir les accés</strong><br>');
     } else {
 
         echo '<strong> Super ! j\'ai réussi à me connecter à ma base de donnée </strong><br>';
-    }
+    }*/
 ?>

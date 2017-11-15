@@ -55,17 +55,19 @@
             ?>
       			<form name="form" id="form" enctype="multipart/form-data" method="post" action="update.php">
 	          	<td>
-	          		<input type="hidden" name="id" value="<?php echo $id;?>">
-	          		<input type="text" class="form-control" name="firstname" placeholder="Username" value="<?php echo $row->firstname;?>">
+                <?php echo $id;?>
+              </td>
+              <td>
+	          		<input type="text" class="form-control" name="firstname" placeholder="Prenom" value="<?php echo $row->firstname;?>">
 	            </td>
 	          	<td>
-	            	<input type="text" class="form-control" name="lastname" placeholder="Username" value="<?php echo $row->lastname;?>">
+	            	<input type="text" class="form-control" name="lastname" placeholder="nom" value="<?php echo $row->lastname;?>">
   	         	</td>
   	         	<td>
-  	            	<input type="text" class="form-control" name="adresse" placeholder="Username" value="<?php echo $row->adresse;?>">
+  	            	<input type="text" class="form-control" name="adresse" placeholder="adresse" value="<?php echo $row->adresse;?>">
 	           	</td>
 	          	<td>
-	            	<input type="text" class="form-control" name="fonction" placeholder="Username" value="<?php echo $row->fonction;?>">
+	            	<input type="text" class="form-control" name="fonction" placeholder="fonction" value="<?php echo $row->fonction;?>">
 	            </td>	
       	</tr>
       	        <?php 
