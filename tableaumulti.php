@@ -13,6 +13,9 @@
 .ti{
   font-size: 9rem;
 }
+.incre{
+  background-color: black;
+}
   </style>
 
   <div class="container">
@@ -38,7 +41,13 @@ foreach($personnes as $key1 => $value1)
     echo  $key2." :" . $value2. "<br />";
   }
 }
-
 ?>
+<div class=incre>
+<?php
+include "includ.php";
+require "require.php";
+?>
+</div>
+
 </div>
 </html>
