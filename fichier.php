@@ -45,6 +45,28 @@
       </thead>
       <tbody>
        <?php
+
+           if (isset($_GET["deleteId"])) {
+                $deleteId = $_GET["deleteId"] ;
+                $sql = "DELETE FROM users WHERE id = ".$deleteId ;
+                $requete = mysqli_query($connection, $sql ) ;
+               
+                if($requete) {
+                  echo '
+                    <div class="alert alert-success" role="alert">
+                      Utilisateur supprimé
+                    </div>
+                  ';
+                  
+                } else{
+                   echo '
+                    <div class="alert alert-success" role="alert">
+                      Impossible de supprimer cet Utilisateur
+                    </div>
+                  ';
+                }
+            }
+
             $sql = "SELECT * FROM USERS";
             $resultat = mysqli_query ($connection,$sql);
             /*
@@ -88,6 +110,9 @@
             </td>
             <td>
             <a href="edit.php?id=<?php echo $row['id'] ?>">Modifier</a>
+            </td>
+            <td>
+            <a href="fichier.php?deleteId=<?php echo $row['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer <?php echo $row['firstname'] . "  " . $row['lastname'] ?>? '));">Supprimer</a>
             </td>
         </tr>
         <?php 
