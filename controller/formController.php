@@ -3,7 +3,7 @@
 // Si tous les champs sont bien remplis
 if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['inputMail']) && isset($_POST['inputTel'])) {
 
-	// On rend inoffensives les balises HTML que le visiteur aurrait pu entrer dans nos input
+	// On rend inoffensives les balises HTML que le visiteur aurait pu entrer dans nos input
 	$_POST['inputNom'] = htmlspecialchars($_POST['inputNom']);
 	$_POST['inputPrenom'] = htmlspecialchars($_POST['inputPrenom']);
 	$_POST['inputMail'] = htmlspecialchars($_POST['inputMail']);
@@ -25,16 +25,7 @@ if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['i
 				// Execution de la requête
 				mysqli_stmt_execute($req_pre);
 				
-			}
-			else {
-				echo "Le numéro de téléphone est invalide";
-			}
+			}			
 		}
-		else {
-			echo "L'adresse email est invalide";
-		}
-	}
-	else {
-		echo "Le nom ou le prénom ne sont pas corrects";
 	}
 }

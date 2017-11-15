@@ -15,7 +15,7 @@ require "model/DBConnexion.php";
 // inclus le formulaire
 include "view/form.html";
 // La sécurisation du formulaire
-require "controller/formControl.php";
+require "controller/formController.php";
 ?>
 	<h2>Mes contacts</h2>
 	<table id="myTable" class="table table-striped table-hover">
@@ -29,17 +29,15 @@ require "controller/formControl.php";
 		</thead>
 		<tbody>	
 <?php
-while($donnees = mysqli_fetch_assoc($resultat)) {
-echo "<tr><td>".$donnees['nom']."</td><td>". $donnees['prenom']."</td><td>".$donnees['mail']."</td><td>".$donnees['tel']."</td></tr>"; 
-}
-
+	while($donnees = mysqli_fetch_assoc($resultat)) {
+		echo "<tr><td>".$donnees['nom']."</td><td>". $donnees['prenom']."</td><td>".$donnees['mail']."</td><td>0".$donnees['tel']."</td></tr>";
+	}
 ?>
 		</tbody>
 </table>
 </div><!-- /Container -->
 
-
-
-
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="controller/formController.js"></script>
 </body>
 </html>

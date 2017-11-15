@@ -1,5 +1,4 @@
 <?php
-
 define('DBSERVER', 'localhost');
 define('DBNAME','interface');
 define('DBUSER', 'root');
@@ -13,4 +12,3 @@ if (mysqli_connect_errno())
   }
 // Stockage de la requête dans la variable $resultat
 $resultat = mysqli_query($connection, 'SELECT * FROM contacts LIMIT 0, 10');
-

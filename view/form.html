@@ -1,25 +1,36 @@
 <div id="formulaire">
-<h2>Ajouter un contact</h2>
-
-  <form action="#" method="POST">
+<h2>Ajouter un contact</h2>  
+  <form action="" method="POST">
     <div class="form-row">
       <div class="col">
         <label for="inputNom">Nom: </label>
-        <input type="text" class="form-control" id="inputNom" name="inputNom" placeholder="nom">
+        <input id="nom" name="inputNom" type="text" class="form-control" required">
+        <div class="invalid-feedback">
+          Le nom doit contenir plus de deux carractères
+        </div>
       </div>
       <div class="col">
-        <label for="inputPrenom">Prénom: </label>
-        <input type="text" class="form-control" id="inputPrenom" name="inputPrenom" placeholder="premon">
+        <label for="inputPrenom">Prenom: </label>
+        <input id="prenom" name="inputPrenom" type="text" class="form-control" required">
+        <div class="invalid-feedback">
+          Le prénom doit contenir plus de deux carractères
+        </div>
       </div>
       <div class="col">
-        <label for="inputTel">N° de téléphone: </label>
-        <input type="text" class="form-control" id="inputTel" name="inputTel" placeholder="telephone">
+        <label for="inputMail">Mail: </label>
+        <input id="mail" name="inputMail" type="text" class="form-control" required">
+        <div class="invalid-feedback">
+          Votre mail est invalide
+        </div>
       </div>
       <div class="col">
-        <label for="inputTel">Mail: </label>
-        <input type="text" class="form-control" id="inputMail" name="inputMail" placeholder="mail@blabla.com">
+        <label for="inputTel">Tel: </label>
+        <input id="tel" name="inputTel" type="text" class="form-control" required">
+        <div class="invalid-feedback">
+          Le numéro de téléphone est invalide
+        </div>
       </div>
-    </div> </br>
-    <button type="submit" class="btn btn-primary" id="valider">Ajouter</button>
+    </div>
+    <input id="envoi" type="submit" class="btn btn-primary" value="Valider"/>
   </form>
-  </div>
+</div>

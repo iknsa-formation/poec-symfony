@@ -3,5 +3,7 @@
 	margin-bottom: 35px;
 	padding-bottom: 12px;
 	border-bottom: 2px grey solid;
-
+}
+.form-row {
+	padding-bottom: 15px;
 }
