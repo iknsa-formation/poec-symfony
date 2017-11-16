@@ -4,6 +4,6 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
-		<?php include_once "pages/etudiants.html"; ?>
+		<?php include_once "pages/contact.html"; ?>
 	</body>
 <html>
