@@ -125,16 +125,20 @@
 			}
 		}
 	}
-	function verifieChampsForm(){
+	function verifieChampsForm($bd){
 		if(!empty($_POST["txtFirstName"])){
 			$firtName = $_POST["txtFirstName"];
 			$lastName = $_POST["txtLastName"];
 			$adresse = $_POST["txtAdresse"];
 			$fonction = $_POST["txtFonction"];
 			$tab = ["FirstName"=>$firtName,"LastName"=>$lastName,"Adresse"=>$adresse,"Fonction"=>$fonction];
+			instructionBd($tab,$bd);
 			return $tab;
 		}else{
-			return "Vérifier votre saisie";
+			return '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Saisie Incorrect!</strong> Vérifier votre saisie.
+				</div>';
 		}
 	}
 	function afficheResultatForm($tab){
@@ -146,4 +150,26 @@
 			echo $tab;
 		}
 	}
+	function instructionBd($data,$bd){
+		insertionUser($data,$bd);
+	}
+	function insertionUser($listeUsers,$bd){
+		$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
+		VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
+		$insert = mysqli_query($bd,$sql);
+
+		if($insert){
+			echo '
+				<div class="alert alert-success" role="alert">
+    				<strong>Réussi!</strong> Utilisateur enregistré.
+				</div>';
+		}else{
+			echo '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Erreur!</strong> Problème de requete.
+				</div>';
+		}
+		mysqli_close($bd);
+	}
+
 ?>
