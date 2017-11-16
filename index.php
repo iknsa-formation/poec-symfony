@@ -126,7 +126,7 @@
                     echo multiplication(6,7)."<br/>";
                     echo modulo(100,3)."<br/>";
                     echo division(120,4)."<br/>";
-                    echo carre(10,2)."<br/>";*/
+                    echo carre(10,2)."<br/>";
                         
                     echo "<br/>";
                     echo "<br/>";
