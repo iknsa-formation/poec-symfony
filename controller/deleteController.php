@@ -12,8 +12,8 @@ if (mysqli_connect_errno())
   }
 
 if (isset($_POST['delete'])) {
-	$target = $_POST['delete'];
-	$sql = ' DELETE FROM contacts WHERE contacts.id = $target ';
+	$target = intval($_POST['delete']);
+	$sql = "DELETE FROM contacts WHERE id=$target";
    
    if (mysqli_query($connection, $sql)) {
       echo "Record deleted successfully";
@@ -22,4 +22,6 @@ if (isset($_POST['delete'])) {
    }
    mysqli_close($connection);
 }
+header('Location: ../view/delete.php');
+exit;
 ?>
