@@ -142,13 +142,11 @@
                     );
                 
                     foreach($etudiants as $id => $info){
-                        //echo $id."<br/>";
-                        
+
                         foreach($info as $nom => $moyenne){
                             echo $nom.": ".$moyenne."<br/>";
                             
                             if($nom === "Moyenne"){
-                                //echo $moyenne."<br/>";
                                 
                                 if($moyenne >= 10)
                                     echo "<b>admis</b><br/><br/>";
