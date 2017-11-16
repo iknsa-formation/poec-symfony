@@ -1,15 +1,5 @@
 <?php
-define('DBSERVER', 'localhost');
-define('DBNAME','interface');
-define('DBUSER', 'root');
-define('DBPWD', '');
-// Connexion à la BDD
-$connection = mysqli_connect(DBSERVER, DBUSER ,DBPWD, DBNAME);
-// Check la connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+require_once '../model/DBConnexion.php';
 
 // Si tous les champs sont bien remplis
 if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['inputMail']) && isset($_POST['inputTel'])) {

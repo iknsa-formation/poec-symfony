@@ -25,7 +25,6 @@
 	// La sécurisation du formulaire
 	require "controller/formController.php";
 	?>
-	<a href="view/modifier.php" class="btn btn-primary" role="button">Modifier la liste</a>
 	<h2>Mes contacts</h2>
 	<table id="myTable" class="table table-striped table-hover">
 		<thead class="thead-dark">
@@ -44,6 +43,8 @@
 	?>
 		</tbody>
 	</table>
+	<a href="view/modifier.php" class="btn btn-primary" role="button">Modifier la liste</a>
+	<a href="view/supprimer.php" class="btn btn-danger" role="button">Supprimer un élément</a>
 </div><!-- /Container -->
 
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
