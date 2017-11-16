@@ -1,9 +1,12 @@
+<?php
+require_once "data.php";
+	?>
 <!doctype html>
 <html>
 	<head>
 		<title>php</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
+			<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="test"><h1>Liste des personnes</h1><?php
@@ -22,33 +25,58 @@
 					echo $key2."=>".$value2."<br/><br/>";
 				}
 			};	
-			
-			
 			?></div>
-			
-			<div class="test2"><h1>Personnes admis</h1><?php
+		
+		<div class="test2"><h1>Personnes admis</h1><?php
 			foreach($untableau as $key1 => $value){
 				if($value['moyenne']>9){
 					echo "personne no".$key1."<br/>";
-					
+
 					foreach ($value as $key2 => $value2){
 						echo $key2."=>".$value2."<br/><br/>";
 					}
 				}
 			}
 			?></div>
-			<div class="test3"><h1>Personne nons admis</h1><?php
+		<div class="test3"><h1>Personne nons admis</h1><?php
 			foreach($untableau as $key1 => $value){
 				if($value['moyenne']<9){
 					echo "personne no".$key1."<br/>";
-					
+
 					foreach ($value as $key2 => $value2){
 						echo $key2."=>".$value2."<br/><br/>";
 					}
 				}
 			}
-			
-			
-			?></div>
+
+			?>
+				
+			</div>
+		<?php
+	require_once "form.php";
+	?>
+		<span>
+			<form action="form.php" method="post" id="form">
+				<div>
+					<label class="glyphicon glyphicon-glyphicon-user">Nom:</label>
+					<input type="text" id="nom" name="lastname" required/>
+				</div>
+				<div>
+					<label>Prenom:</label>
+					<input type="text" id="prenom" name="firstname" required/>
+				</div>
+				<div>
+					<label>Adresse</label>
+					<input type="text" id="adresse" name="adresse" required/>
+				</div>
+				<div>
+					<label>fonction</label>
+					<input type="text" id="fonction" name="fonction" required/>
+				</div>
+				<div>
+					<input type="submit" id="envoye" value="envoyé" required/>
+				</div>
+			</form>
+		</span>
 	</body>
 </html>
