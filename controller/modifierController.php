@@ -21,16 +21,12 @@ $newName = htmlspecialchars($_POST["inputPrenom"]);
 $newMail = trim(htmlspecialchars($_POST["inputMail"]));
 $newTel = htmlspecialchars($_POST["inputTel"]);
 
-
 	// On regarde si le nom et prénom saisis sont bien de type string
 	if (is_string($newLastName) && is_string($newName)) {
-
 		// On teste la validité de l'adresse email avec une regex
 		if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $newMail)) {
-
 			// On teste aussi la validité du numéro de téléphone
-			if (preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $newTel)) {
-				
+			if (preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $newTel)) {				
 				// Préparation de la requête
 				$sql = "
 					UPDATE 
@@ -43,19 +39,15 @@ $newTel = htmlspecialchars($_POST["inputTel"]);
 					WHERE 
 						id = $id
 				";
-
 				if ($connection->query($sql) === TRUE) {
 				    echo "Record updated successfully";
 				} else {
 				    echo "Error updating record: " . $connection->error;
 				}
-
 				$connection->close();
-
 			}		
 		}		
 	}		
 }
-
-header('Location: modifier.php');
+header('Location: ../view/modifier.php');
 ?>

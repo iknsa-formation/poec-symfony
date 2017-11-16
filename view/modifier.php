@@ -15,18 +15,18 @@ require "../model/DBConnexion.php";
 ?>
 	<h2>Mes contact</h2>
 	<table id="myTable" class="table table-striped table-hover">
-		<thead class="thead-dark">
-			<tr>
-			  <th>modifier</th>
-			  <th>Nom</th>
-			  <th>Prenom</th>
-			  <th>Mail</th>
-			  <th>Tel</th>
-			</tr>
-		</thead>
-		<tbody>
+	<thead class="thead-dark">
+		<tr>
+		  <th>modifier</th>
+		  <th>Nom</th>
+		  <th>Prenom</th>
+		  <th>Mail</th>
+		  <th>Tel</th>
+		</tr>
+	</thead>
+	<tbody>
 
-  <form action="traitement.php" method="POST">
+  <form action="../controller/modifierController.php" method="POST">
 
 <?php
 // On attribue un id à chaque ligne créée dynamiquement

@@ -1,5 +1,4 @@
 <?php
-
 // Si tous les champs sont bien remplis
 if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['inputMail']) && isset($_POST['inputTel'])) {
 

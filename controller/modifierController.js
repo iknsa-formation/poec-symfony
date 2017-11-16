@@ -5,7 +5,6 @@ $(document).ready(function() {
 		var inputTel = $('#tel');
 
 	$(document).on('click', '.radio', function() {
-
 		var parentTR = $(this).parent().parent();
 
 		var col1 = parentTR.find('.col1');
