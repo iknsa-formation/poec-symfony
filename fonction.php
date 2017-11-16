@@ -137,7 +137,7 @@
 		}else{
 			return '
 				<div class="alert alert-danger" role="alert">
-    				<strong>Saisie Incorrect!</strong> Vérifier votre saisie.
+    				<strong>Champs obligatoires!</strong> Vérifier votre saisie.
 				</div>';
 		}
 	}
@@ -152,6 +152,7 @@
 	}
 	function instructionBd($data,$bd){
 		insertionUser($data,$bd);
+		mysqli_close($bd);
 	}
 	function insertionUser($listeUsers,$bd){
 		$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
@@ -169,7 +170,5 @@
     				<strong>Erreur!</strong> Problème de requete.
 				</div>';
 		}
-		mysqli_close($bd);
 	}
-
 ?>
