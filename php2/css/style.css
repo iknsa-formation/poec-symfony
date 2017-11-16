@@ -27,3 +27,18 @@ div.content
 	display:inline-block;
 	margin:auto;
 }
+
+div.list_students
+{
+
+}
+
+ 	form
+{
+	background-color: grey;
+	display:block;
+}
+label
+{
+	width:100px;
+}
