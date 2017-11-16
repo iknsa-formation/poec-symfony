@@ -40,4 +40,5 @@ $newTel = htmlspecialchars($_POST["inputTel"]);
 	}		
 }
 header('Location: ../view/modifier.php');
+exit;
 ?>

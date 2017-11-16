@@ -19,7 +19,6 @@ require "../model/DBConnexion.php";
 	<thead class="thead-dark">
 		<tr>
 		  <th>Supprimer</th>
-		  <th>id</th>
 		  <th>Nom</th>
 		  <th>Prenom</th>
 		  <th>Mail</th>
@@ -34,7 +33,6 @@ require "../model/DBConnexion.php";
 				while($donnees = mysqli_fetch_assoc($resultat)) {
 					echo '<tr>
 						    <td><input type="radio" id="'.$i.'" name="delete" value="'.$donnees["id"].'" class="radio"></td>
-							<td>'.$donnees["id"].'</td>
 							<td class="col1">'.$donnees["nom"].'</td>
 							<td class="col2">'. $donnees["prenom"].'</td>
 							<td class="col3">'.$donnees["mail"].'</td>
