@@ -8,7 +8,6 @@ $(document).ready(function() {
 
 		var parentTR = $(this).parent().parent();
 
-		console.log(parentTR);
 		var col1 = parentTR.find('.col1');
 		var col2 = parentTR.find('.col2');
 		var col3 = parentTR.find('.col3');
@@ -16,7 +15,8 @@ $(document).ready(function() {
 
 		var val1 = col1.text();
 		var val2 = col2.text();
-		var val3 = col3.text();
+		// Le trim est nécessaire ici pour éviter d'avoir des espaces, que la regex n'acceptera pas
+		var val3 = col3.text().trim();
 		var val4 = col4.text();
 
 		inputNom.val(val1);

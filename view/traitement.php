@@ -15,17 +15,18 @@ if (mysqli_connect_errno())
 if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['inputMail']) && isset($_POST['inputTel'])) {
 
 $id = $_POST["modifier"];
-$newLastName = $_POST["inputNom"];
-$newName = $_POST["inputPrenom"];
-$newMail = $_POST["inputMail"];
-$newTel = $_POST["inputTel"];
+$newLastName = htmlspecialchars($_POST["inputNom"]);
+$newName = htmlspecialchars($_POST["inputPrenom"]);
+// Le trim est nécessaire ici pour éviter d'avoir des espaces, que la regex n'acceptera pas
+$newMail = trim(htmlspecialchars($_POST["inputMail"]));
+$newTel = htmlspecialchars($_POST["inputTel"]);
 
 
 	// On regarde si le nom et prénom saisis sont bien de type string
 	if (is_string($newLastName) && is_string($newName)) {
 
 		// On teste la validité de l'adresse email avec une regex
-		/*if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $newMail)) {*/
+		if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $newMail)) {
 
 			// On teste aussi la validité du numéro de téléphone
 			if (preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $newTel)) {
@@ -53,7 +54,7 @@ $newTel = $_POST["inputTel"];
 
 			}		
 		}		
-	/*}*/			
+	}		
 }
 
 header('Location: modifier.php');
