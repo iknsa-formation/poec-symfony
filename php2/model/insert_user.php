@@ -10,9 +10,13 @@
 		}	
 		$query = "INSERT INTO users(firstname, lastname, adresse, fonction, img_url) VALUES ('".$firstname." ',' ".$lastname." ',' ".$adresse." ',' ".$fonction." ',' ".$img_url."')";
 		$insert = mysqli_query($connection, $query);
-		if ($insert){
+		$Exist = "select lastname from users where lastname='".$nom"'";
+		//test: 
+		/*var = mysqli_num_rows($exist);*/
+		/*var_dump(var);die;*/		
+if ($var > 0){
 			echo '<div class="alert alert-sucess">';
-			echo "success";
+			echo "success" . "<br>";
 		}
 		else{
 			echo "failled";
