@@ -1,5 +1,6 @@
 <?php
 require_once "data.php";
+require_once "list.php"
 ?>
 <!doctype html>
 <html>
@@ -52,9 +53,7 @@ require_once "data.php";
 			?>
 
 		</div>
-		<?php
-		require_once "form.php";
-		?>
+
 		<span>
 			<form action="form.php" method="post" id="form">
 				<div>
