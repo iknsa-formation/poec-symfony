@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
 
@@ -20,13 +20,14 @@
       </thead>
       <tbody>
 <?php
-    $personnes = array(
-    1 => array("id" => "1","prenom" => "Moussa","nom" => "Camara","moyenne" =>"15"),
-    2 => array("id" => "2","prenom" => "Khaled","nom" => "Sookia","moyenne" =>"19"),
-    3 => array("id" => "3","prenom" => "Noemie","nom" => "Kifia","moyenne" =>"9"),
-    4 => array("id" => "4","prenom" => "Jean","nom" => "Dupont","moyenne" =>"7"),
-    5 => array("id" => "5","prenom" => "Alex","nom" => "Cool","moyenne" =>"10")
-    );
+
+  $personnes = array(
+  1 => array("id" => "1","prenom" => "Moussa","nom" => "Camara","moyenne" =>"15"),
+  2 => array("id" => "2","prenom" => "Khaled","nom" => "Sookia","moyenne" =>"19"),
+  3 => array("id" => "3","prenom" => "Noemie","nom" => "Kifia","moyenne" =>"9"),
+  4 => array("id" => "4","prenom" => "Jean","nom" => "Dupont","moyenne" =>"7"),
+  5 => array("id" => "5","prenom" => "Alex","nom" => "Cool","moyenne" =>"10")
+);
 
   foreach($personnes as $key1 => $value1)
 {

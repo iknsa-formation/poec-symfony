@@ -1,4 +1,9 @@
 
+body
+{
+  font-size: 2rem;
+}
+
 h2.ta
 {
 color:green;
@@ -7,4 +12,9 @@ color:green;
 h2.tn
 {
 color:red;
+}
+
+form#f1
+{
+  margin: 20px;
 }
