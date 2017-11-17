@@ -155,20 +155,30 @@
 		mysqli_close($bd);
 	}
 	function insertionUser($listeUsers,$bd){
-		$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
-		VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
-		$insert = mysqli_query($bd,$sql);
-
-		if($insert){
-			echo '
-				<div class="alert alert-success" role="alert">
-    				<strong>Réussi!</strong> Utilisateur enregistré.
-				</div>';
-		}else{
+		$sql = "select lastname from users where lastname = '".$listeUsers["LastName"]."'";
+		$select = mysqli_query($bd,$sql);
+		$existe = mysqli_num_rows($select);
+		if($existe){
 			echo '
 				<div class="alert alert-danger" role="alert">
-    				<strong>Erreur!</strong> Problème de requete.
+    				L\'Utilisateur <strong>'.$listeUsers["FirstName"].'</strong> existe déja.
 				</div>';
+		}else{
+			$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
+			VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
+			
+			$insert = mysqli_query($bd,$sql);
+			if($insert){
+				echo '
+					<div class="alert alert-success" role="alert">
+	    				<strong>Réussi!</strong> Utilisateur enregistré.
+					</div>';
+			}else{
+				echo '
+					<div class="alert alert-danger" role="alert">
+	    				<strong>Erreur!</strong> Problème de requete.
+					</div>';
+			}
 		}
 	}	
 	function selectionUsers($bd){
