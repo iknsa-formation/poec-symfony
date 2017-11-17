@@ -32,8 +32,7 @@ $fonction = $_POST ['fonction'];
         L'utilisateur <h3>>>>>>>>>>>>>>>> $prenom $nom a été ajouté en base!
         <<<<<<<<<<<<<<<<<</h3></div>";
       } else {
-      echo "<div class= 'alert alert-alert' role= 'crash'>
-      Oops!... out of order ! </div>";
+      echo "<div class= 'alert alert-alert' role= 'crash'> Oops!... out of order ! </div>";
     }
     mysqli_close($connection);
   }
