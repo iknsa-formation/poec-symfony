@@ -1,6 +1,8 @@
 <?php 
-	require 'bd.php'; 
-	//require '../fonction.html'; 
+	require_once "../bd.php"; 
+	require_once "../fonction.php"; 
+	include_once "../head.html";
+	include_once "../header.html";
 ?>
 <span class="col-sm-6 col-sm-offset-3">
 	<h3>Liste des Users</h3>
@@ -18,4 +20,5 @@
 			<?php selectionUsers($connexion); ?>
 		</tbody>
 	</table>
+	<a href="../index.php">Retour</a>
 </span>

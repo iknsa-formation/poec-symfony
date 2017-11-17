@@ -188,18 +188,62 @@
 		if($select){
 			foreach ($select as $key => $value) {
 				echo "<tr>";
-				echo "<td>".$value["id"]."</td>";
-				echo "<td>".$value["firstname"]."</td>";
-				echo "<td>".$value["lastname"]."</td>";
-				echo "<td>".$value["adresse"]."</td>";
-				echo "<td>".$value["fonction"]."</td>";
-				echo "</tr>";
+				echo '<td>'.$value["id"].'</td>';
+				echo '<td>'.$value["firstname"].'</td>';
+				echo '<td>'.$value["lastname"].'</td>';
+				echo '<td>'.$value["adresse"].'</td>';
+				echo '<td>'.$value["fonction"].'</td>';
+				echo '<td><button class="btn"><a href="modifications.php?id='.$value["id"].'">Modifier</a></button></td>';
+				echo '<td><button class="btn"><a href="suppréssion.php?id='.$value["id"].'">Supprimer</a></button></td>';
+				echo '</tr>';
 			}
 		}else{
 			echo '
 				<div class="alert alert-danger" role="alert">
     				<strong>Erreur!</strong> Problème de requete.
 				</div>';
+		}
+		mysqli_close($bd);
+	}
+	function selectionUnUser($bd){
+		$id = $_GET["id"];
+		$sql = "SELECT * FROM users where id=".$id;
+		$select = mysqli_fetch_assoc(mysqli_query($bd,$sql));
+
+		if($select){
+			$firstname = $select["firstname"];
+			$lastname = $select["lastname"];
+			$adresse = $select["adresse"];
+			$fonction = $select["fonction"];
+			$tab = array("firstname"=>$firstname,"lastname"=>$lastname,"adresse"=>$adresse,"fonction"=>$fonction);
+			return $tab;
+		}else{
+			echo '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Erreur!</strong> Problème de requete.
+				</div>';
+			return false;
+		}
+		mysqli_close($bd);
+	}
+	function uptdate($user,$bd){
+		$id = $_GET["id"];
+		$sql = "SELECT * FROM users where id=".$id;
+		$select = mysqli_fetch_assoc(mysqli_query($bd,$sql));
+
+		if($select){
+			$firstname = $select["firstname"];
+			$lastname = $select["lastname"];
+			$adresse = $select["adresse"];
+			$fonction = $select["fonction"];
+			$tab = array("firstname"=>$firstname,"lastname"=>$lastname,"adresse"=>$adresse,"fonction"=>$fonction);
+			return $tab;
+		}else{
+			echo '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Erreur!</strong> Problème de requete.
+				</div>';
+			return false;
 		}
 		mysqli_close($bd);
 	}

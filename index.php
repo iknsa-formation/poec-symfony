@@ -1,8 +1,12 @@
 <?php 
 	require_once "fonction.php"; 
 	include_once "head.html";
+	include_once "header.html";
 ?>
-		<?php include_once "pages/contact.html"; ?>
-		<?php include_once "pages/users.html"; ?>
+		<div class="row">
+			<div class="col-sm-12">
+				<?php include_once "pages/accueil.html"; ?>
+			</div>
+		</div>	
 	</body>
 <html>
