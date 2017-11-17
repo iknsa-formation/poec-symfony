@@ -155,29 +155,35 @@
 		mysqli_close($bd);
 	}
 	function insertionUser($listeUsers,$bd){
-		$sql = "select lastname from users where lastname = '".$listeUsers["LastName"]."'";
-		$select = mysqli_query($bd,$sql);
-		$existe = mysqli_num_rows($select);
-		if($existe){
-			echo '
-				<div class="alert alert-danger" role="alert">
-    				L\'Utilisateur <strong>'.$listeUsers["FirstName"].'</strong> existe déja.
-				</div>';
+		if(isset($_GET['id'])){
+			// UPDTADE
+			uptdateUser($listeUsers,$bd);
 		}else{
-			$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
-			VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
-			
-			$insert = mysqli_query($bd,$sql);
-			if($insert){
-				echo '
-					<div class="alert alert-success" role="alert">
-	    				<strong>Réussi!</strong> Utilisateur enregistré.
-					</div>';
-			}else{
+			// INSERT
+			$sql = "select lastname from users where lastname = '".$listeUsers["LastName"]."'";
+			$select = mysqli_query($bd,$sql);
+			$existe = mysqli_num_rows($select);
+			if($existe){
 				echo '
 					<div class="alert alert-danger" role="alert">
-	    				<strong>Erreur!</strong> Problème de requete.
+	    				L\'Utilisateur <strong>'.$listeUsers["FirstName"].'</strong> existe déja.
 					</div>';
+			}else{
+				$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
+				VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
+				
+				$insert = mysqli_query($bd,$sql);
+				if($insert){
+					echo '
+						<div class="alert alert-success" role="alert">
+		    				<strong>Réussi!</strong> Utilisateur enregistré.
+						</div>';
+				}else{
+					echo '
+						<div class="alert alert-danger" role="alert">
+		    				<strong>Erreur!</strong> Problème de requete.
+						</div>';
+				}
 			}
 		}
 	}	
@@ -206,6 +212,7 @@
 		mysqli_close($bd);
 	}
 	function selectionUnUser($bd){
+		
 		$id = $_GET["id"];
 		$sql = "SELECT * FROM users where id=".$id;
 		$select = mysqli_fetch_assoc(mysqli_query($bd,$sql));
@@ -226,18 +233,16 @@
 		}
 		mysqli_close($bd);
 	}
-	function uptdate($user,$bd){
+	function uptdateUser($user,$bd){
 		$id = $_GET["id"];
-		$sql = "SELECT * FROM users where id=".$id;
-		$select = mysqli_fetch_assoc(mysqli_query($bd,$sql));
+		$sql = "UPDATE users set firstname='".$user["FirstName"]."',lastname='".$user["LastName"]."', adresse='".$user["Adresse"]."', fonction='".$user["Fonction"]."' where id=".$id;
+		$update = mysqli_query($bd,$sql);
 
-		if($select){
-			$firstname = $select["firstname"];
-			$lastname = $select["lastname"];
-			$adresse = $select["adresse"];
-			$fonction = $select["fonction"];
-			$tab = array("firstname"=>$firstname,"lastname"=>$lastname,"adresse"=>$adresse,"fonction"=>$fonction);
-			return $tab;
+		if($update){
+			echo '
+				<div class="alert alert-success" role="alert">
+    				<strong>Réussi!</strong> Mise à jour éffectuées.
+				</div>';
 		}else{
 			echo '
 				<div class="alert alert-danger" role="alert">
@@ -245,6 +250,23 @@
 				</div>';
 			return false;
 		}
-		mysqli_close($bd);
+	}
+	function supprimerUser($user,$bd){
+		$id = $_GET["id"];
+		$sql = "UPDATE users set firstname='".$user["FirstName"]."',lastname='".$user["LastName"]."', adresse='".$user["Adresse"]."', fonction='".$user["Fonction"]."' where id=".$id;
+		$update = mysqli_query($bd,$sql);
+
+		if($update){
+			echo '
+				<div class="alert alert-success" role="alert">
+    				<strong>Réussi!</strong> Mise à jour éffectuées.
+				</div>';
+		}else{
+			echo '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Erreur!</strong> Problème de requete.
+				</div>';
+			return false;
+		}
 	}
 ?>
