@@ -159,7 +159,7 @@
 
             setTimeout( function() {
                 $(".header__dev").addClass("header__dev--slow").removeClass("header__dev--open");
-            },1000);
+            },1000); 
 
 
             setTimeout( function() {
@@ -182,7 +182,6 @@
                 <b class="dev__fe"><i>PO</i></b>
                 <span class="dev__slash">/</span>
                 <b class="dev__ux"><i>EC</i></b>
-                <br>
                 <b class="dev__developer"><?php echo 'BipBopALuLa'?></b>
                 <br>
                 <b><?php 
