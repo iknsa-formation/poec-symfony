@@ -1,4 +1,4 @@
 <ul>
-  	<li><a href="connexion.php">connexion</a></li>
+  	<li><a href="view/form_inscription.php">inscription</a></li>
 </ul>
 
