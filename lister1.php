@@ -1,3 +1,14 @@
+<?php 
+require_once'db.php';
+$pdoStat = $pdo->prepare('SELECT lastname FROM users ');
+$executeIsOk = $pdoStat->execute();
+$contacts=$pdoStat->fetchAll();
+echo "<strong>selectionner tous les nom de contact qu'on a enregistré </strong>"; ?>
+<?php foreach($contacts as $contact){?>
+    		<li><?= "<strong>les noms:</strong>".$contact["lastname"];?></li>
+    	<?php }
+    	?>
+
 
 <!Doctype html>
 <html>
@@ -12,7 +23,7 @@
 	<div class="jumbotron">
 	<h2>formulaire php avec la methode post</h2>
 	</div>
-	<form method="POST" action="insert.php">
+	<form method="POST" action="">
 	<center>
 	<table>
 	<tr>
@@ -34,11 +45,12 @@
 		</tr>
 	
 	<tr>
-		<td><center><button type="submit" class="btn btn-primary">Envoyer</button></center></td>
+		<td><center><button type="submit" class="btn btn-primary btn-xs">Envoyer</button></center></td>
 	</tr>
 	</table>
 	</center>
 	</form>
-	
+
+
 	</body>
-</html>
+	</html>
