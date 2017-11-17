@@ -25,7 +25,7 @@
         
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-2">    
+            <div class="col-md-4">    
             <?php
                 define("SERVERBDD","localhost");
                 define("NAMEBDD","formation");
@@ -39,16 +39,22 @@
                 $tel = $_POST['tel'];
                 $adresse = $_POST['adresse'];
                 $email = $_POST['mail'];
+                
+                $req = "SELECT mail FROM users WHERE mail='".$email."'";
+                $r_mail = mysqli_query($connexion,$req);
+                
+                $requete_insert = "INSERT INTO users(nom,prenom,telephone,code_postal,mail) VALUES('".$nom."','".$prenom."','".$tel."','".$adresse."','".$email."')";
+                
+                if($nom!="" && $prenom!="" && $email!=""){   
+                    $nbrow = mysqli_num_rows($r_mail); 
 
-                if($nom!="" && $prenom!="" && $email!=""){
-                    $requete = "INSERT INTO users(nom,prenom,telephone,code_postal,mail) VALUES('".$nom."','".$prenom."','".$tel."','".$adresse."','".$email."')";
-
-                    $insert = mysqli_query($connexion,$requete);
-                    
-                    if($insert)
-                        echo "Vous avez bien été enregistré dans la base de données!";
-                    else
-                        echo "Un problème est survenu, vous n'avez pas été enregistré dans la base de données.";
+                    if($nbrow>0){ 
+                        echo "<div class='alert alert-danger' role='alert'>Vous êtes déjà enregistré.</div>";
+                    }
+                    else{
+                        $insert = mysqli_query($connexion,$requete_insert);
+                        echo "<div class='alert alert-success' role='alert'>Vous avez bien été enregistré.</div>";
+                    }
                 }
             ?>
             </div>

@@ -42,6 +42,26 @@
                         <button type="submit" class="btn btn-info">Valider</button>
                     </div>
                 </form>       
+                <?php
+                    /*define("SERVERBDD","localhost");
+                    define("NAMEBDD","formation");
+                    define("USERBDD","root");
+                    define("PASSWORDBDD","");
+
+                    $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
+
+                    $email = $_POST['mail'];
+
+                    $req = "SELECT mail FROM users";
+                    $r_mail = mysqli_query($connexion,$req);
+                    
+                    while($data = mysqli_fetch_array($r_mail)){
+                        
+                        if($data['mail']==$email)
+                            echo "Email déjà enregistrée!";
+                    }*/
+
+                ?>
             </div>
         </div>
     </div>
