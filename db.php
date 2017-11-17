@@ -1,9 +1,4 @@
 <?php
-  // $servername = "localhost";
-  // $username = "root";
-  // $password = "";
-  // $dbname = "poec-symfony";
-
   define('DBSERVER', 'localhost');
   define('DBNAME', 'poec-symfony');
   define('DUSER', 'root');
