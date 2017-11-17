@@ -11,6 +11,7 @@ body{
 	display:inline-block;
 	width: 30%;
 	color:darkred;
+	margin-bottom: 30px;
 }
 
 .test2{
@@ -77,3 +78,11 @@ body{
 	margin-top:20px;
 }
 
+#select{
+	border:4px dashed blue;
+	width: 12%;
+}
+
+tr{
+	color:saddlebrown;
+}

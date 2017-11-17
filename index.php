@@ -1,12 +1,12 @@
 <?php
 require_once "data.php";
-	?>
+?>
 <!doctype html>
 <html>
 	<head>
 		<title>php</title>
 		<meta charset="utf-8">
-			<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="test"><h1>Liste des personnes</h1><?php
@@ -26,7 +26,7 @@ require_once "data.php";
 				}
 			};	
 			?></div>
-		
+
 		<div class="test2"><h1>Personnes admis</h1><?php
 			foreach($untableau as $key1 => $value){
 				if($value['moyenne']>9){
@@ -50,11 +50,11 @@ require_once "data.php";
 			}
 
 			?>
-				
-			</div>
+
+		</div>
 		<?php
-	require_once "form.php";
-	?>
+		require_once "form.php";
+		?>
 		<span>
 			<form action="form.php" method="post" id="form">
 				<div>
