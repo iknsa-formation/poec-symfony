@@ -6,9 +6,9 @@
 
 	$connexion = new mysqli(DBSERVER,DBUSER,DBPASS,DBNAME);
 
-	if(!$connexion){
+	/*if(!$connexion){
 		die('<p><strong> Impossible de se connecter, Veuillez revoir les accès</strong><p>'.mysqli_connect_error());
 	}else{
 		echo '<p><strong>Connexion réussie !</strong>';
-	}
+	}*/
 ?>

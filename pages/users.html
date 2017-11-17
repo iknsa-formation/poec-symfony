@@ -1,0 +1,21 @@
+<?php 
+	require 'bd.php'; 
+	//require '../fonction.html'; 
+?>
+<span>
+	<h3>Liste des Users</h3>
+	<table class="table">
+		<thead class="">
+			<tr>
+				<th>Id</th>
+				<th>Prenom</th>
+				<th>Nom</th>
+				<th>Adresse</th>
+				<th>Fonction</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php selectionUsers($connexion); ?>
+		</tbody>
+	</table>
+</span>

@@ -170,5 +170,27 @@
     				<strong>Erreur!</strong> Problème de requete.
 				</div>';
 		}
+	}	
+	function selectionUsers($bd){
+		$sql = "SELECT * FROM users";
+		$select = mysqli_query($bd,$sql);
+
+		if($select){
+			foreach ($select as $key => $value) {
+				echo "<tr>";
+				echo "<td>".$value["id"]."</td>";
+				echo "<td>".$value["firstname"]."</td>";
+				echo "<td>".$value["lastname"]."</td>";
+				echo "<td>".$value["adresse"]."</td>";
+				echo "<td>".$value["fonction"]."</td>";
+				echo "</tr>";
+			}
+		}else{
+			echo '
+				<div class="alert alert-danger" role="alert">
+    				<strong>Erreur!</strong> Problème de requete.
+				</div>';
+		}
+		mysqli_close($bd);
 	}
 ?>
