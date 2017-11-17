@@ -13,12 +13,12 @@ if (isset($_POST['userLastName']) && isset($_POST['userName']) && isset($_POST['
 $userLastName = htmlspecialchars($_POST['userLastName']);
 $userFirstName = htmlspecialchars($_POST['userName']);
 $userPass = htmlspecialchars($_POST['userPass']);
-$userPass2 = htmlspecialchars($_POST['userPass2']);
-$userMail = htmlspecialchars($_POST['userMail']);
+$userPass2 = $_POST['userPass2'];
+$userMail = $_POST['userMail'];
 	
 	// On rajoutera des contrôles plus tard
 	if($userPass === $userPass2) {
-		$pass_hache = password_hash($userPass2, PASSWORD_DEFAULT);		
+		$pass_hache = $_POST['userPass2'];
 	
 		define('DBSERVER', 'localhost');
 		define('DBNAME','interface');
@@ -32,22 +32,15 @@ $userMail = htmlspecialchars($_POST['userMail']);
 		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		  }
 
-		$req_pre = mysqli_prepare($connexion, 'INSERT INTO utilisateurs (nom, prenom, pass, mail) VALUES ( ?, ?, ?, ?)');
-		mysqli_stmt_bind_param($req_pre, "ssss", $userLastName, $userFirstName, $pass_hache, $userMail);
+		/* 
+		* Ici viendra le if exist
+		*/
 
-		// Execution de la requête
-		mysqli_stmt_execute($req_pre);
-
-	/*	// Stockage de la requête dans la variable $resultat
-		$isExist = mysqli_query($connexion, 'SELECT mail FROM utilisateurs where mail=$userMail');
-		$exist = mysqli_query($connexion, $isExist);
-
-		// Détermine le nombre de lignes du jeu de résultats
-		$row = mysqli_num_rows($exist);
-		echo $row;
-*/
+		$sql = "INSERT INTO utilisateurs(nom, prenom, pass, mail) VALUES ('".$userLastName."','".$userName."','".$pass_hache."','".$userMail."')";
+		$insert = mysqli_query($connexion,$sql);
 	}
 }
+header('Location: inscription.html');
 
 ?>
 
