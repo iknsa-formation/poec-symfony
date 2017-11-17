@@ -14,7 +14,7 @@
 			$result = mysqli_query($connection, $query);
 			if ($result){
 				echo '<div class="alert alert-sucess">';
-				echo "success";
+				echo "success" . "<br>";
 			}
 			else{
 				echo "failled";
@@ -23,11 +23,13 @@
 			$result = $connection->query($query);
 			while ($row = mysqli_fetch_array($result)) 
 			{
-	   			echo $row["firstname" ] . '<br>'. $row["lastname"] . $row["adresse"] . $row["fonction"] . $row["img_url"] . '<br>';
+	   			echo $row["firstname" ] . $row["lastname"] . $row["adresse"] . $row["fonction"] . $row["img_url"] . '<br>';
 			}
 /*		$result->closeCursor();
 *//*		mysql_close($connection);
 */
 ?>
 </div>
+
+
 
