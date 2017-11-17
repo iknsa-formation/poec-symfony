@@ -32,7 +32,6 @@
 		<td><label for="fonction">fonction:</label></td>
 		<td><input type="text" name="fonction" id="fonction" size="50" placeholder="Enter votre fonction"></td>
 		</tr>
-	
 	<tr>
 		<td><center><button type="submit" class="btn btn-primary">Envoyer</button></center></td>
 	</tr>
