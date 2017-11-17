@@ -200,7 +200,7 @@
 				echo '<td>'.$value["adresse"].'</td>';
 				echo '<td>'.$value["fonction"].'</td>';
 				echo '<td><button class="btn"><a href="modifications.php?id='.$value["id"].'">Modifier</a></button></td>';
-				echo '<td><button class="btn"><a href="suppréssion.php?id='.$value["id"].'">Supprimer</a></button></td>';
+				echo '<td><button class="btn"><a href="suppression.php?id='.$value["id"].'">Supprimer</a></button></td>';
 				echo '</tr>';
 			}
 		}else{
@@ -251,12 +251,13 @@
 			return false;
 		}
 	}
-	function supprimerUser($user,$bd){
+	function supprimerUser($bd){
 		$id = $_GET["id"];
-		$sql = "UPDATE users set firstname='".$user["FirstName"]."',lastname='".$user["LastName"]."', adresse='".$user["Adresse"]."', fonction='".$user["Fonction"]."' where id=".$id;
-		$update = mysqli_query($bd,$sql);
+		$sql = "DELETE FROM users where id=".$id;
+		
+		$delete = mysqli_query($bd,$sql);
 
-		if($update){
+		if($delete){
 			echo '
 				<div class="alert alert-success" role="alert">
     				<strong>Réussi!</strong> Mise à jour éffectuées.
