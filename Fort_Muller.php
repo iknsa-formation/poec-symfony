@@ -18,25 +18,28 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="firstname" class="col-sm-2 control-label"> Prenom :</label>
+      <label for="firstname" class="col-sm-2 control-label"> Prenom* :</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" name="firstname" id="firstname">
+        <input required="required" type="text" class="form-control" name="firstname" id="firstname">
         </div>
     </div>
       <div class="form-group" >
-      <label for="adresse" class="col-sm-2 control-label"> Adresse :</label>
+      <label for="adresse" class="col-sm-2 control-label"> Adresse* :</label>
         <div class="col-sm-8">
-        <input type="text" class="form-control" name="adresse" id="adresse">
+        <input required="required" type="text" class="form-control" name="adresse" id="adresse">
         </div>
       </div>
         <div class="form-group">
-        <label for="fonction" class="col-sm-2 control-label">fonction :</label>
+        <label for="fonction" class="col-sm-2 control-label">fonction* :</label>
         <div class="col-sm-8">
-      <input type="text" class="form-control" name="fonction" id="fonction">
+      <input required="required" type="text" class="form-control" name="fonction" id="fonction">
       <input type="submit" name="valider" value="envoyer"/ >
     </div>
 
 <p>*require field</p>
+
 </form>
+
+
 </body>
 </html>

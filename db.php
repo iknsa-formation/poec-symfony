@@ -15,6 +15,6 @@
       die('<strong> impossible de se connecter</strong><br/>'.
       mysqli_connect_error());
   } else {
-      echo '<strong> ca marche .......enfin.... presque</strong><br/>';
+      echo '<strong> ca marche ... enfin ... presque</strong><br/>';
   }
 ?>
