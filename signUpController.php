@@ -36,11 +36,11 @@ $userMail = $_POST['userMail'];
 		* Ici viendra le if exist
 		*/
 
-		$sql = "INSERT INTO utilisateurs(nom, prenom, pass, mail) VALUES ('".$userLastName."','".$userName."','".$pass_hache."','".$userMail."')";
+		$sql = "INSERT INTO utilisateurs(nom, prenom, pass, mail) VALUES ('".$userLastName."','".$userFirstName."','".$pass_hache."','".$userMail."')";
 		$insert = mysqli_query($connexion,$sql);
 	}
 }
-header('Location: inscription.html');
+header('Location: SignUpValidation.php');
 
 ?>
 

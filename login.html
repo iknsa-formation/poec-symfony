@@ -8,18 +8,20 @@
 <body>
 
 <div class="container">
-	<form action="loginController.php" method="POST">
-	  <div class="form-group">
-	    <label for="mail">Email:</label>
-	    <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Enter email">
-	    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	  </div>
-	  <div class="form-group">
-	    <label for="pass">Mot de passe:</label>
-	    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
-	  </div>
-	  <button type="submit" class="btn btn-primary">Se connecter</button>
-	</form>
+	<div class="col-md-4">
+		<form action="loginController.php" method="POST">
+		  <div class="form-group">
+		    <label for="mail">Email</label>
+			<input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Enter email">
+			<small id="emailHelp" class="form-text text-muted">Votre email ne sera jamais partagé avec quiconque.</small>
+		  </div>
+		  <div class="form-group">
+		    <label for="pass">Mot de passe:</label>
+		    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Se connecter</button>
+		</form>
+	</div>
 </div>
 
 </body>
