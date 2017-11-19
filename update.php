@@ -31,18 +31,18 @@
         </div>
     </header>
     <?php
-        $id = $_POST["id"] ;
-      if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['adresse']) && isset($_POST['fonction'])) {
+      if(count($_POST)>0) {
 
-        $sql = "UPDATE users set firstname='" . $_POST["firstname"] . "',lastname='" . $_POST["lastname"] . "', adresse='" . $_POST["adresse"] . "', fonction='" . $_POST["fonction"] . "' WHERE id='" . $id . "'";
+        $sql = "UPDATE users set firstname='" . $_POST["firstname"] . "',lastname='" . $_POST["lastname"] . "', adresse='" . $_POST["adresse"] . "', fonction='" . $_POST["fonction"] . "' WHERE id='" . $_POST["id"] . "'";
 
-        $update = mysqli_query($conn,$sql);
+        $update = mysqli_query($connection,$sql);
           if($update){
             ?>
             <div class="alert alert-success" role="alert">
               Modification ok
           </div>
           <?php 
+            header("Location:fichier.php");
           } else{
           ?>
           <div class="alert alert-danger" role="alert">

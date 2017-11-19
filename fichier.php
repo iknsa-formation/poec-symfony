@@ -40,79 +40,47 @@
           <th scope="col">Last Name</th>
           <th scope="col">Adresse</th>
           <th scope="col">Fonction</th>
-          <th scope="col">Edit</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-       <?php
-
-           if (isset($_GET["deleteId"])) {
-                $deleteId = $_GET["deleteId"] ;
-                $sql = "DELETE FROM users WHERE id = ".$deleteId ;
-                $requete = mysqli_query($connection, $sql ) ;
-               
-                if($requete) {
-                  echo '
-                    <div class="alert alert-success" role="alert">
-                      Utilisateur supprimé
-                    </div>
-                  ';
-                  
-                } else{
-                   echo '
-                    <div class="alert alert-success" role="alert">
-                      Impossible de supprimer cet Utilisateur
-                    </div>
-                  ';
-                }
-            }
-
-            $sql = "SELECT * FROM USERS";
-            $resultat = mysqli_query ($connection,$sql);
-            /*
-            * mysqli_fetch_row()result->fetch_row() Récupère une ligne de résultat sous forme de tableau indexé
-            */
-            //while ($row = mysqli_fetch_row($resultat)) {
-            /*
-            * mysqli_fetch_assoc()mysqli->fetch_assoc() Récupère une ligne de résultat sous forme de tableau associatif
-            */
-            while ($row = mysqli_fetch_assoc($resultat)) {
-        ?>
+        <tr>
+            <?php
+                $sql = "SELECT * FROM USERS";
+                $resultat = mysqli_query ($connection,$sql);
+                while ($row = mysqli_fetch_assoc($resultat)) {
+            ?>
           <th>
             <?php 
-                //echo $row[0]; 
                 echo $row['id']; 
           ?>
           </th>
           <td>
             <?php 
-                //echo $row[0]; 
                 echo $row['firstname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[2]; 
                 echo $row['lastname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[3]}; 
                 echo $row['adresse']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[3]}; 
                 echo $row['fonction']; 
             ?>
             </td>
             <td>
-            <a href="edit.php?id=<?php echo $row['id'] ?>">Modifier</a>
-            </td>
-            <td>
-            <a href="fichier.php?deleteId=<?php echo $row['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer <?php echo $row['firstname'] . "  " . $row['lastname'] ?>? '));">Supprimer</a>
+            <a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a>
+        </td>
+        <td>
+            <a href="delete.php?id=<?php echo $row['id'] ?>"><img src="img/delete.png"></a>
             </td>
         </tr>
         <?php 
@@ -121,7 +89,8 @@
             ?>
       </tbody>
     </table>
-    <footer>
+
+ <footer>
         copyright @iknsa.com
     </footer>
   </body>

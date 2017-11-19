@@ -31,7 +31,7 @@
         </div>
     </header>
     <?php
-        $deleteId = $_GET["deleteId"] ;
+        $deleteId = $_GET["id"] ;
 
         $sql = "DELETE FROM users WHERE id = ".$deleteId ;
        
