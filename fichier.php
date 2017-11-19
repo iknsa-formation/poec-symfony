@@ -48,47 +48,35 @@
             <?php
                 $sql = "SELECT * FROM USERS";
                 $resultat = mysqli_query ($connection,$sql);
-                /*
-                * mysqli_fetch_row()result->fetch_row() Récupère une ligne de résultat sous forme de tableau indexé
-                */
-                //while ($row = mysqlI_fetch_row($resultat)) {
-                /*
-                * mysqli_fetch_assoc()mysqli->fetch_assoc() Récupère une ligne de résultat sous forme de tableau associatif
-                */
                 while ($row = mysqli_fetch_assoc($resultat)) {
             ?>
           <th>
             <?php 
-                //echo $row[0]; 
                 echo $row['id']; 
           ?>
           </th>
           <td>
             <?php 
-                //echo $row[0]; 
                 echo $row['firstname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[2]; 
                 echo $row['lastname']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[3]}; 
                 echo $row['adresse']; 
             ?>
             </td>
           <td>
             <?php 
-                //echo $row[3]}; 
                 echo $row['fonction']; 
             ?>
             </td>
             <td>
-            <a href="edit.php?id=<?php echo $row['id'] ?>">Modifier</a>
+            <a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a>
             </td>
         </tr>
         <?php 

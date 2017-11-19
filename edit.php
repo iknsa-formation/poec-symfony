@@ -1,5 +1,26 @@
 <?php
 	require_once 'db.php';
+
+      if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['adresse']) && isset($_POST['fonction'])) {
+    $id = $_POST["id"] ;
+
+        $sql = "UPDATE users set firstname='" . $_POST["firstname"] . "',lastname='" . $_POST["lastname"] . "', adresse='" . $_POST["adresse"] . "', fonction='" . $_POST["fonction"] . "' WHERE id='" . $id . "'";
+
+        $update = mysqli_query($connection,$sql);
+          if($update){
+            ?>
+            <div class="alert alert-success" role="alert">
+              Modification ok
+          </div>
+          <?php 
+          } else{
+          ?>
+          <div class="alert alert-danger" role="alert">
+            Modification KO
+        </div>
+        <?php
+          }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +76,7 @@
             ?>
       			<form name="form" id="form" enctype="multipart/form-data" method="post" action="update.php">
 	          	<td>
-                <?php echo $id;?>
+               <input type="text" class="form-control" name="id" placeholder="id" value=" <?php echo $id;?>">
               </td>
               <td>
 	          		<input type="text" class="form-control" name="firstname" placeholder="Prenom" value="<?php echo $row->firstname;?>">
