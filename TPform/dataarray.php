@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <?php
 require_once 'db.php';
 ?>
@@ -6,7 +7,7 @@ require_once 'db.php';
     <thead>
         <tr>
             <td>
-                id
+                ID
             </td>
             <td>
                 NAME
@@ -51,7 +52,7 @@ require_once 'db.php';
                     <img src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/write-32.png" > </a> 
             </td>
             <td>
-                <a href="edit.php?id=<?php echo $row['id'] ?>">
+                <a href="delete.php?id=<?php echo $row['id'] ?>">
                     <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/cross-24-32.png" > </a> 
             </td>
         </tr>

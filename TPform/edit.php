@@ -1,11 +1,27 @@
 <?php require_once 'dp.php';
 
-if(isset($_POST ))
+$id = $_POST["id"]    
     
+    var_dump($sql);die;
+
+    $sql="UPDATE tablio set name='".$_POST["name"]."',email='".$_POST["email"]."',message='".$_POST["message"]."' WHERE id='".$id."'";
     
-    
-    
-    
+var_dump($sql);die;
+
+$update = mysqli_query($connection, $sql);
+    if($update){
+?>
+
+<div>modification ok</div>
+
+<?php
+                
+} else {
+        
+        ?>
+<div>Modif KO</div>
+    }
+
     $resultat = mysqli_query($connection, $sql);
 
             while ($row= mysqli_fetch_object ($resultat) ) {?>
@@ -22,10 +38,3 @@ if(isset($_POST ))
                 <?php echo $row ['message']; ?>
             </td>
             <td>
-                <a href="edit.php?id= <?php echo $row[$id]"    
-            </td>
-        </tr>
-        <?php }
-        ?>
-    </tbody>
-</table>
