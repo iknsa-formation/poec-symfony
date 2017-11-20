@@ -1,5 +1,5 @@
 <?php
-	require_once'..\model\db.php';
+	require_once'../conf/connection.php';
 	if (count($_POST > 0)) 
 		{
 			$firstname = $_POST["firstname"];
@@ -7,13 +7,17 @@
 			$adresse = $_POST["adresse"];
 			$fonction = $_POST["fonction"];
 			$img_url  = $_POST["img_url"];
-		}	
-		$query = "INSERT INTO users(firstname, lastname, adresse, fonction, img_url) VALUES ('".$firstname." ',' ".$lastname." ',' ".$adresse." ',' ".$fonction." ',' ".$img_url."')";
+			$mail = $_POST["mail"];
+			
+
+		$query = "INSERT INTO users(firstname, lastname, adresse, fonction, img_url, mail) 
+				  VALUES (".$firstname." ',' ".$lastname." ',' ".$adresse." ',' ".$fonction." ',' ".$img_url." ',' ".$mail.")";
+
 		$insert = mysqli_query($connection, $query);
-		$Exist = "select lastname from users where lastname='".$nom"'";
-		//test: 
-		var = mysqli_num_rows($exist);
-		/*var_dump(var);die;*/		
+		$exist = "select lastname from users where lastname = '.$firstname'";
+		var_dump($query);die;		
+		$var = mysqli_num_rows($query);
+		var_dump($var);die;		
 if ($var > 0){
 			echo '<div class="alert alert-sucess">';
 			echo "success" . "<br>";
@@ -21,5 +25,7 @@ if ($var > 0){
 		else{
 			echo "failled";
 		}
+		
 		mysql_close($connection);
+		}
 ?>

@@ -1,9 +1,12 @@
  <?php 
- 	include 'view/inc/header.php'; 
- 	include 'view/inc/navbar.php';	
+ 	include '../../view/inc/header.php'; 
+ 	include '../../view/inc/navbar.php';	
  	include'../../conf/connection.php';
+ 	include'../../model/delete_user.php';	
 
- 	function display_deleted_users();
- ?>
+ 	function delete_user($connection);
+ 
+
+?>
  	
  	

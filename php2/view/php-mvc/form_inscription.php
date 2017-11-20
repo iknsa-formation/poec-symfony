@@ -4,12 +4,11 @@
  	include '../inc/navbar.php'; 	
  ?>
 	<div class="form">
-	 	<form action="model/insert_user.php" method ="post"> 
+	 	<form action="../../model/insert_user.php" method ="post"> 
 			<span>
 				<label>firstname :</label>  
 				<input type="text" name="firstname">
-			</span> 
-				
+			</span> 	
 			<span>	
 				<label>lastname:</label> 	
 				<input type="text" name="lastname"> 
@@ -23,8 +22,13 @@
 				<input type="text" name="fonction">  
 			</span>
 			<span>
-				<input type="text" name="img_url">  
 				<label>img_url :</label>  
+				<input type="text" name="img_url">  
+			</span> 
+			<span>
+				<label>mail :</label>  
+				<input type="text" name="mail">  
+			</span>
 			<span>
 				<input type="submit" value="Envoyer le formulaire"> 
 			</span>

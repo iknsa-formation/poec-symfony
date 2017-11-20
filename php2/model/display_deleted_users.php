@@ -1,7 +1,8 @@
 <?php
 /*	var_dump($connection);die;
 */
-		function display_users($connection)
+		function display_deleted_
+		users($connection)
  		{	
  	    	$query = "SELECT * FROM `users`";
 			
