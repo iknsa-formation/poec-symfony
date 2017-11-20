@@ -43,7 +43,7 @@
       </div>
     <p>*require field</p>
     </form>
-
+<!--
     <table width="100%" cellpadding="5"  cellspacing="1" bgcolor="#666666">
             <tr bgcolor="#FFFFFF">>Date de Commande </span></th>
               <th scope="col"><span class="Style1 Style1">Facture format PDF</span></th>
@@ -52,6 +52,7 @@
               <th scope="col"><span class="Style1 Style1">Num&eacute;ro de facture </span></th>
               <th scope="col"><span class="Style1 Style1">Client </span></th>
               <th scope="col"><span class="Style1 Style1">Poids </span></th>
-              <th scope="col"><span class="Style1 Style1">Total TTC </span></th>
+              <th scope="col"><span class="Style1 Style1">Total TTC </span></th> -->
+
   </body>
 </html>
