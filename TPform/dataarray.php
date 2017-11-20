@@ -18,6 +18,9 @@ require_once 'db.php';
                 MESSAGE
             </td>
             <td>
+                EDIT
+            </td>
+            <td>
                 DELETE
             </td>
         </tr>
@@ -44,8 +47,12 @@ require_once 'db.php';
                 <?php echo $row ['message']; ?>
             </td>
             <td>
-                <?$sql = "DELETE FROM tablio WHERE id=$id";
-                ?> <input type="submit" value="DELETE ROW">    
+                <a href="edit.php?id=<?php echo $row['id'] ?>">
+                    <img src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/write-32.png" > </a> 
+            </td>
+            <td>
+                <a href="edit.php?id=<?php echo $row['id'] ?>">
+                    <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/cross-24-32.png" > </a> 
             </td>
         </tr>
         <?php }
