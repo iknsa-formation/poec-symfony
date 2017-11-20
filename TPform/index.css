@@ -62,13 +62,9 @@ button {
      que celui entre les étiquettes et les champs textuels */
   margin-left: .5em;
 }
-.a {
-  /* Pour positionner les boutons de la même manière que les champs textuels */
-  padding-left: 90px; /* même dimension que les étiquettes */
-}
+
 
 a {
-  /* Cette marge représente approximativement le même espace
-     que celui entre les étiquettes et les champs textuels */
-  margin-left: .5em;
+ 
+ align-content: center;
 }

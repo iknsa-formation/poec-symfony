@@ -15,11 +15,11 @@ if (count($_POST)>0){
     echo "Here is your message: ". $_POST["user_message"]."<br />";
 
     $isExist="select email from tablio where email='".$email."'";
-    
+
     $exist = mysqli_query ($connection, $isExist);
 
     $var=mysqli_num_rows($exist);
-    
+
     if ($var>0) {
         echo "Cet utilisateur existe deja";
     }
