@@ -36,7 +36,6 @@
             <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
               <ul>
                 <li class="btn btn-info">
-
                     Bonjour <?= $_SESSION['prenom'] ." ".$_SESSION['nom'];?> <a href="logout.php" class="btn btn-danger">Logout</a>
                 </li>
               </ul>
@@ -48,8 +47,6 @@
           </div>
         </nav>
     </header>
-
-    <main>
         <?php
            if (!isset($_SESSION['email']) || (!isset($_SESSION['nom'])))  {
               echo  "<div class='alert alert-danger' role='alert'>
@@ -57,42 +54,57 @@
               echo "<img src='img/oups.gif'>";
           }else {
         ?>
-         <h1>Liste des etudiants</h1>
-         <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Prénom</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Email</th>
-              <th scope="col">Tél</th>
-              <th scope="col">Adresse</th>
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Fonction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <?php
 
-              <th scope="col">ACTION</th>
-            </tr>
-              </thead>
-              <tbody>
-              <?php
-                $sql = "SELECT * FROM etudiants";
+            	$id = $_GET['id'];
+
+                $sql = "SELECT * FROM etudiants WHERE id= $id";
+
                 $resultat = mysqli_query ($connection,$sql);
-                while ($row = mysqli_fetch_assoc($resultat)) {
-              ?>
-              <tr>
-              <th><?php echo $row['id']; ?></th>
-              <td> <?php echo $row['prenom']; ?></td>
-              <td> <?php echo $row['nom']; ?></td>
-              <td> <?php echo $row['email']; ?></td>
-              <td><?php  echo $row['tel'];?> </td>
-              <td><?php  echo $row['adresse'];?> </td>
 
-              <td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a></td>
-              <td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="img/delete.png"></a></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-        </table>
-        <?php } ?>
-    </main>
+               while ($row = mysqli_fetch_object($resultat)) {
+            ?>
+      			<form name="form"  enctype="multipart/form-data" method="post" action="update.php">
+	          	<td>
+               <input type="text" class="form-control" name="id" placeholder="id" value=" <?php echo $id;?>">
+              </td>
+              <td>
+	          		<input type="text" class="form-control" name="prenom" placeholder="Prenom" value="<?php echo $row->prenom;?>">
+	            </td>
+	          	<td>
+	            	<input type="text" class="form-control" name="nom" placeholder="nom" value="<?php echo $row->nom;?>">
+  	         	</td>
+  	         	<td>
+  	            	<input type="text" class="form-control" name="email" placeholder="email" value="<?php echo $row->email;?>">
+	           	</td>
+	          	<td>
+                <input type="text" class="form-control" name="tel" placeholder="tel" value="<?php echo $row->tel;?>">
+              </td> 
+              <td>
+	            	<input type="text" class="form-control" name="adresse" placeholder="adresse" value="<?php echo $row->adresse;?>">
+	            </td>	
+      	</tr>
+      	        <?php 
+      	            }
+      	              mysqli_free_result($resultat);
+      	        ?>
+              	<input type="submit" class="btn btn-primary">
+      			</form>
+      </tbody>
+    </table>
+  <?php } ?>
     <footer>
         copyright @iknsa.com
     </footer>

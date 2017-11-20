@@ -57,30 +57,36 @@
         <h1>Login</h1>
         <?php
         if (count($_POST) > 0) {
-        $_SESSION['email'] =  $_POST['email'];
-        $_SESSION['password'] =  $_POST['password'];
-        $login = "select * from etudiants where email = '".$_SESSION['email']."' and password = '".$_SESSION['password']."'";        
 
-        $hash = password_hash($_SESSION['password'],PASSWORD_BCRYPT);
-       /* Comparer le hash et le password
-         if(password_verify($_SESSION['password'], $hash)) {
-            echo 'OK';
-        } else {
-            echo 'ERREUR';
-        }die;*/
+          $_SESSION['email'] =  $_POST['email'];
+          $_SESSION['password'] =  $_POST['password'];
 
-        $isLogged= mysqli_query($connection,$login);
-          foreach ($isLogged as $key => $value) {
-              if ($value['email'] === $_SESSION['email'] && password_verify($value['password'], $hash)) {
-                  $_SESSION['prenom'] = $value['prenom'];
-                  $_SESSION['nom'] = $value['nom'];
-                  header("Location:list.php/");
-                  } else {
+          $hash = password_hash($_SESSION['password'],PASSWORD_BCRYPT);
+
+          $requete = "select password from etudiants where email = '".$_SESSION['email']."'";
+
+          $pwd =mysqli_query($connection,$requete);
+          /*Recuperation du mot de passe en BDD*/
+          foreach ($pwd as $key => $value) {
+              $getPwd = $value['password'];
+              
+              $login = "select * from etudiants where email = '".$_SESSION['email']."' and password = '".$value['password']."'";
+
+              $isLogged= mysqli_query($connection,$login);
+              /*var_dump($isLogged,$login);die;
+              if (mysqli_num_rows($isLogged) === 0) */
+              foreach ($isLogged as $key => $value) {
+                  if ($value['email'] === $_SESSION['email'] && (password_verify($_SESSION['password'], $value['password'])))   {
+                    $_SESSION['prenom'] = $value['prenom'];
+                    $_SESSION['nom'] = $value['nom'];
+                    header("Location:list.php");
+                  }else {
                   echo "<div class='alert alert-danger' role='alert'>
-                      Vous n'avez pas de compte. Voulez vous vous <a href='inscription.php'> inscrire ?</a>
-                  </div>";
+                            Vous n'avez pas de compte. Voulez vous vous <a href='inscription.php'> inscrire ?</a>
+                        </div>";
               }
-          }
+              }
+            }
         }
         ?>
         <form action="" method="post">

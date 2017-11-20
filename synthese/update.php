@@ -4,8 +4,6 @@
     if(!isset($_SESSION)){
         session_start();
     }
-
-   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +34,6 @@
             <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
               <ul>
                 <li class="btn btn-info">
-
                     Bonjour <?= $_SESSION['prenom'] ." ".$_SESSION['nom'];?> <a href="logout.php" class="btn btn-danger">Logout</a>
                 </li>
               </ul>
@@ -49,51 +46,29 @@
         </nav>
     </header>
 
-    <main>
+    <?php
+      if(count($_POST)>0) {
+
+        $sql = "UPDATE etudiants set prenom='" . $_POST["prenom"] . "',nom='" . $_POST["nom"] . "', email='" . $_POST["email"] . "', tel='" . $_POST["tel"] . "', adresse='" . $_POST["adresse"] . "' WHERE id='" . $_POST["id"] . "'";
+
+        $update = mysqli_query($connection,$sql);
+          if($update){
+            ?>
+            <div class="alert alert-success" role="alert">
+              Modification ok
+          </div>
+          <?php 
+            header("Location:list.php");
+          } else{
+          ?>
+          <div class="alert alert-danger" role="alert">
+            Modification KO
+        </div>
         <?php
-           if (!isset($_SESSION['email']) || (!isset($_SESSION['nom'])))  {
-              echo  "<div class='alert alert-danger' role='alert'>
-                Vous devez être connecté pour voir cette page </div>";
-              echo "<img src='img/oups.gif'>";
-          }else {
-        ?>
-         <h1>Liste des etudiants</h1>
-         <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Prénom</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Email</th>
-              <th scope="col">Tél</th>
-              <th scope="col">Adresse</th>
-
-              <th scope="col">ACTION</th>
-            </tr>
-              </thead>
-              <tbody>
-              <?php
-                $sql = "SELECT * FROM etudiants";
-                $resultat = mysqli_query ($connection,$sql);
-                while ($row = mysqli_fetch_assoc($resultat)) {
-              ?>
-              <tr>
-              <th><?php echo $row['id']; ?></th>
-              <td> <?php echo $row['prenom']; ?></td>
-              <td> <?php echo $row['nom']; ?></td>
-              <td> <?php echo $row['email']; ?></td>
-              <td><?php  echo $row['tel'];?> </td>
-              <td><?php  echo $row['adresse'];?> </td>
-
-              <td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a></td>
-              <td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="img/delete.png"></a></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-        </table>
-        <?php } ?>
-    </main>
-    <footer>
+          }
+      } 
+    ?>
+ 	<footer>
         copyright @iknsa.com
     </footer>
   </body>
