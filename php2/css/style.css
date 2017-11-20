@@ -14,12 +14,14 @@ li
     display: inline;
     list-style-type: none;
 }
-li a
+div.form 
 {
 	text-decoration:none: 
 	color:black;
-
-}
+	background-color: grey;
+	display:inline;
+/* 	width:50%;	
+ */}
 
 div.content
 {
@@ -28,27 +30,30 @@ div.content
 	margin:auto;
 }
 
-div.list_students
-{
-
-}
-
 div.list_users
 {
 	background-color:grey;
 }
 
- 	form
-{
-	background-color: grey;
-	display:block;
-}
 label
 {
 	width:100px;
+	display:block;
+	float:left;
+	border-radius:;
 }
 
-p
+form
 {
- text-align:center;
+/* 	display:block;
+ */
+ 	text-align:center;
+ 	background-color:grey;
+ 	border: 1px solid black;
+}
+	/* width:50px; */
+ }
+span
+{
+	display:block;
 }
