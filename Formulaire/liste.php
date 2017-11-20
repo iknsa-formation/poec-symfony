@@ -22,6 +22,7 @@
               <th  scope ="col">Last Name</th>
               <th  scope ="col">Adresse</th>
               <th  scope ="col">Fonction</th>
+							<th  scope ="col">Edit</th>
             <tr>
           </thead>
        <tbody>
@@ -40,19 +41,19 @@
       <td>
         <?php
           echo $row["id"];
-          //echo $row[3];
+          //echo $row[0];
         ?>
       </td>
       <td>
         <?php
           echo $row["firstname"];
-          //echo $row[3];
+          //echo $row[1];
         ?>
       </td>
       <td>
         <?php
           echo $row["lastname"];
-          //echo $row[3];
+          //echo $row[2];
         ?>
       </td>
       <td>
@@ -64,12 +65,16 @@
       <td>
         <?php
           echo $row["fonction"];
-          //echo $row[3];
+          //echo $row[4];
         ?>
       </td>
-    </tr>
+			<td>
+			<a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a>
+  </td>
+	  </tr>
     <?php
     }
+		mysqli_free_result($resultat);
     ?>
   </tbody>
 </div>

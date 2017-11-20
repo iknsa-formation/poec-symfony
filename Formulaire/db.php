@@ -10,7 +10,7 @@ $dbname = "poec-symfony";
 define("SERVERNAME","localhost");
 define("DBNAME","poec-symfony");
 define("DBUSER","root");
-define("DBPASS","root");
+define("DBPASS","");
 
 $connection = mysqli_connect(SERVERNAME,DBUSER,DBPASS,DBNAME);
 
