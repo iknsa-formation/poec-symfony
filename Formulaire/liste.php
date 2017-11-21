@@ -23,6 +23,7 @@
               <th  scope ="col">Adresse</th>
               <th  scope ="col">Fonction</th>
 							<th  scope ="col">Edit</th>
+							<th  scope ="col">Delete</th>
             <tr>
           </thead>
        <tbody>
@@ -71,6 +72,9 @@
 			<td>
 			<a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a>
   </td>
+	<td>
+	<a href="delete.php?id=<?php echo $row['id'] ?>"><img src="img/delete.png"></a>
+</td>
 	  </tr>
     <?php
     }
