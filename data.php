@@ -17,8 +17,4 @@ if(!$connection){
 else {
 	echo '<srong>vous ete connecte</strong><br/>';
 }
-
-
-
-
 ?>
