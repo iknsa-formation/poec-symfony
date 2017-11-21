@@ -270,4 +270,42 @@
 			return false;
 		}
 	}
+	function verifConnexion($bd){
+		if(count($_POST)>0){
+			$sql = "select mail,mdp from users where mail='".$_POST['mail']."'";
+
+
+			$res = mysqli_query($bd,$sql);
+			$mdpBase = mysqli_fetch_assoc($res);
+			$existe = mysqli_num_rows($res);
+
+			if($existe){
+				if(password_verify($_POST['mdp'], $mdpBase['mdp'])){
+					return true;
+				}
+			}else{
+				return false;
+			}
+		}else{
+			// Saisie obligatoire
+			return false;
+		}
+	}
+	function verifSession(){
+		if(!isset($_SESSION)){
+
+			return false;
+		}else{
+
+			return true;
+		}
+	}
+	function messageVerifNonConnexion(){
+		$msg =
+		'<div>
+		<p>Veuillez vous <a href="index.php">
+		connecter</a> ou vous <a href="pages/inscription.php">enrigistrer</a> </p>
+		</div>';
+		return $msg;
+	}
 ?>

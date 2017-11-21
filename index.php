@@ -5,7 +5,7 @@
 ?>
 		<div class="row">
 			<div class="col-sm-12">
-				<?php include_once "pages/accueil.html"; ?>
+				<?php include_once "pages/login.php"; ?>
 			</div>
 		</div>	
 	</body>
