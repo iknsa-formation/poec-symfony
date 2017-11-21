@@ -47,25 +47,21 @@
 				$hash = password_hash($_POST['password'],PASSWORD_BCRYPT);
 
 				$requete = "select email from etudiants where email ='".$email."'";
-
 				$isExist = mysqli_num_rows(mysqli_query($connection,$requete));
 
-				if ($isExist > 0) {
+                if ($isExist > 0) {
 					echo "<div class='alert alert-danger' role='alert'>
 						  Utilisateur existe deja
 						</div>";
 				} else {
-					$sql = "INSERT INTO etudiants(prenom,nom,email,password,tel,adresse) value ('".$prenom."','".$nom."','".$email."','".$hash."','".$tel."','".$adresse."')";
-					$insert =  mysqli_query($connection,$sql);
+                    $sql = "INSERT INTO etudiants(prenom,nom,email,password,tel,adresse) value ('".$prenom."','".$nom."','".$email."','".$hash."','".$tel."','".$adresse."')";
+                    $insert =  mysqli_query($connection,$sql);
 
 					if ($insert) {
 						echo "<div class='alert alert-success' role='alert'>
 						  This is a success alert—check it out!
 						</div>";
-<<<<<<< HEAD
 						header("Location:list.php/");
-=======
->>>>>>> delete-user
 					}
 				}
 			}
