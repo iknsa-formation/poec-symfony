@@ -19,7 +19,19 @@
                 </div>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <a href="index.php">Formulaire d'inscription</a>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-2">
+                <a href="liste.php">Liste des étudiants</a>
+                <br/>
+                <br/>
+            </div>
+        </div>
         <br/>
         <br/>
         
@@ -46,8 +58,9 @@
                 $requete_insert = "INSERT INTO users(nom,prenom,telephone,code_postal,mail) VALUES('".$nom."','".$prenom."','".$tel."','".$adresse."','".$email."')";
                 
                 if($nom!="" && $prenom!="" && $email!=""){   
-                    $nbrow = mysqli_num_rows($r_mail); 
+                    $nbrow = mysqli_num_rows($r_mail);  //compter le nombre de lignes retournent la requete
 
+                    //si le nb de lignes est supérieur à zero, il existe deja une adresse mail identique
                     if($nbrow>0){ 
                         echo "<div class='alert alert-danger' role='alert'>Vous êtes déjà enregistré.</div>";
                     }

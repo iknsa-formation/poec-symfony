@@ -25,6 +25,15 @@
         
         <div class="row">
             <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <a href="liste.php">Liste des étudiants enregistrés</a>
+                <br/>
+                <br />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2"></div>
             <div class="col-md-2"> 
                 <form method="post" action="bdd.php">
                     <div class="form-group">
@@ -35,33 +44,13 @@
                         <label>Téléphone:</label>
                             <input type="text" class="form-control" name="tel" id="tel" maxlength="10" pattern="[0-9]{10}">
                         <label>Code Postal:</label>
-                            <input type="text" class="form-control" name="adresse" id="adresse" pattern="[0-9]{5}">
+                            <input type="text" class="form-control" name="adresse" id="adresse" maxlength="5" pattern="[0-9]{5}">
                         <label>Mail*:</label>
                             <input type="text" class="form-control" name="mail" id="mail" required>
                         <br/>
                         <button type="submit" class="btn btn-info">Valider</button>
                     </div>
                 </form>       
-                <?php
-                    /*define("SERVERBDD","localhost");
-                    define("NAMEBDD","formation");
-                    define("USERBDD","root");
-                    define("PASSWORDBDD","");
-
-                    $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
-
-                    $email = $_POST['mail'];
-
-                    $req = "SELECT mail FROM users";
-                    $r_mail = mysqli_query($connexion,$req);
-                    
-                    while($data = mysqli_fetch_array($r_mail)){
-                        
-                        if($data['mail']==$email)
-                            echo "Email déjà enregistrée!";
-                    }*/
-
-                ?>
             </div>
         </div>
     </div>
