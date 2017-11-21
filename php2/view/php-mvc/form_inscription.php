@@ -4,7 +4,7 @@
  	include '../inc/navbar.php'; 	
  ?>
 	<div class="form">
-	 	<form action="../../model/insert_user.php" method ="post"> 
+	 	<form action="../../model/insert_user_pdo.php" method ="post"> 
 			<span>
 				<label>firstname :</label>  
 				<input type="text" name="firstname">
@@ -28,6 +28,10 @@
 			<span>
 				<label>mail :</label>  
 				<input type="text" name="mail">  
+			</span>
+			<span>
+				<label>password :</label>  
+				<input type="text" name="password">  
 			</span>
 			<span>
 				<input type="submit" value="Envoyer le formulaire"> 
