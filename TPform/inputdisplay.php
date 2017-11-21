@@ -20,10 +20,10 @@ if (count($_POST)>0){
 
     $var=mysqli_num_rows($exist);
 
-    if ($var>0) {
+  /*  if ($var>0) {
         echo "Cet utilisateur existe deja";
     }
-    else{
+    else{*/
 
         $sql = "INSERT INTO tablio (name, email, message) VALUES('".$nom."','".$email."','".$message."')";
 
@@ -42,8 +42,6 @@ if (count($_POST)>0){
 
         var_dump($insert);
     }
-
-}
 
 
 ?>
