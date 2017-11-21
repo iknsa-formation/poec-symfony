@@ -1,4 +1,5 @@
 <?php include 'index.html'?>
+<?php require_once "db.php";?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -11,9 +12,40 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     </head>
 
+
+
+
+
     <body class="text-center">
 
-        <img src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/Upload-256.png"  alt="Sign Up">
-        
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4  text-center">
+                    <img class="text-center" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/Upload-256.png"  alt="Log In">
+                    <br/>
+                    <h1 class="text-center login-title">Create your account on CP-TP badass!</h1>
+                    <div class="account-wall">
+                        <br/>
+
+                        <form class="form-sigin text-center">
+
+                            <input type="text" class="form-control" placeholder="Username" required autofocus>
+                            <br/>
+                            <input type="text" class="form-control" placeholder="Email" required autofocus>
+                            <br/>
+                            <input type="password" class="form-control" placeholder="Password" required>
+                            <br/>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Sign Up</button>
+                            <br/>
+
+                        </form>
+                    </div>
+                    <a href="login.php" class="text-center new-account">Already have an account? Sign In!</a>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

@@ -1,4 +1,5 @@
 <?php include 'index.html'?>
+<?php require_once "db.php";?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -17,27 +18,29 @@
 
     <body class="text-center">
 
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-4  text-center">
                     <img class="text-center" src="https://cdn2.iconfinder.com/data/icons/4web-3/139/enter-image-256.png"  alt="Log In">
+                    <br/>
                     <h1 class="text-center login-title">Sign in to continue to CP-TP</h1>
                     <div class="account-wall">
-                        
+                        <br/>
+
                         <form class="form-signin text-center">
+
                             <input type="text" class="form-control" placeholder="Email" required autofocus>
+                            <br/>
                             <input type="password" class="form-control" placeholder="Password" required>
+                            <br/>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Sign in</button>
-                            <label class="checkbox pull-left">
-                                <input type="checkbox" value="remember-me">
-                                Remember me
-                            </label>
-                            <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                            <br/>
+
                         </form>
                     </div>
-                    <a href="#" class="text-center new-account">Create an account </a>
+                    <a href="signup.php" class="text-center new-account">Create an account </a>
                 </div>
             </div>
         </div>

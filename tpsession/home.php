@@ -1,4 +1,5 @@
 <?php include 'index.html'?>
+<?php require_once "db.php";?>
 <!doctype html>
 <html lang="en">
     <head>
