@@ -2,9 +2,9 @@
  	include '../../view/inc/header.php'; 
  	include '../../view/inc/navbar.php';	
  	include'../../conf/connection.php';
- 	include'../../model/display_users.php';
+ 	include'../../model/display_users_pdo.php';
 
- 	display_users($connection);
+ 	display_users_pdo($connection);
  ?>
  	
  	

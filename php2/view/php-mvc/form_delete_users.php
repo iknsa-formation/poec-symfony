@@ -5,7 +5,7 @@
  ?>
  	<h1>form_delete_user</h1>
 	<div class="form">
-	 	<form action="../../model/delete_user.php" method ="post"> 
+	 	<form action="../../model/delete_user_pdo.php" method ="post"> 
 			<span>
 				<label>email :</label>  
 				<input type="mail" name="mail">  
