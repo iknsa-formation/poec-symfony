@@ -28,7 +28,7 @@
                     <div class="account-wall">
                         <br/>
 
-                        <form class="form-signin text-center">
+                        <form class="form-signin text-center" method="post" action="inputdisplay.php">
 
                             <input type="text" class="form-control" placeholder="Email" required autofocus>
                             <br/>
