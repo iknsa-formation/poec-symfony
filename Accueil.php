@@ -9,7 +9,7 @@
 <body>
 
     <?php
-$number1 =2;
+        $number1 =2;
         $number2 =3;
         $number3 =4;
         $number4 =5;

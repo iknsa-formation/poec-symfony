@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Il est fort Muller !!!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+      margin:0;
+padding:0;
+background: url(img/decolle.svg) no-repeat center fixed;
+
+    }
+
+    </style>
   </head>
   <body>
   <h2>Formulaire</h2>
