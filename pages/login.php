@@ -18,5 +18,3 @@
     </div>
   </div>
 </div>
-<?php var_dump(password_verify("$2y$10$YicOaOs.Wd.rKUZFybbRluvn4qWvESjmpAJlnrhAMcLmHBygE31Mq",PASSWORD_BCRYPT)); ?>
-<?php var_dump(password_hash("abdi",PASSWORD_BCRYPT)); ?>
