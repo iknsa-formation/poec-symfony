@@ -7,13 +7,13 @@
      $update = mysqli_query($connection,$sql);
     if($update){
            ?>
-         Modification ok
+           Modification ok
      <?php
           } else{
           ?>
           <div class="alert alert-danger" role="alert">
-            Modification KO
-        </div>
+            Ca passe pas.... !!!
+          </div>
         <?php
           }
       }
@@ -37,7 +37,7 @@
           <th scope="col">Adresse</th>
           <th scope="col">Fonction</th>
         </tr>
-      </thead> 
+      </thead>
       <tbody>
       <tr>
         <?php
@@ -48,8 +48,8 @@
         while ($row = mysqli_fetch_object($resultat)) {
         ?>
       <form name="form" id="form" enctype="multipart/form-data" method="post" action="update.php">
-      <td>
-      <input type="text" class="form-control" name="id" placeholder="id" value=" <?php echo $id;?>">
+      <td><?php echo $id;?>
+      <input type="text" class="form-control" name="id" placeholder="id" value=" <?php echo $id;?>" style="visibility: hidden" >
       </td>
       <td>
       <input type="text" class="form-control" name="firstname" placeholder="Prenom"

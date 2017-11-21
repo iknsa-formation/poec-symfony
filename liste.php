@@ -30,9 +30,11 @@ while ($row = mysqli_fetch_assoc($result)){
 <td><?php echo $row['adresse'] ?></td>
 <td><?php echo $row['fonction'] ?></td>
 <td><a href="edit.php?id=<?php echo $row['ID']?>"> <img src='img/edit.png'></a></td>
-<?php
+<td><a href="delete.php?id=<?php echo $row['ID']?>">
+  <img src='img/delete.png' OnClick= return confirm('Voulez-vous vraiment supprimer ?');></a></td>
+  <?php
 }
-?> 
+?>
 
 </tr>
 </thead>
