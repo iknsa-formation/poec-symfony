@@ -1,0 +1,80 @@
+/* -------------------------------- 
+
+    contact.php 
+
+-------------------------------- */
+
+element.style{
+  width: inherit;
+  height: 200px;  
+}
+
+#contact {
+  font-family: Calibri, Arial, Serif;
+  font-size: 1.3em;
+}
+.formulaire {
+  margin-left: 0px;
+  margin-right: 0;
+  padding-right: 0;
+  width: 100%;
+  padding-left: 10%;
+  text-align: left;
+  background-color: #25283D;
+}
+.titre {
+  font-family: Verdana, Arial, Serif;
+  font-size: 2.3em;
+  font-weight: bold;
+  width: 100%;
+  /*padding-top: 50px;*/
+  text-align: center;
+  margin-left: -430px
+  color: white;
+}
+
+h2{
+  color: white;
+  padding-top: 50px;
+  margin-left: -60px
+}
+
+
+.block {
+  display: block;
+  position: absolute;
+  float: left;
+  padding-top: 60px;
+}
+.libelle {
+  margin-top: 0;
+  font-weight: bold;
+  color: #fff;
+  width: 200px;
+  height: 30px;
+}
+.one_line {
+  width: 510px;
+  height: 50px;
+}
+.form-control  {
+  width: 450px;
+  height: 200px;
+  font-family: Calibri, Arial, Serif;
+  font-size: 1em;
+}
+.label_message, .form-control {
+  margin-left: 640px;
+}
+.btn-success {
+  text-align: center;
+  margin-top: 430px;
+  margin-left: 500px;
+  width: 160px;
+  height: 40px;
+  font-family: Calibri, Arial, Serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #fff;
+  color: #25283D;;
+}
