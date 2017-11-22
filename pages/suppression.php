@@ -1,6 +1,7 @@
 <?php 
 	require_once "../bd.php"; 
-	require_once "../fonction.php"; 
+	require_once "../fonction.php";
+	require_once '../session.php';
 	include_once "../head.html";
 	include_once "../header.php";
 	if(verifSession()){
