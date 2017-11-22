@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+require_once 'db2.php';
+
+
+if (count($_POST)>0) {
+
+  $email = $_POST ['email'];
+  $mdp = $_POST ['mdp'];
+
+}
+
+?><!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,16 +22,16 @@
 if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 	if ((isset($_POST['email']) && !empty($_POST['email'])) && (isset($_POST['pass']) && !empty($_POST['pass']))) {
 
-	$base = mysql_connect ('serveur', 'email', 'password');
-	mysql_select_db ('nom_base', $base);
+	// $base = mysqli_connect ('serveur', 'email', 'password');
+	// mysqli_select_db ('crud', $base);
 
 	// on teste si une entrée de la base contient ce couple email / pass
-	$sql = 'SELECT count(*) FROM usera WHERE email="'.mysql_escape_string($_POST['email']).'" AND pass_md5="'.mysql_escape_string(md5($_POST['pass'])).'"';
-	$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
-	$data = mysql_fetch_array($req);
+	$sql = 'SELECT count(*) FROM crud WHERE email="'.$_POST['email'].'"'.'" AND pass_md5="'.md5($_POST['mdp']).'"';
+	$req = mysqli_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysqli_error());
+	$data = mysqli_fetch_array($req);
 
-	mysql_free_result($req);
-	mysql_close();
+	mysqli_free_result($req);
+	mysqli_close();
 
 	// si on obtient une réponse, alors l'utilisateur est un user
 	if ($data[0] == 1) {
@@ -51,7 +62,7 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 Connexion à l'espace membre :<br />
 <form action="index.php" method="post">
 Email* : <input type="text" name="email" value="<?php if (isset($_POST['email'])) echo htmlentities(trim($_POST['email'])); ?>"><br />
-Mot de passe* : <input type="password" name="pass" value="<?php if (isset($_POST['pass'])) echo htmlentities(trim($_POST['pass'])); ?>"><br />
+Mot de passe* : <input type="password" name="mdp" value="<?php if (isset($_POST['pass'])) echo htmlentities(trim($_POST['pass'])); ?>"><br />
 <input type="submit" name="connexion" value="Connexion">
 </form>
 <a href="inscription.php">Vous inscrire</a>
