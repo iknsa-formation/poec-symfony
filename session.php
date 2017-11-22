@@ -5,5 +5,4 @@
 		//header('Location:page/inscription.php');
 	}else{ ?>
 	
-
 <?php } ?>

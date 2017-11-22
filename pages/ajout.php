@@ -7,5 +7,5 @@
 ?>
 <span class="col-sm-6 col-sm-offset-3">
 
-	<a href="../index.php">Retour</a>
+	<a href="index.php">Retour</a>
 </span>

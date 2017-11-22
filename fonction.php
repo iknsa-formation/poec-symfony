@@ -155,10 +155,10 @@
 		mysqli_close($bd);
 	}
 	function insertionUser($listeUsers,$bd){
-		if(isset($_GET['id'])){
+		if(isset($_GET['id'])){echo 'UPDATE';
 			// UPDTADE
 			uptdateUser($listeUsers,$bd);
-		}else{
+		}else{echo 'INSERT';
 			// INSERT
 			$sql = "select lastname from users where lastname = '".$listeUsers["LastName"]."'";
 			$select = mysqli_query($bd,$sql);
@@ -171,7 +171,7 @@
 			}else{
 				$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
 				VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
-				
+				var_dump($sql);die();
 				$insert = mysqli_query($bd,$sql);
 				if($insert){
 					echo '
@@ -272,15 +272,21 @@
 	}
 	function verifConnexion($bd){
 		if(count($_POST)>0){
-			$sql = "select mail,mdp from users where mail='".$_POST['mail']."'";
+			$sql = "select mail,mdp,firstname,lastname from inscrit where mail='".$_POST['mail']."'";
 
 
 			$res = mysqli_query($bd,$sql);
-			$mdpBase = mysqli_fetch_assoc($res);
+			$info = mysqli_fetch_assoc($res);
 			$existe = mysqli_num_rows($res);
 
 			if($existe){
-				if(password_verify($_POST['mdp'], $mdpBase['mdp'])){
+				if(password_verify($_POST['mdp'], $info['mdp'])){
+					session_start();
+					$_SESSION['mail'] = $_POST['mail'];
+					$_SESSION['mdp'] = $_POST['mdp'];
+					$_SESSION['firstname'] = $info['firstname'];
+					$_SESSION['lastname'] = $info['lastname'];
+					
 					return true;
 				}
 			}else{
@@ -304,7 +310,15 @@
 		$msg =
 		'<div>
 		<p>Veuillez vous <a href="index.php">
-		connecter</a> ou vous <a href="pages/inscription.php">enrigistrer</a> </p>
+		connecter</a> ou vous <a href="/">enrigistrer</a> </p>
+		</div>';
+		return $msg;
+	}
+	function messageVerifNonSession(){
+		$msg =
+		'<div>
+		<p>Veuillez vous <a href="index.php">
+		connecter</a> ou vous <a href="../index.php">enrigistrer</a> </p>
 		</div>';
 		return $msg;
 	}

@@ -20,5 +20,5 @@
 			<?php selectionUsers($connexion); ?>
 		</tbody>
 	</table>
-	<a href="../index.php">Retour</a>
+	<a href="index.php">Retour</a>
 </span>

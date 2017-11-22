@@ -4,10 +4,9 @@
 
 	if(verifConnexion($connexion)){
 		// connextion OK
-		echo 'OK';
-		session_start();
+		header('Location:pages/');
 	}else{
-		echo messageVerifNonConnexion();
+		header('Location:./');
 		// Saisie incorecte
 
 	}
