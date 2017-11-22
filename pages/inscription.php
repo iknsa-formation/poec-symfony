@@ -4,7 +4,6 @@
   include_once "../header.php";
   verifSession();
 ?>
-?>
 <div class="row">
  <div class="col-sm-6 col-sm-offset-3">
     <div class="wrapper">
@@ -13,17 +12,17 @@
           <h2 class="form-signin-heading">Inscription</h2>
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" name="firstname" placeholder="firstname" <?php if(isset($_POST['firstname'])){echo 'value ="'.$_POST['firstname'].'"';} ?> required="" autofocus="" />
+          <input type="text" class="form-control" name="firstname" placeholder="firstname" <?php if(isset($_GET['firstname'])){echo 'value ="'.$_GET['firstname'].'"';} ?> required="" autofocus="" />
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="lastname" placeholder="lastname" <?php if(isset($_POST['lastname'])){echo 'value ="'.$_POST['lastname'].'"';} ?> />
+          <input type="text" class="form-control" name="lastname" placeholder="lastname" <?php if(isset($_GET['lastname'])){echo 'value ="'.$_GET['lastname'].'"';} ?> />
         </div>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="mail" placeholder="Email Address" required="" <?php if(isset($_POST['mail'])){echo 'value ="'.$_POST['mail'].'"';} ?> />
+          <input type="text" class="form-control" name="mail" placeholder="Email Address" required="" <?php if(isset($_GET['mail'])){echo 'value ="'.$_GET['mail'].'"';} ?> />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" name="mdp" placeholder="Password" required="" <?php if(isset($_POST['mdp'])){echo 'value ="'.$_POST['mdp'].'"';} ?> />
+          <input type="password" class="form-control" name="mdp" placeholder="Password" required="" <?php if(isset($_GET['mdp'])){echo 'value ="'.$_GET['mdp'].'"';} ?> />
         </div>
         <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>   

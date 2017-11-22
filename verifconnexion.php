@@ -6,7 +6,7 @@
 		// connextion OK
 		header('Location:pages/');
 	}else{
-		header('Location:./');
+		header('Location:./?erreur=4&mail='.$_POST["mail"].'&mdp='.$_POST["mdp"]);
 		// Saisie incorecte
 	}
 

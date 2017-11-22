@@ -336,7 +336,7 @@
 		if($e == 1){
 			$msg ='
 				<div class="alert alert-danger" role="alert">
-					<strong>Erreur!</strong> Cet mail est deja utilisé.
+					Cet mail est deja utilisé.
 				</div>';
 		}
 		if($e == 2){
@@ -348,7 +348,13 @@
 		if($e == 3){
 			$msg ='
 				<div class="alert alert-danger" role="alert">
-					<strong>Erreur!</strong> Saisie obligatoire.
+					Saisie obligatoire.
+				</div>';
+		}
+		if($e == 4){
+			$msg ='
+				<div class="alert alert-danger" role="alert">
+					Votre mot de passe ou l\'email est incorrect.
 				</div>';
 		}
 		return $msg;
