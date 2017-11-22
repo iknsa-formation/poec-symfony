@@ -12,7 +12,7 @@
           <input type="password" class="form-control" name="mdp" placeholder="Password" required=""/>      
         </div>
         <div class="form-group">
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>   
         </div>
         <small>Vous n'êtes pas encore inscrit ? <a href="pages/inscription.php">inscription</small>
       </form>
