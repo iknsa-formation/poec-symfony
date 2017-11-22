@@ -5,10 +5,10 @@
  ?>
  	<h1>form update</h1>
 	<div class="form">
-	 	<form action="model/update_user.php" method ="post"> 
+	 	<form action="../../model/update_user_pdo.php" method ="post"> 
 			
 			<span>
-				<input type="text" name="email">  
+				<input type="text" name="mail">  
 				<label>email :</label>  
 			<span>
 				<input type="submit" value="Envoyer le formulaire"> 
