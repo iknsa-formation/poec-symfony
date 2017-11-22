@@ -51,7 +51,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="pull-right border border-success">
                     <h2>Sin up</h2>
-                    <a href=""><img src="img/register.jpg"></a>
+                    <a href="inscription.php"><img src="img/register.jpg"></a>
                  </div>
             </div>
         </div>
