@@ -14,6 +14,7 @@
         <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
         </div>
+        <small>Vous n'êtes pas encore inscrit ? <a href="pages/inscription.php">inscription</small>
       </form>
     </div>
   </div>

@@ -1,8 +1,27 @@
-  <div class="wrapper">
-    <form class="form-signin">       
-      <h2 class="form-signin-heading">Inscription</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>   
-    </form>
+<?php 
+  require_once "../fonction.php"; 
+  include_once "../head.html";
+  include_once "../header.html";
+?>
+<div class="row">
+ <div class="col-sm-6 col-sm-offset-3">
+    <div class="wrapper">
+      <form class="form-signin" action="verifconnexion.php" method="post">    
+        <div class="form-group">
+          <h2 class="form-signin-heading">Inscription</h2>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="mail" placeholder="Email Address" required="" autofocus="" />
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="mdp" placeholder="Password" required=""/>      
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>   
+        </div>
+        <small>Vous êtes déja inscrit ? <a href="../">connexion</small>
+      </form>
+    </div>
   </div>
+</div>
+      
