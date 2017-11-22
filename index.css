@@ -1,0 +1,20 @@
+#login-image {
+    margin-top: 10%;
+    margin-left: 13%;
+}
+
+#inscription-image {
+    margin-left: 62%;
+    margin-top: -12%;
+}
+
+#login-inscription
+{
+	border:2px solid black;
+	margin-top: 10%;
+	width: 80%;
+	margin-left:10%;
+	border-radius:400px;
+	background-color : rgba(56,98,247,0.2);
+	padding-bottom: 50px;
+}

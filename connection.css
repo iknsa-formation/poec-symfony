@@ -1,3 +1,8 @@
+#titre{
+	text-align: center;
+	margin-left:10px;
+}
+
 #form1{
 	margin-left:  40%;
 	margin-top: 14%;
@@ -5,18 +10,19 @@
 	width: 20%;
 	height: -20%;
 	padding-left: 60px;
-	padding-right: -50px;
+	padding-right: -10px;
 	
 }
 
-#email{
+#pseudo{
 	margin-left: 41px;
 	margin-bottom: 30px;
 	margin-top: 40px;
 }
 
 #inscription{
-	margin-left:40px;
+	margin-left:10px;
+	margin-top:10px;
 	display: inline-block;
 }
 
@@ -26,43 +32,44 @@
 }
 
 #motDePasseOublier{
-	margin-left: 33%;
+	margin-left: 43%;
+	margin-top:-20%;
 	display: inline-block;
 }
 
 #imgphp{
 	width: 20%;
-	height: 2%;
+	height: 30%;
 	float: left;
-	margin-top: 7%;
+	margin-top: 12%;
 }
 
 #imghtml{
 	width: 20%;
-	height: 2%;
+	height: 30%;
 	float: left;
-	margin-top:-10%;
-	margin-left: -3%;
+	margin-top:-5%;
+	margin-left: -4%;
 }
 
 #imgcss{
 	width: 20%;
-	height: 2%;
+	height: 30%;
 	float:right;
 	margin-top: 3%;
-	margin-right: 18%;
+	margin-right: 38%;
 }
 
 #imgangular{
 	width: 20%;
-	height: 2%;
+	height: 30%;
 	float:right;
-	margin-top: 5%;
+	margin-top: 10%;
 }
 #imgjavascript{
 	width: 20%;
-	height: 2%;
+	height: 30%;
 	float: right;
-	margin-top:-11%;
+	margin-top:-3%;
 	margin-right:-5%;
 }

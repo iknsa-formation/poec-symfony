@@ -1,20 +1,22 @@
-<?php
+<?php 
 $servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'poec';
+$dbpass = '';
+$dbname ='site perso';
+$username ='root';
 
-define('DBSERVER', 'localhost');
+define ('DBSERVER', 'localhost');
 define('DBUSER', 'root');
-define('DBPASS','');
-define('DBNAME', 'poec');
+define('DBPASS', '');
+define ('DBNAME', 'site perso');
 
 $connection =  mysqli_connect(DBSERVER, DBUSER, DBPASS, DBNAME);
 
 if(!$connection){
-	die('<strong>Impossible de se connecter,Veuillez revoir les accés</strong><br/>'.mysqli_connect_error());
+	die("vous ete pas connecte");
 }
-else {
-	echo '<srong>vous ete connecte</strong><br/>';
+
+else{
+	echo "vous ete connecte <br/>";
 }
+
 ?>
