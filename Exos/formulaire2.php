@@ -41,6 +41,8 @@
                             <input type="text" class="form-control" name="nom" id="nom" required>
                         <label>Prénom*:</label>
                             <input type="text" class="form-control" name="prenom" id="prenom" required>
+                        <label>Mot de passe*:</label>
+                            <input type="text" class="form-control" name="mdp" id="mdp" required>
                         <label>Téléphone:</label>
                             <input type="text" class="form-control" name="tel" id="tel" maxlength="10" pattern="[0-9]{10}">
                         <label>Code Postal:</label>
