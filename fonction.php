@@ -155,10 +155,10 @@
 		mysqli_close($bd);
 	}
 	function insertionUser($listeUsers,$bd){
-		if(isset($_GET['id'])){echo 'UPDATE';
+		if(isset($_GET['id'])){
 			// UPDTADE
 			uptdateUser($listeUsers,$bd);
-		}else{echo 'INSERT';
+		}else{
 			// INSERT
 			$sql = "select lastname from users where lastname = '".$listeUsers["LastName"]."'";
 			$select = mysqli_query($bd,$sql);
@@ -171,7 +171,6 @@
 			}else{
 				$sql = "INSERT INTO users(firstname,lastname,adresse,fonction) 
 				VALUES('".$listeUsers["FirstName"]."','".$listeUsers["LastName"]."','".$listeUsers["Adresse"]."','".$listeUsers["Fonction"]."')";
-				var_dump($sql);die();
 				$insert = mysqli_query($bd,$sql);
 				if($insert){
 					echo '
@@ -306,20 +305,51 @@
 			return true;
 		}
 	}
-	function messageVerifNonConnexion(){
-		$msg =
-		'<div>
-		<p>Veuillez vous <a href="index.php">
-		connecter</a> ou vous <a href="/">enrigistrer</a> </p>
-		</div>';
-		return $msg;
+	function verifInscription($bd){
+		$sql = "select mail from inscrit where mail='".$_POST['mail']."'";
+		$res = mysqli_query($bd,$sql);
+		$existe = mysqli_num_rows($res);
+
+		if(count($_POST) > 0){
+			if($existe){
+				// Message exist deja
+				header('Location:inscription.php?erreur=1');
+			}else{
+				$mdpCrypt = password_hash($_POST["mdp"],PASSWORD_BCRYPT);
+				$sql = "INSERT INTO inscrit(firstname,lastname,mail,mdp) 
+				VALUES('".$_POST["firstname"]."','".$_POST["lastname"]."','".$_POST["mail"]."','".$mdpCrypt."')";
+				
+				$insert = mysqli_query($bd,$sql);
+				if($insert){
+					header('Location:./');
+				}else{
+					header('Location:./?erreur=2');
+				}
+			}
+		}else{
+			header('Location:../?erreur=3');
+		}
 	}
-	function messageVerifNonSession(){
-		$msg =
-		'<div>
-		<p>Veuillez vous <a href="index.php">
-		connecter</a> ou vous <a href="../index.php">enrigistrer</a> </p>
-		</div>';
+	function msgErreurInscription($e){
+		$msg ='';
+		if($e == 1){
+			$msg ='
+				<div class="alert alert-danger" role="alert">
+					<strong>Erreur!</strong> Cet mail est deja utilisé.
+				</div>';
+		}
+		if($e == 2){
+			$msg ='
+				<div class="alert alert-danger" role="alert">
+					<strong>Erreur!</strong> Une erreur c\'est produit.
+				</div>';
+		}
+		if($e == 3){
+			$msg ='
+				<div class="alert alert-danger" role="alert">
+					<strong>Erreur!</strong> Saisie obligatoire.
+				</div>';
+		}
 		return $msg;
 	}
 ?>
