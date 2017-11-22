@@ -7,7 +7,7 @@
 		global $connection;
 		if (($_POST['mail'])) 
 			{
-				$/*verification_query = "SELECT lastname FROM users WHERE lastname = '.$firstname'";
+				/*verification_query = "SELECT lastname FROM users WHERE lastname = '.$firstname'";
 				
 				$verification_query = $bdd->prepare('SELECT * FROM users WHERE mail = mail:');
 				
@@ -15,7 +15,6 @@
 				if ($verification_query->fetchColumn() != 0) {*/
 
 				$query = $connection->prepare("UPDATE users SET firstname = :firstname, lastname = :lastname, adresse = :adresse, fonction = :fonction, img_url = :img_url, mail = :mail, password = :password WHERE mail = :mail");
-
 				$query->bindParam(':firstname', $_POST['firstname'], PDO::PARAM_STR);
                 $query->bindParam(':lastname', $_POST['lastname'], PDO::PARAM_STR);
                 $query->bindParam(':adresse', $_POST['adresse'], PDO::PARAM_STR);
@@ -24,7 +23,6 @@
                 $query->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
                 $query->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
     			$query->execute();
-
     			if ($query != null)
                 {
                     $query->closeCursor();

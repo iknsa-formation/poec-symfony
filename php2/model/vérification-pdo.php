@@ -21,7 +21,6 @@
 	                $query->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
 	                $query->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
 	    			$query->execute();
-
     			if ($query != null)
                 	{
 		                $query->closeCursor();
@@ -32,7 +31,7 @@
 		                print_r($query->errorInfo());  
 		                echo"ici";
 		                return false;
-		               }    
+		            }    
 		}		
 	}
 		update_user_pdo();			
