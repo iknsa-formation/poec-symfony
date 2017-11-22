@@ -15,7 +15,7 @@ $login = "select *from etudiants where email = '".$_SESSION['email']."' and '".$
 
 $isLogged = mysqli_query($connetion, $login);
 	foreach ($isLogged as $key => $value) {
-		if ($value['email'] === $_SESSION['email'] && password_verify($_SESSION[password], $['value'] ))) {
+		if ($value['email'] === $_SESSION['email'] && password_verify($_SESSION['password'], $['value'] ))) {
 			$_SESSION['prenom'] = $value['prenom'];
 			$_SESSION['nom'] = $value['nom'];
 			header("location:list.php")
@@ -23,4 +23,7 @@ $isLogged = mysqli_query($connetion, $login);
 			echo "<div class='alert alert-danger' role = 'alert'> Vous n'avez " 
 		}
 	}
+
 ?>
+
+

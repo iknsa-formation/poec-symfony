@@ -15,3 +15,10 @@ form {
 	position: center;
 	margin-right: 
 }
+
+.btn_con {
+	position: center;
+	width: 30px;
+	padding-right: 30px;
+    left: 20%;
+}

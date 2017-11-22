@@ -23,7 +23,7 @@ require_once 'db.php';
 				<input type="password" name="password" id="password" required>
 			</div>
 			<div class="form-group">
-				<input type="sumit" class="btn btn-primary" value="Connexion"  name="Se conecter">
+				<input type="sumit" class="btn btn-primary" value="connexion"  name="Se conecter">
 			</div>
 		</form>
 	</main>

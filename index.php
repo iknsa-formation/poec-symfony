@@ -24,15 +24,16 @@
 		    <a class="nav-link" href="#">Link</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link disabled" href="#">Disabled</a>
-		  </li>
-		</ul>
+		  	<button type="submit" class="btn btn-danger" >Deconnexion</button>
+  		   </li>
+	</ul>
 	</header>
-	<div>
-		<button type="button" class="btn btn-primary btn-lg">Connection</button>
-	</div>	
-	<div>
-		<button type="button" class="btn btn-secondary btn-lg">Inscription</button>
-	</div>
+
+	<form name="connexion" id="connexion" method="post" action="connexion.php">
+		<button type="submit" class="btn btn-primary btn-lg">Connection</button>
+	</form>
+	<form name="inscription" id="inscription" method="post" action="form_inscription.php">
+		<button type="submit" class="btn btn-primary btn-lg">Inscription</button>
+	</form>
 </body>
 </html>
