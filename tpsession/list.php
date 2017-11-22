@@ -41,7 +41,6 @@
                 <?php echo $row ['email']; ?>
             </td> 
             <td>
-                <?php echo $row ['password']; ?><br/>
                 <?php echo password_hash("password", PASSWORD_DEFAULT);?>
             </td>
             <td>

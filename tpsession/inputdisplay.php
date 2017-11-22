@@ -6,9 +6,11 @@ if (count($_POST)>0){
     $name=$_POST["username"];
     $email=$_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+   
     echo "Welcome: ". $_POST["username"]. "<br />";
     echo "Your email is: ". $_POST["email"]. "<br />";
     echo "This is your password: ".password_hash("password", PASSWORD_DEFAULT)."\n"."<br/>";
+   
     $requete="select email from cptable where email='".$email."'";
     $resultat = mysqli_query ($connection, $requete);
 
