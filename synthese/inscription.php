@@ -1,5 +1,9 @@
 <?php
 	require_once 'db.php';
+
+     if(!isset($_SESSION)){
+        session_start();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +48,8 @@
 				$tel = $_POST['tel'];
 				$adresse = $_POST['adress'];
 
+                $_SESSION['role'] = $_POST['role'];
+
 				$hash = password_hash($_POST['password'],PASSWORD_BCRYPT);
 
 				$requete = "select email from etudiants where email ='".$email."'";
@@ -54,15 +60,24 @@
 						  Utilisateur existe deja
 						</div>";
 				} else {
-                    $sql = "INSERT INTO etudiants(prenom,nom,email,password,tel,adresse) value ('".$prenom."','".$nom."','".$email."','".$hash."','".$tel."','".$adresse."')";
-                    $insert =  mysqli_query($connection,$sql);
+
+                    /* Ajout de role */
+                    $addRole = mysqli_query($connection, "ALTER TABLE etudiants ADD role varchar(30)");
+
+					$sql = "INSERT INTO etudiants(prenom,nom,email,password,tel,adresse,role) value ('".$prenom."','".$nom."','".$email."','".$hash."','".$tel."','".$adresse."','".$_SESSION['role']."')";
+					$insert =  mysqli_query($connection,$sql);
 
 					if ($insert) {
 						echo "<div class='alert alert-success' role='alert'>
-						  This is a success alert—check it out!
+						  Bravo! votre compte a été bien créé avec succés. Vous devez maintement <a href='login.php'>vous connecter</a> pour continuer
 						</div>";
-						header("Location:list.php/");
-					}
+
+					} else {
+                        echo "<div class='alert alert-danger' role='alert'>
+                          Impossible de créer votre compte. Merci de vérifier votre saisie.
+                        </div>";
+                        echo "<img src='img/oups.gif'>";
+                    }
 				}
 			}
         ?>
@@ -96,6 +111,13 @@
 			 <div class="form-group">
                 <label for="adress">Adress*:</label>
                 <input type="text" name="adress" id="adress" required>
+            </div>
+
+            <div class="form-group">
+                <select name="role"> for="adress">Adress*:
+                <option value="cp">Chef de projet</option>
+                <option value="dev">Developpeur</option>
+                </select>
             </div>
             
             <div class="form-group">

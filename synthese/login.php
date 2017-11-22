@@ -45,8 +45,8 @@
             <?php if(isset($_SESSION['is_connected']) && $_SESSION['is_connected']): ?>
                     Bonjour <?=  $_SESSION['nom']; ?> <a href="logout" class="btn btn-danger">Logout</a>
                 <?php else: ?>
-                    <a href="login" class="btn btn-primary">Sign in </a>  or
-                    <a href="login" class="btn btn-primary">Sign up</a>
+                    <a href="login.php" class="btn btn-primary">Sign in </a>  or
+                    <a href="inscription.php" class="btn btn-primary">Sign up</a>
                 <?php endif; ?>
             </form>
           </div>
@@ -78,6 +78,7 @@
                   if ($value['email'] === $_SESSION['email'] && (password_verify($_SESSION['password'], $value['password'])))   {
                     $_SESSION['prenom'] = $value['prenom'];
                     $_SESSION['nom'] = $value['nom'];
+                    $_SESSION['role'] = $value['role'];
                     header("Location:list.php");
                   }else {
                   echo "<div class='alert alert-danger' role='alert'>

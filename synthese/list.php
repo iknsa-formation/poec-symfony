@@ -73,22 +73,52 @@
               </thead>
               <tbody>
               <?php
-                $sql = "SELECT * FROM etudiants";
-                $resultat = mysqli_query ($connection,$sql);
-                while ($row = mysqli_fetch_assoc($resultat)) {
-              ?>
-              <tr>
-              <th><?php echo $row['id']; ?></th>
-              <td> <?php echo $row['prenom']; ?></td>
-              <td> <?php echo $row['nom']; ?></td>
-              <td> <?php echo $row['email']; ?></td>
-              <td><?php  echo $row['tel'];?> </td>
-              <td><?php  echo $row['adresse'];?> </td>
 
-              <td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a></td>
-              <td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="img/delete.png"></a></td>
-              </tr>
-              <?php } ?>
+              /*
+              * Affichage des actions que pour le role cp
+              */
+                /* Verification du role */
+                $requete = "SELECT role FROM etudiants WHERE email='".$_SESSION['email']."'";
+                $sql = mysqli_query($connection,$requete);
+
+               foreach ($sql as  $value) {
+                  if ($value['role'] === 'cp') {
+                      $sql2 = "SELECT * FROM etudiants";
+                      $resultat = mysqli_query ($connection,$sql2 );
+                      while ($row = mysqli_fetch_assoc($resultat)) {
+                      ?>
+                        <tr>
+                        <th><?php echo $row['id']; ?></th>
+                        <td> <?php echo $row['prenom']; ?></td>
+                        <td> <?php echo $row['nom']; ?></td>
+                        <td> <?php echo $row['email']; ?></td>
+                        <td><?php  echo $row['tel'];?> </td>
+                        <td><?php  echo $row['adresse'];?> </td>
+                        <td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a></td>
+                        <td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="img/delete.png"></a></td>
+                       
+                        </tr>
+                        <?php 
+                      }
+
+                  } else {
+                        $sql = "SELECT * FROM etudiants";
+                        $resultat = mysqli_query ($connection,$sql);
+                        while ($row = mysqli_fetch_assoc($resultat)) {
+                      ?>
+                      <tr>
+                      <th><?php echo $row['id']; ?></th>
+                      <td> <?php echo $row['prenom']; ?></td>
+                      <td> <?php echo $row['nom']; ?></td>
+                      <td> <?php echo $row['email']; ?></td>
+                      <td><?php  echo $row['tel'];?> </td>
+                      <td><?php  echo $row['adresse'];?> </td>
+                      </tr>
+                      <?php }
+
+                  }
+              } 
+              ?>
             </tbody>
         </table>
         <?php } ?>
