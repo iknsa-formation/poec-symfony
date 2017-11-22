@@ -38,9 +38,9 @@
         $requete = mysqli_query($connection, $sql ) ;
        
         if($requete) {
-          echo("La suppression à été correctement effectuée") ;
+          echo("La suppression a été correctement effectué") ;
         } else{
-          echo("La suppression à échouée") ;
+          echo("La suppression a échoué") ;
         }
     ?>
  	<footer>

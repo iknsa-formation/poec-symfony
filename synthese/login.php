@@ -61,20 +61,19 @@
           $_SESSION['email'] =  $_POST['email'];
           $_SESSION['password'] =  $_POST['password'];
 
-          $hash = password_hash($_SESSION['password'],PASSWORD_BCRYPT);
 
           $requete = "select password from etudiants where email = '".$_SESSION['email']."'";
 
           $pwd =mysqli_query($connection,$requete);
+
+
           /*Recuperation du mot de passe en BDD*/
           foreach ($pwd as $key => $value) {
-              $getPwd = $value['password'];
               
               $login = "select * from etudiants where email = '".$_SESSION['email']."' and password = '".$value['password']."'";
 
+
               $isLogged= mysqli_query($connection,$login);
-              /*var_dump($isLogged,$login);die;
-              if (mysqli_num_rows($isLogged) === 0) */
               foreach ($isLogged as $key => $value) {
                   if ($value['email'] === $_SESSION['email'] && (password_verify($_SESSION['password'], $value['password'])))   {
                     $_SESSION['prenom'] = $value['prenom'];
@@ -88,6 +87,17 @@
               }
             }
         }
+
+        $to      = 'msa.camara@gmail.com';
+     $subject = 'le sujet';
+     $message = 'Bonjour !';
+     $headers = 'From: webmaster@example.com' . "\r\n" .
+     'Reply-To: webmaster@example.com' . "\r\n" .
+     'X-Mailer: PHP/' . phpversion();
+
+    $x = mail($to, $subject, $message, $headers);
+  if ($x === true) echo 'yaaaaahhhhooo !!!';
+  else echo 'so bad :/';
         ?>
         <form action="" method="post">
             <div class="form-group">
