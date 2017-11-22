@@ -1,7 +1,7 @@
 <?php 
 	require_once "fonction.php"; 
 	include_once "head.html";
-	include_once "header.html";
+	include_once "header.php";
 ?>
 		<div class="row">
 			<div class="col-sm-12">

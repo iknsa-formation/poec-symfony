@@ -272,8 +272,6 @@
 	function verifConnexion($bd){
 		if(count($_POST)>0){
 			$sql = "select mail,mdp,firstname,lastname from inscrit where mail='".$_POST['mail']."'";
-
-
 			$res = mysqli_query($bd,$sql);
 			$info = mysqli_fetch_assoc($res);
 			$existe = mysqli_num_rows($res);
@@ -297,11 +295,9 @@
 		}
 	}
 	function verifSession(){
-		if(!isset($_SESSION)){
-
-			return false;
+		if(!isset($_SESSION['mail'])){
+			header('Location:../');
 		}else{
-
 			return true;
 		}
 	}
@@ -321,6 +317,11 @@
 				
 				$insert = mysqli_query($bd,$sql);
 				if($insert){
+					session_start();
+					$_SESSION['firstname'] = $_POST["firstname"];
+					$_SESSION['lastname'] = $_POST["lastname"];
+					$_SESSION['mail'] = $_POST["mail"];
+					$_SESSION['mdp']= $_POST["mdp"];
 					header('Location:./');
 				}else{
 					header('Location:./?erreur=2');
