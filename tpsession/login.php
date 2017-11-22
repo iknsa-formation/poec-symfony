@@ -1,5 +1,6 @@
 <?php include 'index.html'?>
 <?php require_once "db.php";?>
+<hr/>
 <!doctype html>
 <html lang="en">
     <head>
@@ -30,9 +31,9 @@
 
                         <form class="form-signin text-center" method="post" action="inputdisplay.php">
 
-                            <input type="text" class="form-control" placeholder="Email" required autofocus>
+                            <input name="email" type="text" class="form-control" placeholder="Email" required autofocus>
                             <br/>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input name="password" type="password" class="form-control" placeholder="Password" required>
                             <br/>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Sign in</button>

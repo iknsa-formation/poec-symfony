@@ -1,39 +1,34 @@
-<?php
-require_once "db.php";
+<?php include 'index.html'?>
+<?php require_once "db.php";?>
+<hr/><?php
 
+var_dump($_POST);
 
 if (count($_POST)>0){
     $name=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
-
-
-
-
+    $hash = password_hash ("password", PASSWORD_DEFAULT);
+    
+    
     echo "Welcome: ". $_POST["username"]. "<br />";
     echo "Your email is: ". $_POST["email"]. "<br />";
-    echo "This is your password: ". $_POST["password"]."<br />";
+    echo "This is your password: ".password_hash("password", PASSWORD_DEFAULT)."\n"."<br/>";
 
-  
-    
-    
-    
-    
-    
-    
-    
-    $isExist="select email from cptable where email='".$email."'";
 
-    $exist = mysqli_query ($connection, $isExist);
 
-    $var=mysqli_num_rows($exist);
+ 
+    $requete="select email from cptable where email='".$email."'";
+    $resultat = mysqli_query ($connection, $requete);
+
+    $var=mysqli_num_rows($resultat);
 
     if ($var>0) {
         echo "Cet utilisateur existe deja";
     }
     else{
 
-        $sql = "INSERT INTO cptable (name, email, password) VALUES('".$name."','".$email."','".$password."')";
+        $sql = "INSERT INTO cptable (username, email, password) VALUES('".$name."','".$email."','".$password."')";
 
         var_dump($sql);
 
@@ -51,6 +46,7 @@ if (count($_POST)>0){
         
     }
 }
+
 
 
 ?>

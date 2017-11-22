@@ -1,5 +1,6 @@
 <?php include 'index.html'?>
 <?php require_once "db.php";?>
+<hr/>
 <!doctype html>
 <html lang="en">
     <head>
