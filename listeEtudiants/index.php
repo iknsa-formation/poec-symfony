@@ -28,6 +28,7 @@
   		   </li>
 	</ul>
 	</header>
+	<h1>Bienvenue !</h1>
 
 	<form name="connexion" id="connexion" method="post" action="connexion.php">
 		<button type="submit" class="btn btn-primary btn-lg">Connection</button>

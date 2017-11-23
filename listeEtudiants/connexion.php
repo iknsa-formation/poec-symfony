@@ -13,17 +13,17 @@ require_once 'db.php';
 </head>
 <body>
 	<main>
-		<form action="login" method="post">
+		<form name="login" id= "login" action="membre.php" method="post">
 			<div class="form-group">
 				<label for="email">Email :</label>
-				<input type="test" name="email" id="email" required>
+				<input type="text" name="email" id="email" required>
 			</div>
 			<div class="form-group">
 				<label for="password">password :</label>
 				<input type="password" name="password" id="password" required>
 			</div>
 			<div class="form-group">
-				<input type="sumit" class="btn btn-primary" value="connexion"  name="Se conecter">
+				<button type="submit" class="btn btn-primary btn-lg" value="Connection">Se connecter</button> 
 			</div>
 		</form>
 	</main>
