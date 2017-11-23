@@ -10,7 +10,6 @@ if (count($_POST)>0) {
   $tel = $_POST ['tel'];
   $adresse = $_POST ['adresse'];
 }
-
 ?>
 
 <html>
@@ -53,6 +52,8 @@ if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
     // $insert = mysqli_query ($connection,$sql);
 
 		session_start();
+		$_SESSION['prenom'] = $_POST['prenom'];
+		$_SESSION['nom'] = $_POST['nom'];
 		$_SESSION['email'] = $_POST['email'];
 		header('Location: membre.php');
 		exit();
@@ -82,18 +83,18 @@ Inscription à l'espace membre :<br />
       if (isset($_POST['nom']))
       echo htmlentities(trim($_POST['nom']));
       ?>"><br />
-      Email*: <input type="text" name="email" required"
+      Email*: <input type="text" name="email" required=required"
       <?php
       if (isset($_POST['email']))
       echo htmlentities(trim($_POST['email']));
       ?>"><br />
-        Mot de passe*: <input type="password" name="mdp" required"
+      Mot de passe*: <input type="password" name="mdp" required=required"
       <?php
       if (isset($_POST['mdp']))
       echo htmlentities(trim($_POST['mdp']));
       ?>">
       <br />
-      Confirmation du mot de passe*: <input type="password" name="mdp_confirm" value="
+      Confirmation du mot de passe*: <input type="password" name="mdp_confirm" value="" required=required"
       <?php
       if (isset($_POST['mdp_confirm']))
       echo htmlentities(trim($_POST['mdp_confirm']));
