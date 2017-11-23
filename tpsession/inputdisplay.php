@@ -7,7 +7,6 @@ if (count($_POST)>0){
     $name=$_POST["username"];
     $email=$_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-       $id=$_POST["id"];
 
     echo "Welcome: ". $_POST["username"]. "<br />";
     echo "Your email is: ". $_POST["email"]. "<br />";
