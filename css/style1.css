@@ -1,0 +1,72 @@
+td{
+  text-align: center;
+}
+.navbar-right{
+  /*margin-left: 100px;*/
+  color: #fff;
+  /*background-color: #fff;*/
+}
+.navbar-inverse{
+  margin-top: 5px;
+  background-color: #18223a;
+
+}
+#login{
+    margin-top: 80px;
+}
+.log input[type=text], select
+{
+    width: 55%;
+    height: 30px;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.log input[type=password], select
+{
+    width: 55%;
+     height: 30px;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.log input[type=submit] 
+{
+    width: 50%;
+    background-color: #40acdc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.log input[type=submit]:hover 
+{
+    background-color: #18223a;
+}
+
+footer{
+  margin-top: 15px;
+  background-color: #18223a;
+  height: 50px;
+}
+footer p{
+  text-align: center;
+  padding-top: 17px;
+  color: #fff;
+}
+.text-color{
+  color: #ce891a !important;
+  font-weight: lighter;
+}
+.text-color .navbar-brand:hover{
+  color: #ce891a;
+  background-color: transparent;
+} 
