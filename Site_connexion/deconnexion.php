@@ -20,21 +20,18 @@
                 </ul>
             </nav>
         </div>
+        
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-2"> 
-                <form method="post" action="verification.php">
-                    <div class="form-group">
-                        <label>Mail:</label>
-                            <input type="text" class="form-control" name="mail" id="mail" required>
-                        <label>Mot de passe:</label>
-                            <input type="password" class="form-control" name="mdp" id="mdp" required>
-                        <button type="submit" class="btn btn-info">Valider</button>
-                    </div>
-                </form>  
+            <div class="col-md-4"> 
+            <?php
+                session_start();
+                session_unset();
+                session_destroy();
+                echo "<div class='alert alert-success' role='alert'>Vous avez été déconnecté</div>";
+            ?>
             </div>
         </div>
     </div>
-
 </body>
 </html>

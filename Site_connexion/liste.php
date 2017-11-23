@@ -17,36 +17,34 @@
                     <li><a class="active" href="index.php">Home</a></li>
                     <li><a href="inscription.php">Inscription</a></li>
                     <li><a href="connexion.php">Connexion</a></li>
+                    <?php    
+                        define("SERVERBDD","localhost");
+                        define("NAMEBDD","formation");
+                        define("USERBDD","root");
+                        define("PASSWORDBDD","");
+
+                        $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
+
+                        if(session_start()){
+                            echo "<li style='margin-top:15px;'><b>Bonjour ".$_SESSION['mail']." "."</b></li>";
+                    ?>
+                    <li><button type="button" class="btn btn-outline-danger btn-sm" style='margin-top:10px; margin-left:10px;'><a href="deconnexion.php" style="color:red;">Déconnexion</a></button></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </nav>
         </div>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-7"> 
-                <?php    
-                    define("SERVERBDD","localhost");
-                    define("NAMEBDD","formation");
-                    define("USERBDD","root");
-                    define("PASSWORDBDD","");
-                
-                    $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
-                
-                    session_start();
-                
-                    $req_nom = "SELECT prenom, nom FROM users WHERE nom='".$_SESSION['nom']."' AND mdp='".$_SESSION['mdp']."'";
-                    $result = mysqli_query($connexion,$req_nom);
-                
-                    foreach($result as $value){
-                        echo "<div class='alert alert-info' role='alert'>Bonjour ".$value['prenom']." ".$value['nom']."</div>";
-                    }  
-                ?> 
+ 
                 <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nom</th>
                             <th>Prénom</th>
-                            <th>Mot de passe</th>
                             <th>Téléphone</th>
                             <th>Code Postal</th>
                             <th>Mail</th>
@@ -62,16 +60,15 @@
                                     echo "<tr><td>".$valeur['id']."</td>";
                                     echo "<td>".$valeur['nom']."</td>";
                                     echo "<td>".$valeur['prenom']."</td>";
-                                    echo "<td>********</td>";
                                     echo "<td>".$valeur['telephone']."</td>";
                                     echo "<td>".$valeur['code_postal']."</td>";
                                     echo "<td>".$valeur['mail']."</td>";
-                                    echo "<td><a href='modifier.php?id=".$valeur['id']."'>Modifier</a></td></tr>";
+                                    if($_SESSION['id'] == $valeur['id'])
+                                        echo "<td><a href='modifier.php?id=".$valeur['id']."'>Modifier</a></td></tr>";
                                 }
                             ?>
                     </tbody>
                 </table>
-                
             </div>
         </div>
     </div>

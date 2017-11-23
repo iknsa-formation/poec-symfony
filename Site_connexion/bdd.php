@@ -40,10 +40,13 @@
                 $adresse = $_POST['adresse'];
                 $email = $_POST['mail'];
                 
+                $hash = password_hash($mdp,PASSWORD_BCRYPT);
+                //echo "psw hash: ".$hash."<br/>";
+                
                 $req = "SELECT mail FROM users WHERE mail='".$email."'";
                 $r_mail = mysqli_query($connexion,$req);
                 
-                $requete_insert = "INSERT INTO users(nom,prenom,mdp,telephone,code_postal,mail) VALUES('".$nom."','".$prenom."','".$mdp."','".$tel."','".$adresse."','".$email."')";
+                $requete_insert = "INSERT INTO users(nom,prenom,mdp,telephone,code_postal,mail) VALUES('".$nom."','".$prenom."','".$hash."','".$tel."','".$adresse."','".$email."')";
                 
                 if($nom!="" && $prenom!="" && $email!="" && $mdp!="" && $conf_mdp!=""){   
                     $nbrow = mysqli_num_rows($r_mail);  //compter le nombre de lignes retournent la requete

@@ -40,7 +40,9 @@
                     $email = $_POST['mail'];
                     $hidden = $_POST['hidden'];
                 
-                    $modifier = "UPDATE users SET nom='$nom', prenom='$prenom', mdp='$mdp', telephone='$tel', code_postal='$adresse', mail='$email' WHERE id=$hidden";
+                    $hash = password_hash($mdp,PASSWORD_BCRYPT);
+                
+                    $modifier = "UPDATE users SET nom='$nom', prenom='$prenom', mdp='$hash', telephone='$tel', code_postal='$adresse', mail='$email' WHERE id=$hidden";
                 
                     if($mdp==$conf_mdp){
                         $r = mysqli_query($connexion,$modifier);

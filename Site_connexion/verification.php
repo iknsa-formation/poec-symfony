@@ -30,20 +30,20 @@
                     define("PASSWORDBDD","");
                 
                     $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
+                    $mdp_verif = "SELECT id,mdp,mail FROM users WHERE mail='".$_POST['mail']."'";
+                    $r = mysqli_fetch_assoc(mysqli_query($connexion,$mdp_verif));
+                    $verify = password_verify($_POST['mdp'],$r['mdp']);
 
-                    $req = "SELECT nom, mdp FROM users WHERE nom='".$_POST['nom']."' AND mdp='".$_POST['mdp']."'";
-                    $re = mysqli_query($connexion,$req);
-                    $exist = mysqli_num_rows($re);
-                
-                    if(!$exist){
+                    if(!$verify){
                         echo "<div class='alert alert-danger' role='alert'>Erreur de connexion</div>";
                     }
                     else{
                         session_start();
-                        $_SESSION['nom'] = $_POST['nom'];
+                        $_SESSION['mail'] = $_POST['mail'];
                         $_SESSION['mdp'] = $_POST['mdp'];
+                        $_SESSION['id'] = $r['id'];
 
-                        header("location: liste.php");
+                        header("location: liste.php?id=".$_SESSION['id']."");
                     }
                 ?>
            

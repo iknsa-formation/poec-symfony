@@ -17,6 +17,24 @@
                     <li><a class="active" href="index.php">Home</a></li>
                     <li><a href="inscription.php">Inscription</a></li>
                     <li><a href="connexion.php">Connexion</a></li>
+                    <?php
+                        define("SERVERBDD","localhost");
+                        define("NAMEBDD","formation");
+                        define("USERBDD","root");
+                        define("PASSWORDBDD","");
+
+                        $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
+
+                        if(session_start()){
+                            echo "<li style='margin-top:15px;'><b>Bonjour ".$_SESSION['mail']." "."</b></li>";
+                    ?>
+                    <li><button type="button" class="btn btn-outline-danger btn-sm" style='margin-top:10px; margin-left:10px;'><a href="deconnexion.php" style="color:red;">Déconnexion</a></button></li>
+                    <?php
+                        }
+
+                        $requete = "SELECT * FROM users WHERE id='".$_GET['id']."'";
+                        $r = mysqli_fetch_assoc(mysqli_query($connexion,$requete));
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -28,19 +46,7 @@
                 <br/>                
             </div>
         </div>
-            <?php
-                    define("SERVERBDD","localhost");
-                    define("NAMEBDD","formation");
-                    define("USERBDD","root");
-                    define("PASSWORDBDD","");
 
-                    $connexion = new mysqli(SERVERBDD,USERBDD,PASSWORDBDD,NAMEBDD);
-                
-                    session_start(); 
-        
-                    $requete = "SELECT * FROM users WHERE id='".$_GET['id']."'";
-                    $r = mysqli_fetch_assoc(mysqli_query($connexion,$requete));
-            ?>
         
         <div class="row">
             <div class="col-md-2"></div>
@@ -51,9 +57,9 @@
                     <label>Prénom*:</label>
                             <input type="text" class="form-control" name="prenom" id="prenom" required value="<?php echo $r['prenom'];?>">
                     <label>Mot de passe*:</label>
-                            <input type="text" class="form-control" name="mdp" id="mdp" required value="">
+                            <input type="password" class="form-control" name="mdp" id="mdp" required value="">
                     <label>Confirmer le nouveau mot de passe*:</label>
-                            <input type="text" class="form-control" name="conf_mdp" id="conf_mdp" required value="">
+                            <input type="password" class="form-control" name="conf_mdp" id="conf_mdp" required value="">
                     <label>Téléphone:</label>
                             <input type="text" class="form-control" name="tel" id="tel" maxlength="10" pattern="[0-9]{10}" value="<?php echo $r['telephone'];?>">
                     <label>Code Postal:</label>
@@ -66,7 +72,7 @@
                 </form>
             </div>
             <div class="col-md-2">
-                    <button type="button" class="btn btn-danger"><a href="delete.php?id=<?php echo $_GET['id'];?>" style="color:white;">Supprimer le compte</a></button>
+                <button type="button" class="btn btn-danger"><a href="delete.php" style="color:white;">Supprimer le compte</a></button>
             </div>
         </div>
     </div>
