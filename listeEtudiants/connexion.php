@@ -13,7 +13,7 @@ require_once 'db.php';
 </head>
 <body>
 	<main>
-		<form name="login" id= "login" action="membre.php" method="post">
+		<form name="login" id= "login" action="login.php" method="post">
 			<div class="form-group">
 				<label for="email">Email :</label>
 				<input type="text" name="email" id="email" required>

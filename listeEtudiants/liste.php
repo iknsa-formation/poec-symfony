@@ -1,5 +1,22 @@
 <?php
-	 require_once "db.php"
+	 require_once "db.php";
+
+	if(!isset($_SESSION)){
+        session_start();
+    }
+	//var_dump($_SESSION['prenom'],$_SESSION['nom']);die;
+
+if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
+              <ul>
+                <li class="btn btn-info">
+
+                    Bonjour <?= $_SESSION['prenom'] ." ".$_SESSION['nom'];?> <a href="logout.php" class="btn btn-danger">Logout</a>
+                </li>
+              </ul>
+                <?php else: ?>
+                    <a href="login" class="btn btn-primary">Sign in </a>  or
+                    <a href="inscription" class="btn btn-primary">Sign up</a>
+                <?php endif;
 ?> 
 
 <!DOCTYPE html>
