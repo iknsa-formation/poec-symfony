@@ -1,7 +1,6 @@
 <?php
 require_once 'db2.php';
 
-
 if (count($_POST)>0) {
   $prenom = $_POST ['prenom'];
   $nom = $_POST ['nom'];
@@ -11,7 +10,6 @@ if (count($_POST)>0) {
   $adresse = $_POST ['adresse'];
 }
 ?>
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -20,38 +18,21 @@ if (count($_POST)>0) {
     <title>BIENVENUE DE BASE</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
-// on teste si le visiteur a soumis le formulaire
-if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
-	// on teste l'existence de nos variables. On teste également si elles ne sont pas vides
-	if ((isset($email) && !empty($_POST['email'])) && (isset($_POST['mdp']) && !empty($_POST['mdp'])) && (isset($_POST['mdp_confirm']) && !empty($_POST['mdp']))) {
-	// on teste les deux mots de passe
-	if ($_POST['mdp'] != $_POST['mdp_confirm']) {
-		$erreur = 'Les 2 mots de passe sont différents.';
-	}
-	else {
-
-		// on recherche si ce email est déjà utilisé par un autre membre
+    if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
+    if ((isset($email) && !empty($_POST['email'])) && (isset($_POST['mdp']) &&
+    !empty($_POST['mdp'])) && (isset($_POST['mdp_confirm']) && !empty($_POST['mdp']))) {
+    if ($_POST['mdp'] != $_POST['mdp_confirm']) {
+    $erreur = 'Les 2 mots de passe sont différents.';
+	} else {
 		$sql = 'SELECT count(*) FROM crud WHERE email="'.$_POST['email'].'"';
 		$req = mysqli_query($connection,$sql);
 		$data = mysqli_fetch_array($req);
-    var_dump($_POST['nom']);
-    var_dump($_POST['prenom']);
-    var_dump($_POST['email']);
-    var_dump($_POST['mdp']);
-    var_dump($_POST['tel']);
-    var_dump($_POST['adresse']);
-
 		if ($data[0] == 0) {
 		$sql = 'INSERT INTO crud (prenom,nom,email,mdp,tel,adresse)
     VALUES("'.$_POST['prenom'].'","'.$_POST['nom'].'","'.$_POST['email'].'",
     "'.md5($_POST['mdp']).'", "'.$_POST['tel'].'","'.$_POST['adresse'].'")';
 		mysqli_query($connection,$sql);
-
-    // $sql = "INSERT INTO user(firstname,lastname,adresse,fonction)
-    // VALUES('".$prenom."', '".$nom."','".$adresse."', '".$fonction."')";
-    // $insert = mysqli_query ($connection,$sql);
-
-		session_start();
+    session_start();
 		$_SESSION['prenom'] = $_POST['prenom'];
 		$_SESSION['nom'] = $_POST['nom'];
 		$_SESSION['email'] = $_POST['email'];
@@ -71,7 +52,7 @@ if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
 </head>
 
 <body>
-Inscription à l'espace membre :<br />
+  Inscription à l'espace membre :<br />
   <form action="inscription.php" method="post">
     prenom: <input type="text" name="prenom" "
     <?php
@@ -94,7 +75,7 @@ Inscription à l'espace membre :<br />
       echo htmlentities(trim($_POST['mdp']));
       ?>">
       <br />
-      Confirmation du mot de passe*: <input type="password" name="mdp_confirm" value="" required=required"
+      Confirmation du mot de passe*: <input type="password" name="mdp_confirm" value="
       <?php
       if (isset($_POST['mdp_confirm']))
       echo htmlentities(trim($_POST['mdp_confirm']));
