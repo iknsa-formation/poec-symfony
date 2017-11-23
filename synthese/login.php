@@ -88,17 +88,6 @@
               }
             }
         }
-
-        $to      = 'msa.camara@gmail.com';
-     $subject = 'le sujet';
-     $message = 'Bonjour !';
-     $headers = 'From: webmaster@example.com' . "\r\n" .
-     'Reply-To: webmaster@example.com' . "\r\n" .
-     'X-Mailer: PHP/' . phpversion();
-
-    $x = mail($to, $subject, $message, $headers);
-  if ($x === true) echo 'yaaaaahhhhooo !!!';
-  else echo 'so bad :/';
         ?>
         <form action="" method="post">
             <div class="form-group">
