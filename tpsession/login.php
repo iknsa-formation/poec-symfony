@@ -29,7 +29,7 @@
                     <div class="account-wall">
                         <br/>
 
-                        <form class="form-signin text-center" method="post" action="inputdisplay.php">
+                        <form class="form-signin text-center" method="post" action="list.php">
 
                             <input name="email" type="text" class="form-control" placeholder="Email" required autofocus>
                             <br/>
