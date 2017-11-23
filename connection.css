@@ -7,10 +7,12 @@
 	margin-left:  40%;
 	margin-top: 14%;
 	border: 2px solid black;
+	box-shadow: 6px 6px 6px black;
 	width: 20%;
 	height: -20%;
 	padding-left: 60px;
 	padding-right: -10px;
+	
 	
 }
 
@@ -73,3 +75,5 @@
 	margin-top:-3%;
 	margin-right:-5%;
 }
+
+

@@ -1,16 +1,36 @@
 <?php
 require_once "data.php";
+?>
+    <html>
+
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <?php
+if(isset($_GET['id'])){
+	$id = $_GET["id"];
 	
 
-	$sql2 = "DELETE FROM users WHERE firstname='".$username."'";
-	mysqli_query($connection, $sql2);
-	if($sql2){
-		echo "supprimer";
-		
+
+	$sql ="DELETE  FROM users WHERE id='".$id."'";
+	$resultat1=mysqli_query($connection,$sql); 
+	
+	
+	if(mysqli_query($connection,$sql)){
+		echo '<div class="alert alert-dismissable alert-success">
+  <button type="button" class="close" data-dismiss="alert"></button>
+  <strong>Yes !</strong> user supprimer, Redirection dans 1 secondes ! <meta http-equiv="refresh" content="5; URL=http://localhost/poec-symphony/connecter(list).php">
+</div>';
 	}
-	else{
-		echo "na pas ete supprimer kooo";
-	}
+	else
+		{
+			echo "vous n'avez pas ete ajouter";
+		}
 
 
+// on ferme la connexion à la base
+mysqli_close($resultat1);
+}
 ?>

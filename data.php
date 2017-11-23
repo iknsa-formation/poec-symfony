@@ -4,7 +4,7 @@ $dbpass = '';
 $dbname ='site perso';
 $username ='root';
 
-define ('DBSERVER', 'localhost');
+define ('DBSERVER', 'poec-symphony.dev');
 define('DBUSER', 'root');
 define('DBPASS', '');
 define ('DBNAME', 'site perso');

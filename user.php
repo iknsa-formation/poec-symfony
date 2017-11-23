@@ -1,7 +1,9 @@
 <?php
 require_once "data.php";
 if(count($_POST)>0) {
-	$sql = "UPDATE users set firstname='" . $_POST["firstname"] . "',pseudo='" . $_POST["pseudo"] . "', email='" . $_POST["email"] ."' , password='".$_POST["password"]."' WHERE id='".$_POST["id"]."'";
+	$mot_de_passe =$_POST['password'];
+	$crypted = md5($mot_de_passe); 
+	$sql = "UPDATE users set firstname='" . $_POST["firstname"] . "',pseudo='" . $_POST["pseudo"] . "', email='" . $_POST["email"] ."' , password='".$crypted."' WHERE id='".$_POST["id"]."'";
 	$update = mysqli_query($connection,$sql);
 	if($update){
 ?>
