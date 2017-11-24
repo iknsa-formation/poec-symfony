@@ -67,11 +67,14 @@
 	echo "<p> méthode getAge : ".$unePersonne->getAge()." ans</p>";*/
 	require 'Personne1.php';
 	require 'Personne2.php';
+	require 'Voiture.php';
+
 	use personne1 as p1;
 	use personne2 as p2;
 
 	$toto = new p1\Personne();
 	$tutu = new p2\Personne();
+	$nissan = new Voiture();
 
 	echo $toto->setNom("Toto");
 	echo $tutu->setNom("Tutu");
@@ -79,4 +82,6 @@
 	echo $tutu->setSexe("Masculin");
 	echo "<p> méthode getNom de la class Personne depuis name space personne2 : ".$tutu->getNom()."</p>";
 	echo "<p> méthode getSexe de la class Personne depuis name space personne2 : ".$tutu->getSexe()."</p>";
+
+	echo " J'ai pas besoin de get/set mon constructeur le fait pour moi ! ".$nissan->nom;
 ?>
