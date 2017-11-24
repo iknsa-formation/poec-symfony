@@ -13,23 +13,23 @@
 </head>
 <body>
 	<header>
-		<ul class="nav justify-content-end">
-		  <li class="nav-item">
-		    <a class="nav-link active" href="#">Active</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="#">Link</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="#">Link</a>
-		  </li>
-		  <li class="nav-item">
-		  	<button type="submit" class="btn btn-danger" >Deconnexion</button>
-  		   </li>
-	</ul>
+		<nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="nav justify-content-end">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">Active</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Link</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Link</a>
+			  </li>
+			</ul>
+			</div>
+		</nav>
 	</header>
-	<h1>Bienvenue !</h1>
-
+		<h1>Bienvenue !</h1>
 	<form name="connexion" id="connexion" method="post" action="connexion.php">
 		<button type="submit" class="btn btn-primary btn-lg">Connection</button>
 	</form>

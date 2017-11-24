@@ -5,7 +5,6 @@
 	if(!isset($_SESSION)){
 		session_start();
 	}
-
 	 if (count($_POST) > 0) {
       $_SESSION['email'] =  $_POST['email'];
       $_SESSION['password'] =  $_POST['password'];

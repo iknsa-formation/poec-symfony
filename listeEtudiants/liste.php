@@ -4,7 +4,37 @@
 	if(!isset($_SESSION)){
         session_start();
     }
-	//var_dump($_SESSION['prenom'],$_SESSION['nom']);die;
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="css/style_form.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<title>Formulaire_table</title>
+</head>
+
+<body>
+	 <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+
+<?php
 
 if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
               <ul>
@@ -18,18 +48,10 @@ if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
                     <a href="inscription" class="btn btn-primary">Sign up</a>
                 <?php endif;
 ?> 
+			  </div>
+		</nav>
+</header>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-
-	<link rel="stylesheet" type="text/css" href="">
-	<link rel="stylesheet" href="css/style_form.css" />
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<title>Formulaire_table</title>
-</head>
-<body>
 	<table class="table table-striped" style="width: 70%">
 		<thead>
 			<caption style="font-size: 1.2em">Liste des étudiantes</caption>
