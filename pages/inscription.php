@@ -2,7 +2,6 @@
   require_once "../fonction.php";
   include_once "../head.html";
   include_once "../header.php";
-  verifSession();
 ?>
 <div class="row">
  <div class="col-sm-6 col-sm-offset-3">
