@@ -19,10 +19,11 @@ if (!isset($_SESSION['email'])) {
 </head>
 
 <body>
-Salut <?php
-echo htmlentities(trim($_SESSION['prenom']) ."  ". ($_SESSION['nom'])); ?><br />  Bah dis-donc... tu viens plus aux soirées ?
+Bonjour <?php
+echo htmlentities(trim($_SESSION['prenom']) ."  ". ($_SESSION['nom'])); ?>
+<br />Bienvenue. Modifie ta base ou deconnecte toi. <br />
 <br />
-<br />
+<button type="button" class="btn btn-primary"><a href="liste2.php" onclick="open('liste2.php', 'Popup', 'scrollbars=1,resizable=1,height=560,width=770'); return false;">Modifier Base</a></button>
 <button type="button" class="btn btn-danger"><a href="deconnexion.php">Deconnexion</a></button>
 </body>
 </html>
