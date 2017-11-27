@@ -11,14 +11,13 @@ if (count($_POST)>0){
 	$resultat = mysqli_query($connection,$query);
 	$row = mysqli_num_rows($resultat);
 	$crypted = md5($mot_de_passe); 	
-	
+
 	if( $row >0 )
 	{
 		echo "ce pseudo est deja utilise";
 	}
 	else{
 		$sql = "INSERT INTO users (firstname,pseudo,email,password) VALUES('".$prenom."','".$pseudo."','".$email."','".$crypted."')";
-
 		if(mysqli_query($connection,$sql))
 		{
 			echo '<div class="alert alert-dismissable alert-success">

@@ -1,7 +1,17 @@
-<?php 
+<?php
+session_start()
+?>
+<?php
 require_once "data.php";
 require_once "menu.php";
 
+if (empty($_SESSION['pseudo']))
+	{
+		echo '<center><font color="red" size="4"><b>Vous devez vous connecter pour acceder à la page <i></i></center></font><br />';
+	}
+	else
+	{
+		echo $_SESSION['pseudo'];
 
 $id = $_GET["id"];
 $query4 = "SELECT * FROM users WHERE id = $id"; 
@@ -30,7 +40,7 @@ $user= mysqli_fetch_assoc($resultat);
 
 <?php
 	mysqli_free_result($resultat);
-
+	}
 	?>
 
 
