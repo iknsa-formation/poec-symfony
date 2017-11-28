@@ -1,7 +1,6 @@
 <?php
 	 require_once "db.php"
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +11,22 @@
 	<title>Formulaire-etudiants</title>
 </head>
 <body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+		</nav>
+	</header>
 	<main>
 		<h2>Formulaire Inscription</h2>
 		<form action="inscription.php " method="POST">
@@ -27,6 +42,7 @@
 				<div class="form-group">
 					<label for="email">Email :</label>
 					<input type="text" name="email" id="email" placeholder="email"><br>
+				</div>
 				<div class="form-group">
 					<label for="password">Password :</label>
 					<input type="password" name="password" id="password" placeholder="password"><br>
@@ -38,7 +54,6 @@
 				<div class="form-group">
 					<label for="telephone">Telephone :</label>
 					<input type="text" name="telephone" id="telephone" placeholder="telephone"><br>
-				</div>
 				</div>
 				<div class="form-group">
 					<label for="adresse">Adresse :</label>

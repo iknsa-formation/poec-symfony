@@ -42,7 +42,7 @@
 			// conecction avec ma base de données et avec ma rêquete 
 			$insert = mysqli_query ($connection, $sql);
 			if ($insert) {
-				echo "<div class='alert alert-success'role='alert'>ok Super!</div>";
+				echo "<div class='alert alert-success'role='alert'>ok Super vous êtes bien inscrit!<img src='img/smile.jpg'></div>"; //set intervall
 			} else {
 				echo "<div class='alert alert-danger' role='alert'>Oups! Insertion échoué</div>";
 			}

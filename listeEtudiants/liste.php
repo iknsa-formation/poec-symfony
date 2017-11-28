@@ -5,7 +5,6 @@
         session_start();
     }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +15,9 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<title>Formulaire_table</title>
 </head>
-
 <body>
 	 <header>
         <nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
@@ -33,14 +30,12 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
               </li>
             </ul>
-
 <?php
-
 if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
               <ul>
                 <li class="btn btn-info">
 
-                    Bonjour <?= $_SESSION['prenom'] ." ".$_SESSION['nom'];?> <a href="logout.php" class="btn btn-danger">Logout</a>
+                    Bonjour <?= $_SESSION['prenom'] ." ".$_SESSION['nom'];?> <a href="deconnection.php" class="btn btn-danger">Logout</a>
                 </li>
               </ul>
                 <?php else: ?>
@@ -51,6 +46,7 @@ if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])): ?>
 			  </div>
 		</nav>
 </header>
+	<h1>Espace membre</h1>
 
 	<table class="table table-striped" style="width: 70%">
 		<thead>

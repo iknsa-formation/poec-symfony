@@ -20,9 +20,10 @@
                 $_SESSION['prenom'] = $value['prenom'];
                 $_SESSION['nom'] = $value['nom'];
                 header("Location:liste.php");
+                
               }else {
-              echo "<div class='alert alert-danger' role='alert'>
-                        Vous n'avez pas de compte. Voulez vous vous <a href='inscription.php'> inscrire ?</a>
+              echo "<div class='alert alert-danger' role='alert' style='color: red'>
+                        Vous n'avez pas de compte. Voulez vous vous <a href='form_inscription.php'> inscrire ?</a>
                     </div>";
           }
           }

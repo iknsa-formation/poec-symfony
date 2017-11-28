@@ -229,7 +229,7 @@ $couleur = new Constructeur;
 // l'héritage
 class Mere{
 	public function parent(){
-		$mere="Je suis la classe mere";
+		$mere="Je suis la classe mère.";
 		return $mere;
 	}
 }
@@ -242,9 +242,37 @@ class Fille extends Mere{
 }
 
 $objet =  new Fille();
-echo $objet->parent();
+echo $objet->parent(). "<br/>";
 echo '<br/>';
 echo $objet->enfant();
+echo '<br/>';
+echo '<br/>';
+
+//--------------------------
+
+class Mere1{
+	public function parent1(){
+		$mere1="Je suis la classe mère.";
+		return $mere1;
+	}
+}
+
+class Fille1 extends Mere1{
+	public function parent1(){
+/* Surchager la methode parent. */
+		$mere1 = Mere1::parent1();
+		// fin surchager
+		$mere1.="Je suis la classe Fille, j'herite de ma mere";
+		return $mere1;
+	}
+}
+
+$objet =  new Fille1();
+echo $objet->parent1(). "<br/>";
+
+
+//-------------------------------------------------
+// (principe de DRY)
 
 ?>
 

@@ -11,6 +11,22 @@
 	<title>Edit_liste</title>
 </head>
 <body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+		</nav>
+	</header>
 	<table class="table table-striped" style="width: 80%">
 		<thead>
 			<caption style="font-size: 1.2em">Liste des étudiantes</caption>
