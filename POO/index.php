@@ -274,5 +274,39 @@ echo $objet->parent1(). "<br/>";
 //-------------------------------------------------
 // (principe de DRY)
 
+class ArticleManager {
+
+	public function(array $article)
+	{
+		$db = new PDO("mysql:host=localhost;dbname=aston",'root','');
+
+		$ADD_ARTICLE = $db->prepare("
+			INSERT INTO 'article' ('titre', 'auteur','creatAT', 'image', 'message') VALUES(:titre, :auteur, NOW(), :image, :message)");
+
+	$ADD_ARTICLE->bindValue(':titre', $article["titre"]);	
+	$ADD_ARTICLE->bindValue(':auteur', $auteur["auteur"]);
+	$ADD_ARTICLE->bindValue(':image', $image["image"]);
+	$ADD_ARTICLE->bindValue(':message', $message["message"]);
+
+	//
+	if (!$ADD_ARTICLE->execute())
+	{
+
+		die('Unable to create article');
+	} else{
+	echo "insertion ok";	
+		}
+	$ADD_ARTICLE->closeCursor();
+
+	}
+}
+echo"<h1>Creation d'un utilisateur</h1>";
+$article = new ArticleManager();
+$article->addArticle(["titre" => "Le POO est cool !", "auteur" => "Veronica", "image" => "http://lespopines.l.e.pic.centerblog.net/o/7047f4e0.png" , "message" => "Bla bla bla" 
+]);
+
+
+
+
 ?>
 

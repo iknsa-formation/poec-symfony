@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="css/style_form.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
 	<title></title>
 </head>
 <body>
 <main>
-		<h2>Formulaire Inscription</h2>
+		<h2>Formulaire Utilisateur</h2>
 
 
-		<form action="inscription.php " method="POST">
+		<form action="utilisateur.php " method="POST">
 			<div class="form-row">
 				<div class="form-group"> 
-					<label for="nom">Nom :</label>
-					<input type="text" name="nom" id="nom" placeholder="nom"><br>
+					<label for="titre">Titre :</label>
+					<input type="text" name="titre" id="titre" placeholder="titre"><br>
 				</div>
 				<div class="form-group">
-					<label for="prenom">Prenom :</label>
-					<input type="text" name="prenom" id="prenom" placeholder="prenom"><br>
+					<label for="auteur">Auteur :</label>
+					<input type="text" name="auteur" id="auteur" placeholder="auteur"><br>
 				</div>
 				<div class="form-group">
-					<label for="email">Email :</label>
-					<input type="text" name="email" id="email" placeholder="email"><br>
+					<label for="image">Image :</label>
+					<input type="text" name="image" id="image" placeholder="image"><br>
 				</div>
-
+				<div class="form-group">
+					<textarea name="textarea" id="message" placeholder="Votre message" rows="8" cols="40"></textarea><br>
+				</div>
 				<div>
 					<input type="submit" class="btn btn-primary">
 				</div>
 			</div>
 		</form>
 	</main>
-
-
 </body>
 </html>
 
-<?php
-
-class Personne{
-
-
-}
-
-class Animal{
-
-
-
-
-
-}
-?>
