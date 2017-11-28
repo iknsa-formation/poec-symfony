@@ -8,13 +8,20 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-		<div class="container">
+      <header>
+	
 	<div class="jumbotron">
-     <!-- <div class="btn-group btn-group-lg" role="button" aria-label="...">
-      <a href="index.html" target="_blank" type="html" class="btn btn-primary">
-        Ajouter</a>.</div>  -->
+     <div class="btn-group btn-group-lg" role="button" aria-label="...">
+      <a href="inscription.php" target="_blank" type="html" class="btn btn-primary">
+        Ajouter</a></div> 
+        <br />
+        <div class="btn-group btn-group-lg" role="button" aria-label="...">
+      <a href="loghout.php" target="_blank" type="html" class="btn btn-primary">
+        Se déconnecter</a></div> 
     <div class="container">
     <h1>Liste de étudiants</h1>
+        </header>
+        	<div class="container">
       <tbody>
         <table class="table maclasse">
           <thead>
@@ -22,15 +29,16 @@
               <th  scope ="col">#</th>
               <th  scope ="col">Prénom</th>
               <th  scope ="col">Nom</th>
-              <th  scope ="col">Email</th>
+              <th  scope ="col">Email</th>    
               <th  scope ="col">Tel</th>
-							<th  scope ="col">Adresse</th>
-							<th  scope ="col">ACTION</th>
+              <th  scope ="col">Adresse</th>
+              <th  scope ="col">EDITER</th>
+              <th  scope ="col">SUPPRIMER</th>
             <tr>
           </thead>
        <tbody>
 <?php
-    $sql = "SELECT * FROM MEMBER";
+    $sql = "SELECT * FROM MEMBERS";
     $resultat = mysqli_query ($connection,$sql);
     /* mysqli_fetch_row()result ->fetch_row() récupère une ligne de résultat sous forme de tableau indexé
     while ($row = mysqli_fetch_row($resultat)) {
@@ -44,11 +52,11 @@
       <td><?php echo $row["id"]; ?></td>
       <td><?php echo $row["firstname"]; ?></td>
       <td><?php echo $row["lastname"]; ?></td>
+      <td><?php echo $row["email"]; ?></td>
+      <td><?php echo $row["tel"]; ?></td>
       <td><?php echo $row["adresse"]; ?></td>
-      <td><?php echo $row["fonction"]; ?></td>
-
-			<td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="img/edit.png"></a></td>
-			<td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="img/delete.png"></a></td>
+      <td><a href="edit.php?id=<?php echo $row['id'] ?>"><img src="../img/edit.png"/></a></td>
+      <td><a href="delete.php?id=<?php echo $row['id'] ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><img src="../img/delete.png"/></a></td>
 	  </tr>
     <?php
     }

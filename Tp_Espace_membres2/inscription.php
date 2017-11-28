@@ -1,35 +1,29 @@
 <?php
-
-    require_once 'db.php';
-
-      //  if(isset($_SESSION['password'])) {
-      //     $password = $_POST['password'];
-    //    }
-
+require_once "db.php";
          if (count($_POST) > 0) {
        $prenom = $_POST['firstname'];
        $nom = $_POST['lastname'];
-      $password = $_POST['password'];
+       $password = $_POST['password'];
        $email = $_POST['email'];
        $tel = $_POST['tel'];
        $adresse = $_POST['adresse'];
-      $hash = password_hash($_POST['password'],PASSWORD_BCRYPT);
-
-      // var_dump($password);
-       $requete = "SELECT email from member where email ='".$email."'";
-       $isExist = mysqli_num_rows(mysqli_query($connection,$requete));
-               if ($isExist > 0) {
+       $hash = password_hash($_POST['password'],PASSWORD_BCRYPT);
+       $isExist = "SELECT email FROM members where email ='".$email."'";
+       $exist = mysqli_query($connection,$isExist);
+             $var = mysqli_num_rows($exist);
+            // echo ($isExist);
+               if ($var > 0) {
          echo "<div class='alert alert-danger' role='alert'>
-             Utilisateur existe deja
+             Cet Utilisateur existe deja
            </div>";
        } else {
-                   $sql = "INSERT INTO member VALUES ('".$prenom."','".$nom."','".$email."','".$hash."','".$tel."','".$adresse."')";
+                   $sql = "INSERT INTO members(firstname,lastname,password,email,tel,adresse) VALUES ('".$prenom."','".$nom."','".$hash."','".$email."','".$tel."','".$adresse."')";
                    $insert =  mysqli_query($connection,$sql);
          if ($insert) {
            echo "<div class='alert alert-success' role='alert'>
              This is a success alert—check it out!
            </div>";
-           header("Location:liste.php/");
+           header("Location:liste.php");
          }
        }
      }

@@ -1,0 +1,14 @@
+body
+{
+  padding: 10px;
+}
+
+form#f1
+{
+  padding: 20px;
+}
+
+label
+{
+  padding-left: 20px;
+}
