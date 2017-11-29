@@ -35,10 +35,21 @@
 				echo '<p>Lastname : '.$row['lastname'].'</p>';
 			}
 		}
-	}
-	//
-	$art = new UsersManager();
+		public function updateUser($user){
+			$USERS = $this->bd->prepare('UPDATE users set lastname=:lastname   where id=:id');
 
+			$USERS->bindValue(":id",$user["id"]);
+			$USERS->bindValue(":lastname",$user["lastname"]);
+
+			if($USERS->execute()){
+				echo "MAJ éffectuée";
+			}else{
+				echo "KOOOOOOOO!";
+			}
+		}
+	}
+	$art = new UsersManager();
 	//$art->insertUser(["firstname"=>"Dalton","lastname"=>"Djo","adresse"=>"918 stephen avenue","fonction"=>"Lead dev"]);
-	$art->afficherUsers();
+	//$art->afficherUsers();
+	$art->updateUser(["id"=>17,"lastname"=>"Avrel"]);
 ?>
