@@ -47,9 +47,19 @@
 				echo "KOOOOOOOO!";
 			}
 		}
+		public function deleteUser($user){
+			$USERS = $this->bd->prepare('DELETE FROM users where id=:id');
+
+			$USERS->bindValue(":id",$user["id"]);
+			if($USERS->execute()){
+				echo "Delete éffectué";
+			}else{
+				echo "KOOOOOOOO!";
+			}
+		}
 	}
 	$art = new UsersManager();
 	//$art->insertUser(["firstname"=>"Dalton","lastname"=>"Djo","adresse"=>"918 stephen avenue","fonction"=>"Lead dev"]);
 	//$art->afficherUsers();
-	$art->updateUser(["id"=>17,"lastname"=>"Avrel"]);
+	$art->deleteUser(["id"=>4]);
 ?>
