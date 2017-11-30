@@ -27,13 +27,14 @@ class ArticleManager {
 	}
 }
 echo"<h1>Creation d'un utilisateur</h1>";
+
 $article = new ArticleManager();
+
 $titre = $_POST['titre'];
 $auteur = $_POST['auteur'];
 $image = $_POST['image'];
 $message = $_POST['message'];
-var_dump($message);die;
-$article->addArticle(["titre" => $titre, "auteur" => $auteur, "image" => $image, "message" => $message 
-]);
+
+$article->addArticle(["titre" => $titre, "auteur" => $auteur, "image" => $image, "message" => $message]);
 
 ?>

@@ -9,7 +9,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<link rel="stylesheet" type="text/css" href="">
 	<link rel="stylesheet" href="css/style_form.css" />
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">

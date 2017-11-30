@@ -12,7 +12,6 @@
 <main>
 		<h2>Formulaire Utilisateur</h2>
 
-
 		<form action="utilisateur.php " method="POST">
 			<div class="form-row">
 				<div class="form-group"> 
@@ -28,7 +27,7 @@
 					<input type="text" name="image" id="image" placeholder="image"><br>
 				</div>
 				<div class="form-group">
-					<textarea name="textarea" id="message" placeholder="Votre message" rows="8" cols="40"></textarea><br>
+					<textarea name="message" id="message" placeholder="Votre message" rows="8" cols="40"></textarea><br>
 				</div>
 				<div>
 					<input type="submit" class="btn btn-primary">
