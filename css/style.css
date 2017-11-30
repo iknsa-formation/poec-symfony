@@ -1,0 +1,23 @@
+.navbar{
+  margin-top: 5px;
+  background-color: #18223a;
+
+}
+.navbar-light .navbar-brand
+{
+	color: #fff;
+}
+.navbar-light .navbar-nav .nav-link{
+	color: #fff;
+}
+.img-valign {
+  vertical-align: middle;
+
+  margin-bottom: 0.75em;
+  width: 30%;
+}
+td
+{
+	text-align: center;
+	
+}
