@@ -1,28 +1,39 @@
 <?php
-require "DAO/parametes.php";
-class DAO extends PDO{
-	private $parametre =null;	
-	public function __construc(){
-		$this->parametre = (new Parametre())->get();
-		if(
-			!isset($this->parametre["dbhost"])||
-			!isset($this->parametre["dbname"])||
-			!isset($this->parametre["dbuser"])||
-			!isset($this->parametre["dbpassword"]))
-		{
-			die("Il manque des informations pour se connecter à la base de donnée");
-		}	
-	
-	 function connect(){
-		try{
-			return new PDO(
-				'mysql:host=".$this->parametre["dbhost"].";dbname=".$this->parametre["dbname"].";dbuser=".$this->parametre["dbuser"].";dbpassword=".$this->parametre["dbpassword"]."'
-			);
-		}
-		catch(Exception $e){
-			die('Erreur : ' . $e->getMessage());
-		}
-	}
-}
+require 'DAO/parametes.php';
+
+class DAO
+{
+    private $parameters = null;
+
+    public function __construct()
+    {
+        $this->parameters = (new Parameters())->get();
+        if (
+            !isset($this->parameters["dbhost"]) ||
+            !isset($this->parameters["dbname"]) ||
+            !isset($this->parameters["dbuser"]) ||
+            !isset($this->parameters["dbpass"]) 
+        ) {
+            die("Il manque les informations pour se connecter à la base de donnée");
+        }
+    }
+
+    public function connect()
+    {
+        try {
+            return new PDO(
+                "mysql:host=" . $this->parameters["dbhost"] .
+                ";dbname=" . $this->parameters["dbname"] . ";",
+                $this->parameters["dbuser"], $this->parameters["dbpass"]
+            );
+        } catch (\PDOException $e) {
+            if (!$this->parameters["debug"]) {
+                exit("Unable to connect to db");
+            } else {
+                var_dump($e);
+                exit("Unable to connect to db");
+            }
+        }
+    }
 }
 ?>

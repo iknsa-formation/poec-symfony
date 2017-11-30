@@ -1,5 +1,5 @@
-<?php
-try{
+<!--<?php
+/*try{
     $dbConnection = new PDO('mysql:host=localhost;dbname=pdo','root','');
     $dbConnection->exec("SET CHARACTER SET utf8");
     echo "connection reussi";
@@ -28,12 +28,12 @@ foreach($data as $row){
                     <th>'.$row["nom"].'</th>
                     <th>'.$row["titre"].'</th>
                     <th>'.$row["auteur"].'</th>
-                </tr>';
+                </tr>'
                 
 }
-   echo '</table>';
+   echo '</table>';*/
 
-$stmt=$dbConnection->prepare("INSERT INTO article(auteur, nom, titre) VALUES (:auteur, :nom, :titre)");
+/*$stmt=$dbConnection->prepare("INSERT INTO article(auteur, nom, titre) VALUES (:auteur, :nom, :titre)");
 $stmt->bindParam(':auteur', $auteur);
 $stmt->bindParam(':nom', $nom);
 $stmt->bindParam(':titre', $titre);	
@@ -41,10 +41,10 @@ $stmt->bindParam(':titre', $titre);
 $auteur = 'fee';
 $nom = "abed";
 $titre = "le bleue";
-$stmt->execute();
+$stmt->execute();*/
 
-?>
-    <form name="form" action="#" method="POST" enctype="multipart/form-data">
+?>-->
+   <!-- <form name="form" action="#" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend><em>Ajout d'un Article</em></legend>
             <table align="center">
@@ -81,3 +81,4 @@ $stmt->execute();
             </table>
         </fieldset>
     </form>
+-->
