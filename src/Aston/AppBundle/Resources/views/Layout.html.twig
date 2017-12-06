@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/main.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css') }}" type="text/css" />
+			{% endblock %}
+		
+	</head>
+
+	
+	{% include "AstonAppBundle:Default:navigation.html.twig" %}
+	{% block body %}
+		<h1 id="text">Bienvenue</h1>
+		<img id="image1" src="{{ asset('bundles/framework/images/test.png') }}" alt="" />
+	{% endblock %}
+	
+	
+
+
+
+</html>
