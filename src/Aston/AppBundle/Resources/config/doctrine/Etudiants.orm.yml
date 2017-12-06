@@ -1,0 +1,21 @@
+Aston\AppBundle\Entity\Etudiants:
+    type: entity
+    table: null
+    repositoryClass: Aston\AppBundle\Repository\EtudiantsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '25'
+        firstname:
+            type: string
+            length: '25'
+        mail:
+            type: string
+            length: '25'
+    lifecycleCallbacks: {  }
