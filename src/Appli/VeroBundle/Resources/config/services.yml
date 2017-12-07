@@ -1,0 +1,4 @@
+services:
+#    appli_vero.example:
+#        class: Appli\VeroBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

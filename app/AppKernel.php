@@ -15,7 +15,14 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+<<<<<<< Updated upstream
             new Aston\AppBundle\AstonAppBundle(),
+=======
+            new Appli\VeroBundle\AppliVeroBundle(),
+            new IKNSA\AppBundle\IKNSAAppBundle(),
+            new IKNSA\BlogBundle\IKNSABlogBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+>>>>>>> Stashed changes
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

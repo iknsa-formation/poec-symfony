@@ -1,0 +1,7 @@
+appli_vero_friend:
+    resource: "@AppliVeroBundle/Resources/config/routing/friend.yml"
+    prefix:   /friend
+
+appli_vero_homepage:
+    path:     /test
+    defaults: { _controller: AppliVeroBundle:Default:index }
