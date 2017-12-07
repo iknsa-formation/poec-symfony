@@ -1,0 +1,8 @@
+aston_app_etudiant:
+    resource: "@AstonAppBundle/Controller/EtudiantController.php"
+    type:     annotation
+
+aston_app:
+    resource: "@AstonAppBundle/Resources/config/routing.yml"
+    prefix:   /
+

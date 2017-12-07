@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="class">
+
+    <h3>Creation d'un nouveau étudiant</h3>
+        {{ form_start(form) }}
+        {{ form_label (form.nom, 'Votre nom')}}
+            {{ form_widget(form.nom,{ 'attr': {'class':'form-control'} }) }}
+
+        {{ form_start(form) }}
+        {{ form_label (form.prenom, 'Votre prenom')}}
+            {{ form_widget(form.prenom,{ 'attr': {'class':'form-control'} }) }}
+
+        {{ form_label(form.email, 'votre email') }}
+            {{ form_widget(form.email,{ 'attr':{'class':'form-control'} }) }}
+
+            <input type="submit" class= "btn-primary" value="Create" />
+        
+        
+        {{ form_end(form) }}
+     </div>
+{# 
+    <ul>
+        <li>
+            <a href="{{ path('etudiant_index') }}">Back to the list</a>
+        </li>
+    </ul> #}
+{% endblock %}

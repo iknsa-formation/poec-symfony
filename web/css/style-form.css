@@ -1,4 +1,4 @@
-main{
+div .class{
 	background: white;
 	width: 30%;
 	height: 40%;
@@ -8,7 +8,7 @@ main{
     left: 20%;
 	}
 
-form {
+.class {
 	background: white;
 	width: 400px;
 	height: 300px;
@@ -22,4 +22,3 @@ form {
 	padding-right: 30px;
     left: 20%;
 }
-

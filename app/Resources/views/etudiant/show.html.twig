@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <h1 >Liste Etudiants</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th scope="row">Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Nom</th>
+                <td>{{ etudiant.nom }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Prenom</th>
+                <td>{{ etudiant.prenom }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Email</th>
+                <td>{{ etudiant.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('etudiant_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('etudiant_edit', { 'id': etudiant.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
+
