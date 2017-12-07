@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+       <div id="content" class="row">
+        <div  class="col-md-6">
+       <h3>Welcome to </h3>
+              <h2>ONLINE ACADEMY</h2>
+            <p>We are dedicated to enabling aspiring students to make informed decisions on their path to academic success. We help students to recognize their individual needs, and provide them with the information they require to match themselves with an instruction that will polish their skills and help them grow as professionals.</p>
+        </div>
+         <div class="col-md-6">
+            <center><h1>Log In | <a href="#">Register</a></h1></center>
+            <div>
+            <form class="log" method="POST" action="#">
+              <label for="uname" style="padding-left: 130px" >Identifiant
+              </label><br>
+              <center><input type="text" id="uname" name="username" placeholder="Identifiant"></center>
+
+              <label for="pword" style="padding-left: 130px">Mot de Passe
+              </label>
+              <br>
+              <center><input type="text" id="pword" name="password" placeholder="Mot de Passe"></center>
+              <a href="#" style="padding-left: 130px">Mot de passe oublié?</a>
+              <br><br>
+              <center><input type="submit" value="Log In"></center>
+            </form></div>
+        </div>
+       </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+{% endblock %}
+{% block body %}
+    <h1>Etudiants list</h1>
+
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td><a href="{{ path('etudiant_show', { 'id': etudiant.id }) }}">{{ etudiant.id }}</a></td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.Email }}</td>
+                <td>{{ etudiant.telephone }}</td>
+                <td>
+                            <a href="{{ path('etudiant_show', { 'id': etudiant.id }) }}">show</a>
+                            </td>
+                       
+                        
+                        <td>
+                            <a href="{{ path('etudiant_edit', { 'id': etudiant.id }) }}">edit</a>
+                            </td>
+            </tr>
+        {% endfor %}
+        <tr>
+        <td colspan="7" style="text-align=center"><a href="{{ path('etudiant_new') }}">Create a new etudiant</a></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

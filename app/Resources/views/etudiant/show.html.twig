@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Etudiant</h1>
+
+    <table class="table table-responsive table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ etudiant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ etudiant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ etudiant.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-secondary"><a href="{{ path('etudiant_index') }}">Back to the list</a></button>
+        
+            <button class="btn btn-warning"><a href="{{ path('etudiant_edit', { 'id': etudiant.id }) }}">Edit</a></button>
+     <br><br>
+            {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            {{ form_end(delete_form) }}
+{% endblock %}

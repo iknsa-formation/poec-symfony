@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Friend creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+<br>
+        <button type="submit" class="btn btn-secondary">CREATE</button>
+    {{ form_end(form) }}
+
+<br>
+   
+            <button class="btn btn-secondary"> <a href="{{ path('friend_index') }}">Back to the list</a></button>
+        
+{% endblock %}

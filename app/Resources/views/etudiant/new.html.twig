@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+ {% block header %}
+
+{% endblock %}
+{% block body %}
+    <h1>Etudiant creation</h1>
+
+
+    {{ form_start(form) }}
+              
+        {{ form_widget(form,{'class' : 'log'}) }}
+        <br>
+        <input type="submit" value="Create" /> 
+
+    {{ form_end(form) }}
+
+   <br>
+            <button class="btn btn-secondary"><a href="{{ path('etudiant_index') }}">Back to the list</a></button>
+        
+{% endblock %}
+
+

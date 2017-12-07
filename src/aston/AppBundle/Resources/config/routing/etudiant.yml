@@ -1,0 +1,32 @@
+etudiant_index1:
+    path:  /   
+    defaults: { _controller: "astonAppBundle:Etudiant:index1" }
+    methods:  GET
+etudiant_about:
+    path:     /about
+    defaults: { _controller: "astonAppBundle:Etudiant:about" }
+    methods:  GET
+etudiant_index:
+    path:     /index
+    defaults: { _controller: "astonAppBundle:Etudiant:index" }
+    methods:  GET
+
+etudiant_show:
+    path:     /{id}/show
+    defaults: { _controller: "astonAppBundle:Etudiant:show" }
+    methods:  GET
+
+etudiant_new:
+    path:     /new
+    defaults: { _controller: "astonAppBundle:Etudiant:new" }
+    methods:  [GET, POST]
+
+etudiant_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "astonAppBundle:Etudiant:edit" }
+    methods:  [GET, POST]
+
+etudiant_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "astonAppBundle:Etudiant:delete" }
+    methods:  DELETE

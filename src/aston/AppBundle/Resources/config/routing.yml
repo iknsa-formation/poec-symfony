@@ -1,0 +1,7 @@
+aston_app_etudiant:
+    resource: "@astonAppBundle/Resources/config/routing/etudiant.yml"
+    prefix:   /etudiant
+
+aston_app_homepage:
+    path:     /
+    defaults: { _controller: astonAppBundle:Default:index }
