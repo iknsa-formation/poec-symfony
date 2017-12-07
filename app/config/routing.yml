@@ -1,0 +1,4 @@
+aston_app:
+    resource: "@AstonAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
