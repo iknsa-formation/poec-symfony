@@ -1,0 +1,22 @@
+Aston\AppBundle\Entity\Ecole:
+    type: entity
+    table: null
+    repositoryClass: Aston\AppBundle\Repository\EcoleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '60'
+        prenom:
+            type: string
+            length: '60'
+            nullable: true
+        email:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

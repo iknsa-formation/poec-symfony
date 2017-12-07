@@ -1,0 +1,12 @@
+aston_app:
+    resource: "@AstonAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+iknsa_app:
+    resource: "@IKNSAAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+article:
+    resource: "@ArticleBundle/Resources/config/routing.yml"
+    prefix:   /
+

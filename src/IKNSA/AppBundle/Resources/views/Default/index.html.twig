@@ -1,0 +1,25 @@
+{% extends 'IKNSAAppBundle::layout.html.twig' %}
+
+{% block naviguation %}{% endblock %}
+{% block body %}
+    {% set table = ["Josh","Nash"] %}
+    {% for i in range(0,10,step=2) %}
+        <p> {{loop.index}} => {{ i }} </p>
+        {% if (loop.first) %}
+            <p> First </p>
+        {% endif %}
+        {% if (loop.last) %}
+            <p> Last </p>
+        {% endif %}
+    {% endfor %}
+    <p> Table :</p>
+    {% for i in table %}
+        {% if (loop.first) %}
+            <p>{{ i }} {{ i|upper }}</p>
+        {% endif %}
+        <p>{{ i }}</p>
+        {% if (loop.last) %}
+            <p>{{ i|lower }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

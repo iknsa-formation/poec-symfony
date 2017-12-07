@@ -1,0 +1,24 @@
+ecole_index:
+    path:     /
+    defaults: { _controller: "AstonAppBundle:Ecole:index" }
+    methods:  GET
+
+ecole_show:
+    path:     /{id}/show
+    defaults: { _controller: "AstonAppBundle:Ecole:show" }
+    methods:  GET
+
+ecole_new:
+    path:     /new
+    defaults: { _controller: "AstonAppBundle:Ecole:new" }
+    methods:  [GET, POST]
+
+ecole_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AstonAppBundle:Ecole:edit" }
+    methods:  [GET, POST]
+
+ecole_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AstonAppBundle:Ecole:delete" }
+    methods:  DELETE
