@@ -9,9 +9,11 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {% include 'AstonAppBundle:Default:navigation.html.twig' %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-        {% include 'app/Resources/views/etudiants/navigation.html.twig' %}  
+          
+  
 <!--                     AstonAppBundle:Default:navigation.html.twig  
      -->    </body>
 </html>
