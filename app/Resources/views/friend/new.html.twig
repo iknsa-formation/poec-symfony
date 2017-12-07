@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Friend creation</h1>
+
+    {{ form_start(form) }}
+     <div class="form-group">
+    {{ form_label(form.name, 'Your Name') }}
+       {{ form_widget(form.name,{ 'attr': { 'class':'form-control'} }) }}
+    
+    {{ form_label(form.email, 'Your email') }}
+        {{ form_widget(form.email,{ 'attr': { 'class':'form-control'} }) }}
+
+    {{ form_label(form.tel, 'Your tel') }}
+        {{ form_widget(form.tel,{ 'attr': { 'class':'form-control'} }) }}
+
+        <input type="submit" class="btn btn-primary" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('friend_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

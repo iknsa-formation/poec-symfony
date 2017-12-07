@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Layout testing</title>
+
+    <link rel="stylesheet" type="text/css" 
+    href="{{asset('css/style.css')}}">
+</head>
+<body>
+{% block header %}
+    <h1>Header</h1>
+    <hr>
+{% endblock %}
+
+
+	
+	{% block navigation %}
+    <h3>navigation</h3>
+    {% include 'IKNSAAppBundle:Default:navigation.html.twig' %}
+    <hr>
+{% endblock %}
+{% block body %}{% endblock %}
+</body>
+</html>
