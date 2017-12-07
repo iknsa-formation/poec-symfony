@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Eleve</h1>
+
+    <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Id</th>
+     <th>Nom</th>
+     <th>Prenom</th>
+     <th>Email</th>
+     <th>choix</th>
+     </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <td>{{ eleve.id }}</td>
+               
+                <td>{{ eleve.nom }}</td>
+        
+                <td>{{ eleve.prenom }}</td>
+            
+                
+                <td>{{ eleve.email }}</td>
+                 <td><ul>
+                        <li>
+                        <a href="{{ path('eleve_index') }}">Back to the list</a>
+                        </li>
+                         <li>
+                        <a href="{{ path('eleve_edit', { 'id': eleve.id }) }}">Edit</a>
+                        </li></ul>
+                </td>
+                </tr>
+        </tbody>
+    </table>
+
+   
+      
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        
+{% endblock %}

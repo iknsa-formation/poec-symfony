@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Layout testing</title>
+</head>
+<body>
+{% block header %}
+<h1>header</h1>
+<hr>
+{% endblock %}
+{% block navigation %}
+<h3>navigation</h3>
+{%include 'IKNSAAppBundle:Default:navigation.html.twig'%}
+<hr>
+{% endblock %}
+{% block body %}{% endblock %}
+</body>
+</html>
+

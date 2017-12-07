@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <center> <h1>Liste des etudiants</h1></center>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eleve in eleves %}
+            <tr>
+                <td><a href="{{ path('eleve_show', { 'id': eleve.id }) }}">{{ eleve.id }}</a></td>
+                <td>{{ eleve.nom }}</td>
+                <td>{{ eleve.prenom }}</td>
+                <td>{{ eleve.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('eleve_show', { 'id': eleve.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('eleve_edit', { 'id': eleve.id }) }}">edit</a>
+                        </li>
+                         <li>
+                            <a href="{{ path('eleve_new') }}">Create a new eleve</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

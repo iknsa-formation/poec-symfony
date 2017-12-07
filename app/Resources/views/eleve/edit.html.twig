@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Eleve edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <button type="submit" class="btn btn-warning">Modifier</button>
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+        
+            <button type ="submit" class="btn btn-danger"><a href="{{ path('eleve_index') }}">Retour à la liste</a></button>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+          <button type="submit" class="btn btn-info">supprimer</button>
+                
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

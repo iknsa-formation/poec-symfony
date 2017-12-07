@@ -1,0 +1,38 @@
+{% include 'IKNSAAppBundle:Default:fileToInclude.html.twig'%}<br>
+{% for i in range(0,10, step=2)%}
+{{ loop.index }}=>{{i}}<br>
+{% endfor %}
+
+
+
+{% set myArray =["alfred",'hitchcock','Arsène', 'Lupin']%}
+{% for nom in myArray %}
+{{loop.index}} =>{{nom }}<br>
+{% endfor %}
+
+
+
+{% set myArray =["alfred",'<i>hitchcock</i>','arsène', 'lupin']%}
+{% for nom in myArray%}
+{{loop.index}} =><b>nom upper</b>: {{nom|upper}}
+<br><br>
+<b>{{ nom|lower }}
+<br><br>
+{% endfor %}
+
+
+
+
+{% set myArray =["alfred",'<i>hitchcock</i>','arsène', 'lupin']%}
+{% for nom in myArray %}
+{{loop.index}} =><b>nom raw</b>:
+<b>{{ nom|raw }}
+<br><br>
+{% endfor %}
+
+
+
+{{ "now"|date(null, "Europe/Paris")}}
+<br>
+<br>
+{{"now"|date('D d/m/y H:i:s', "Europe/Paris")}}
