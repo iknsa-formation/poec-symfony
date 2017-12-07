@@ -1,0 +1,7 @@
+iknsa_app_homepage:
+    path:     /
+    defaults: { _controller: IKNSAAppBundle:Default:index }
+
+iknsa_app_homepage:
+    path:     /ecole
+    defaults: { _controller: IKNSAAppBundle:Default:ecole }

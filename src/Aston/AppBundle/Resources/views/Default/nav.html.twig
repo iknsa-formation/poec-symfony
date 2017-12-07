@@ -1,0 +1,15 @@
+
+   	{% block nav %}
+   	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active btn btn-outline-primary " href="{{ path('intro_crud_homepage') }}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link btn btn-outline-primary" href="{{path ('etudiant_index')}}">Liste des étudiants</a>
+      <a class="nav-item nav-link btn btn-outline-primary" href="{{path ('etudiant_new')}}">Ajouter un étudiant</a>
+     
+    </div>
+  </div>
+</nav>
+	{% endblock %}

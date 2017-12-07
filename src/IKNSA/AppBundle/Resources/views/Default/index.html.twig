@@ -1,0 +1,39 @@
+{# Boucle <br> <br>
+{%   for i in range(0, 10, step=2) %}
+	{{ loop.index }} =>  {{ i }} <br>
+{% endfor %} <br> <br>
+
+Boucle sur un tableau <br> <br>
+{%   set myArray = ["Alfred", "Hitchcock", "Arsène", "Lupin" ]  %}
+{% for nom in myArray %}
+	{{ loop.index}} => {{ nom }} <br>
+{% endfor %} <br> <br>
+
+
+Upper <br> <br>
+{%   set myArray = ["Alfred", "Hitchcock", "Arsène", "Lupin" ]  %}
+{% for nom in myArray %}
+	{{ loop.index}} => <b> nom upper </b> {{ nom|upper }} <br><br>
+{% endfor %}<br> <br>
+
+Raw <br> <br>
+{%   set myArray = ["Alfred", "<i> Hitchcock </i>", "Arsène", "Lupin" ]  %}
+{% for nom in myArray %}
+	{{ loop.index}} =>b> nom raw </b> {{ nom|raw }} <br><br>
+{% endfor %}<br> <br>
+
+Date
+{{ "now"|date(null, "Europe/Paris")}}
+<br>
+{{ "now"|date("D d/m/y H:i:s" , "Europe/Paris") }}
+<br> <br>
+{% include 'IKNSAAppBundle:Default:fileToInclude.html.twig' %} #}
+{% extends 'IKNSAAppBundle::layout.html.twig' %}
+ {# {% block navigation %}{% endblock %} #}
+ {% block header %}
+<h1>Index </h1>
+
+ {% endblock %}
+{% block body %}
+votre contenu ici
+{% endblock %}
