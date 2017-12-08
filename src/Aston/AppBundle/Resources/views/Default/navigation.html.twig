@@ -1,14 +1,46 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/framework/css/navigation.css') }}" type="text/css" />
+	{% endblock %}
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="{{ path('aston_app_homepage') }}">Home</a>
+  <a class="navbar-brand" id="home" href="{{ path('aston_app_homepage') }}">Home</a>
   
   <!-- Links -->
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" id="liste" href="{{ path('etudiants_index') }}">Liste des Etudiants</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="ajouter1" href="{{ path('etudiants_new') }}">Ajouter un etudiant</a>
-    </li>
+	  <div class="dropdown" id="espace">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Etudiant
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" id="listeetudiant" href="{{ path('etudiants_index') }}">Liste des etudiants</a>
+    <a class="dropdown-item" id="ajouteretudiant" href="{{ path('etudiants_new') }}">Ajouter un etudiant</a>
+  </div>
+</div>
+	    <div class="dropdown" id="espace">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Article
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" id="listearticle" href="{{ path('articles_index') }}">Liste des articles</a>
+    <a class="dropdown-item" id="ajouterarticle" href="{{ path('articles_new') }}">Ajouter un article</a>
+  </div>
+</div>
+	  <div class="dropdown" id="espace">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Poste
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" id="listeposte" href="{{ path('post_index') }}">Liste des postes</a>
+    <a class="dropdown-item" id="ajouterposte" href="{{ path('post_new') }}">Ajouter un Poste</a>
+  </div>
+</div>
   </ul>
+	<a class="btn btn-secondary" id="connection" href="{{ path('fos_user_security_login') }}">Connection</a>
+<a class="btn btn-secondary" id="inscription" href="{{ path('fos_user_registration_register') }}">Inscription</a>
 </nav>
+
+
+
+
+

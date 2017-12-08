@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/framework/css/ajouterposte.css') }}" type="text/css" />
+	{% endblock %}
+
+{% block body %}
+    <h1 id="text">Creation du poste</h1>
+<div id="test">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+</div>
+	
+
+    
+{% endblock %}
+
+

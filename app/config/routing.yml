@@ -1,3 +1,14 @@
+iknsa_blog_articles:
+    resource: "@IKNSABlogBundle/Controller/ArticlesController.php"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+iknsa_blog:
+    resource: "@IKNSABlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 aston_app_etudiants:
     resource: "@AstonAppBundle/Controller/EtudiantsController.php"
     type:     annotation
@@ -5,4 +16,3 @@ aston_app_etudiants:
 aston_app:
     resource: "@AstonAppBundle/Resources/config/routing.yml"
     prefix:   /
-
