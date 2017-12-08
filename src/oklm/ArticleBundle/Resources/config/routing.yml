@@ -3,5 +3,5 @@ article_article:
     prefix:   /article
 
 article_homepage:
-    path:     /
+    path:     /apparticle
     defaults: { _controller: ArticleBundle:Default:index }

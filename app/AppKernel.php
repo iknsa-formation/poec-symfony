@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new oklm\ArticleBundle\ArticleBundle(),
             new IKNSA\AppBundle\IKNSAAppBundle(),
             new Aston\AppBundle\AstonAppBundle(),
+            new IKNSA\BlogBundle\IKNSABlogBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
