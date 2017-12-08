@@ -3,5 +3,5 @@ aston_app_etudiant:
     prefix:   /etudiant
 
 aston_app_homepage:
-    path:     /
+    path:     /test1
     defaults: { _controller: astonAppBundle:Default:index }

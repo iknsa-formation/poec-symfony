@@ -1,3 +1,4 @@
+
 .navbar
 {
   margin-top: 5px;
@@ -72,9 +73,10 @@ footer p{
   color: #ce891a;
   background-color: transparent;
 } 
+
 #content
 {
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
-
 

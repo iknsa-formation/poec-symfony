@@ -1,3 +1,7 @@
+iknsa_blog:
+    resource: "@IKNSABlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 aston_app:
     resource: "@astonAppBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,4 +9,7 @@ aston_app:
 intro_crud:
     resource: "@introCrudBundle/Resources/config/routing.yml"
     prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
