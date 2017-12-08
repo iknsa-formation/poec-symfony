@@ -1,0 +1,19 @@
+{% block nav %}
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li background="#ffe5e5" class="active" foc="foc">
+          <a href="{{path('blog_blog_homepage')}}">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="{{path('post_index')}}">Liste des utilisateurs</a>
+        </li>
+        <li>
+          <a href="{{path('post_new')}}">Creer un utilisateur</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}

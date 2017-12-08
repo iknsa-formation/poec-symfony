@@ -3,5 +3,5 @@ intro_crud_friend:
     prefix:   /friend
 
 intro_crud_homepage:
-    path:     /
+    path:     /INTRO
     defaults: { _controller: introCrudBundle:Default:index }

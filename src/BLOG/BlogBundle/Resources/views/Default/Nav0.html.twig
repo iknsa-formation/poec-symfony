@@ -1,0 +1,19 @@
+{% block nav %}
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li background="#ffe5e5" class="active" foc="foc">
+          <a href="{{path('intro_crud_homepage')}}">
+            MAISON
+          </a>
+        </li>
+        <li>
+          <a href="{{path('etudiants_index')}}">Liste des étudiants</a>
+        </li>
+        <li>
+          <a href="{{path('etudiants_new')}}">Ajouter étudiant</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
