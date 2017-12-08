@@ -1,5 +1,5 @@
 iknsa_app_homepage:
-    path:     /aston
+    path:     /astondf
     defaults: { _controller: IKNSAAppBundle:Default:index }
 
 iknsa_app_ecole:
