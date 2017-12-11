@@ -1,3 +1,7 @@
+blog_bblog:
+    resource: "@blogBblogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 aston_app_etudiants:
     resource: "@AstonAppBundle/Controller/EtudiantsController.php"
     type:     annotation
@@ -6,3 +10,6 @@ aston_app:
     resource: "@AstonAppBundle/Resources/config/routing.yml"
     prefix:   /
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /

@@ -1,0 +1,3 @@
+blog_bblog_homepage:
+    path:     /vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig
+    defaults: { _controller: blogBblogBundle:Default:register }

@@ -1,0 +1,25 @@
+blog\BblogBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: blog\BblogBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: text
+        summary:
+            type: text
+        content:
+            type: text
+        createdAt:
+            type: datetime
+            column: created_at
+        author:
+            type: text
+        image:
+            type: text
+    lifecycleCallbacks: {  }
