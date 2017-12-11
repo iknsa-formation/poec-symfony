@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="{{ asset('bundles/framework/css/listearticle.css') }}" type="text/css" />
 	{% endblock %}
 
-{% block body %}
+{% block body  %}
     <h1 id="text">Articles list</h1>
 
-    <table class="table">
+    <table class="table table-info">
         <thead>
-            <tr>
+            <tr class="table table-warning">
                 <th>Id</th>
                 <th>Actions</th>
             </tr>
@@ -31,10 +31,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('articles_new') }}">Create a new article</a>
-        </li>
-    </ul>
 {% endblock %}

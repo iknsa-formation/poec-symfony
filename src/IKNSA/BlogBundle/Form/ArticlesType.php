@@ -12,6 +12,11 @@ class ArticlesType extends AbstractType
     /**
      * {@inheritdoc}
      */
+	public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('auteur')->add('titre');
+    }
+	
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

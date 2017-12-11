@@ -2,16 +2,16 @@
 {% block stylesheets %}
 			<link rel="stylesheet" href="{{ asset('bundles/framework/css/Liste.css') }}" type="text/css" />
 			<link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css') }}" type="text/css" />
-			<link rel="stylesheet" href="{{ asset('bundles/framework/css/main.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/listeposte.css') }}" type="text/css" />
 			{% endblock %}
 
 {% block body %}
 	
-    <h1 class="textliste">liste des postes</h1>
+    <h1 id="text">liste des postes</h1>
 
-    <table id="table" class="table">
+    <table id="table" class="table table-info">
         <thead>
-            <tr>
+            <tr class="table-warning">
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Summary</th>

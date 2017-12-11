@@ -5,10 +5,11 @@
 
 {% block body %}
     <h1 id="text">Creation du poste</h1>
-<div id="test">
+<div id="form">
+		<img id="image1" src="{{ asset('bundles/framework/image/poste.png') }}" alt="" />
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input id="input" type="submit" value="Create" />
     {{ form_end(form) }}
 </div>
 	

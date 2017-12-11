@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('bundles/framework/css/ajoutetudiants.cs') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/ajoutetudiants.css') }}" type="text/css" />
 			<link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css') }}" type="text/css" />
 			{% endblock %}
 
 {% block body %}
     <h1 id="text">Creation de l'etudiant</h1>
 <div id="form">
-    {{ form_start(form) }}
+	<img id="image1" src="{{ asset('bundles/framework/image/etudiant.png') }}" alt="" />
+    {{ form_start(form)  }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input id="input" type="submit" value="Create" />
     {{ form_end(form) }}
 </div>
 

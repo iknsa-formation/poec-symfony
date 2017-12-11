@@ -4,16 +4,14 @@
 	{% endblock %}
 
 {% block body %}
-    <h1>Article creation</h1>
+    <h1 id="text">Article creation</h1>
 
+	<div id="form">
+			<img id="image1" src="{{ asset('bundles/framework/image/article.png') }}" alt="" />
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input id="input" type="submit" value="Create" />
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('articles_index') }}">Back to the list</a>
-        </li>
-    </ul>
+</div>
+    
 {% endblock %}
