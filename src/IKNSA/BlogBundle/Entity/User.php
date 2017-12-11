@@ -23,4 +23,9 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="IKNSA\BlogBundle\Entity\User")
+     */
+    protected $user;
 }
