@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
@@ -14,10 +14,10 @@
    ici le block header
     {%endblock%}
       {% block nav %}
-<nav class="nav nav-pills nav-justified">
+      <nav class="nav nav-pills nav-justified">
   <a class="nav-item nav-link active" href="{{ path('app_homepage') }}">Accueil</a>
-  <a class="nav-item nav-link" href="{{ path('post_index') }}">Liste des etudiant</a>
-  <a class="nav-item nav-link" href="{{ path('post_new') }}">Ajouter un etudiants</a>
+  <a class="nav-item nav-link" href="{{ path('eleve_index') }}">Liste des eleves</a>
+  <a class="nav-item nav-link" href="{{ path('eleve_new') }}">Ajouter un eleve</a>
   <a class="nav-item nav-link disabled" href="#">Retour</a>
 </nav>
 {% endblock %}

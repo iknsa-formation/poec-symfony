@@ -1,0 +1,24 @@
+post_index:
+    path:     /
+    defaults: { _controller: "AstonBlogBundle:Post:index" }
+    methods:  GET
+
+post_show:
+    path:     /post/{id}/show 
+    defaults: { _controller: "AstonBlogBundle:Post:show" }
+    methods:  GET
+
+post_new:
+    path:     /new
+    defaults: { _controller: "AstonBlogBundle:Post:new" }
+    methods:  [GET, POST]
+
+post_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AstonBlogBundle:Post:edit" }
+    methods:  [GET, POST]
+
+post_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AstonBlogBundle:Post:delete" }
+    methods:  DELETE

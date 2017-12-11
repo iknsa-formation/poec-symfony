@@ -1,0 +1,7 @@
+aston_blog_post:
+    resource: "@AstonBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+aston_blog_homepage:
+    path:     /
+    defaults: { _controller: AstonBlogBundle:Default:index }
