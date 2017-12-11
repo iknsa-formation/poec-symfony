@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('IKNSABlogBundle:Default:index.html.twig');
     }
+
+    public function aboutAction()
+    {
+        return $this->render('IKNSABlogBundle:Default:about.html.twig');
+    }
 }

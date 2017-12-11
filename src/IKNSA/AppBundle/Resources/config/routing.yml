@@ -1,5 +1,5 @@
 iknsa_app_homepage:
-    path:     /
+    path:     /app
     defaults: { _controller: IKNSAAppBundle:Default:index }
 
 iknsa_app_etudiant:
