@@ -2,10 +2,12 @@ post_index1:
     path:  /   
     defaults: { _controller: "IKNSABlogBundle:Post:index1" }
     methods:  GET
+    
 post_about:
     path:     /about
     defaults: { _controller: "IKNSABlogBundle:Post:about" }
     methods:  GET
+
 post_index:
     path:     /index
     defaults: { _controller: "IKNSABlogBundle:Post:index" }

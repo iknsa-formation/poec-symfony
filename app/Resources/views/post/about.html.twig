@@ -23,7 +23,11 @@
       </li>
     </ul>
     <div class="navbar-form ml-auto">
-        
+      
+      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+         Bonjour {{ app.user.username }}
+      {% endif %}
+        <a href="http://localhost/projetaston/web/app_dev.php/login"><button type="button" class="btn btn-secondary">Log In</button></a>
         <a href="http://localhost/projetaston/web/app_dev.php/logout"><button type="button" class="btn btn-secondary">Log Out</button></a>
     </div>
   </div>

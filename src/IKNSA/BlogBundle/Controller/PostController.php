@@ -14,7 +14,11 @@ class PostController extends Controller
 {
     public function index1Action()
     {
-        
+        /*if($this->getUser()) 
+        {
+            $this->addFlash('notice', getUser());
+            
+        }*/
 
         return $this->render('post/index1.html.twig');
        
@@ -31,7 +35,11 @@ class PostController extends Controller
      *
      */
     public function indexAction()
-    {
+    {   
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'Ooops!!! Please get yourself logged in to access this page');
+            return $this->redirectToRoute('post_index1');
+        }
         $em = $this->getDoctrine()->getManager();
 
         $posts = $em->getRepository('IKNSABlogBundle:Post')->findAll();
@@ -47,22 +55,31 @@ class PostController extends Controller
      */
     public function newAction(Request $request)
     {
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'Ooops!!! Please get yourself logged in to access this page');
+            return $this->redirectToRoute('post_index1');
+        }
         $post = new Post();
         $form = $this->createForm('IKNSA\BlogBundle\Form\PostType', $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $post->setUser($this->getUser());
             $em->persist($post);
             $em->flush();
 
             return $this->redirectToRoute('post_show', array('id' => $post->getId()));
         }
 
+        
+
         return $this->render('post/new.html.twig', array(
             'post' => $post,
             'form' => $form->createView(),
         ));
+
+
     }
 
     /**
@@ -71,6 +88,10 @@ class PostController extends Controller
      */
     public function showAction(Post $post)
     {
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'Ooops!!! Please get yourself logged in to access this page');
+            return $this->redirectToRoute('post_index1');
+        }
         $deleteForm = $this->createDeleteForm($post);
 
         return $this->render('post/show.html.twig', array(

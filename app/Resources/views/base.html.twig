@@ -36,6 +36,7 @@
       </li>
     </ul>
     <div class="navbar-form ml-auto">
+      
         <a href="http://localhost/projetaston/web/app_dev.php/login"><button type="button" class="btn btn-secondary">Log In</button></a>
         <a href="http://localhost/projetaston/web/app_dev.php/logout"><button type="button" class="btn btn-secondary">Log Out</button></a>
     </div>
@@ -48,15 +49,16 @@
 
         {% endblock %}
 
+        
+
+        <!-- {% block header %}
+Bienvenue
+{% endblock %} -->
+        {% block body %}
+
         {% block main %}
        
         {% endblock %}
-
-        {% block header %}
-Bienvenue
-{% endblock %}
-        {% block body %}
-
 
         {% endblock %}
          </div>

@@ -23,7 +23,11 @@
       </li>
     </ul>
     <div class="navbar-form ml-auto">
-        
+      
+      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+         Bonjour {{ app.user.username }}
+      {% endif %}
+        <a href="http://localhost/projetaston/web/app_dev.php/login"><button type="button" class="btn btn-secondary">Log In</button></a>
         <a href="http://localhost/projetaston/web/app_dev.php/logout"><button type="button" class="btn btn-secondary">Log Out</button></a>
     </div>
   </div>
@@ -45,8 +49,8 @@
                 <th>Titre</th>
                 <th>Summary</th>
                 <th>Content</th>
-                <th>Createdat</th>
                 <th>Author</th>
+                <th>Created_At</th>
                 <th>Image</th>
                 <th colspan="2">Action</th>
             </tr>
@@ -58,9 +62,21 @@
                 <td>{{ post.titre }}</td>
                 <td>{{ post.summary }}</td>
                 <td>{{ post.content }}</td>
+                <td>
+                    {% if post.user %}
+                        {{ post.user.username }}
+                    {% else %}
+                        <i>Annonymous</i>
+                    {% endif %}
+                </td>
                 <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ post.author }}</td>
-                <td>{{ post.image }}</td>
+                <td>
+                 {% if post.getImage %}
+                        <img src="{{ asset('uploads/pictures/' ~ post.getImage) }}" style="width:75px;max-height:75px;">
+                    {% else %}
+                        <i>null</i>
+                    {% endif %}
+                </td>
                 <td>
                             <a href="{{ path('post_show', { 'id': post.id }) }}"><button type="button" class="btn btn-secondary">Show</button></a>
                             </td>

@@ -80,3 +80,13 @@ footer p{
   margin-bottom: 10px;
 }
 
+#left
+{
+  background-color: #40acdc;
+  color: #fff;
+}
+
+.ml-auto
+{
+  color: #fff;
+}

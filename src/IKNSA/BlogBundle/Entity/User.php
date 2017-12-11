@@ -18,14 +18,14 @@ class User extends BaseUser
      */
     protected $id;
 
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="IKNSA\BlogBundle\Entity\User")
-     */
-    protected $user;
+    
+
+    
 }
