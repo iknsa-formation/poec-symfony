@@ -22,7 +22,7 @@ class etudiantsController extends Controller
 
         $etudiants = $em->getRepository('ASTONAppBundle:etudiants')->findAll();
 
-        return $this->render('etudiants/index.html.twig', array(
+        return $this->render('ASTONAppBundle:etudiants:index.html.twig', array(
             'etudiants' => $etudiants,
         ));
     }
@@ -45,7 +45,7 @@ class etudiantsController extends Controller
             return $this->redirectToRoute('etudiants_show', array('id' => $etudiant->getId()));
         }
 
-        return $this->render('etudiants/new.html.twig', array(
+        return $this->render('ASTONAppBundle:etudiants:new.html.twig', array(
             'etudiant' => $etudiant,
             'form' => $form->createView(),
         ));
