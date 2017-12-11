@@ -9,9 +9,9 @@
 {% block body %}
     <h1 id="text">Etudiants liste</h1>
 
-    <table class="table table-bordered">
+    <table class="table table-info table-bordered">
         <thead>
-            <tr>
+            <tr class="table-warning">
                 <th>Id</th>
                 <th>Name</th>
                 <th>Firstname</th>
@@ -40,5 +40,10 @@
         {% endfor %}
         </tbody>
     </table>
+	{% for flash in app.session.flashBag.get('notice') %}
+<div id="notice" class="notice alert alert-notice">
+{{ flash }}
+</div>
+{% endfor %}
 {% endblock %}
 

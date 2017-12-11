@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('bundles/framework/css/Liste.css') }}" type="text/css" />
 			<link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css') }}" type="text/css" />
 			<link rel="stylesheet" href="{{ asset('bundles/framework/css/listeposte.css') }}" type="text/css" />
 			{% endblock %}
@@ -9,7 +8,7 @@
 	
     <h1 id="text">liste des postes</h1>
 
-    <table id="table" class="table table-info">
+    <table id="table" class="table table-info table-bordered">
         <thead>
             <tr class="table-warning">
                 <th scope="col">Id</th>
@@ -39,7 +38,7 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('post_show', { 'id': post.id }) }}">show</a>
+                            <a href="{{ path('post_show', { 'id': post.id }) }}"><img id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
                         </li>
                         <li>
                             <a href="{{ path('post_edit', { 'id': post.id }) }}">edit</a>
@@ -51,5 +50,9 @@
         </tbody>
     </table>
 
-    
+    {% for flash in app.session.flashBag.get('notice') %}
+<div id="notice" class="notice alert alert-notice">
+{{ flash }}
+</div>
+{% endfor %}
 {% endblock %}

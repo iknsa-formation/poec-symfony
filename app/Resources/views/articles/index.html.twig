@@ -1,34 +1,44 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('bundles/framework/css/listearticle.css') }}" type="text/css" />
-	{% endblock %}
+	<link rel="stylesheet" href="{{ asset('bundles/framework/css/listearticle.css') }}" type="text/css" />
+{% endblock %}
+
+
 
 {% block body  %}
-    <h1 id="text">Articles list</h1>
+	<h1 id="text">Articles list</h1>
 
-    <table class="table table-info">
-        <thead>
-            <tr class="table table-warning">
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('articles_show', { 'id': article.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('articles_edit', { 'id': article.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table table-info">
+		<thead>
+			<tr class="table table-warning table-bordered">
+				<th>auteur</th>
+				<th>titre</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for article in articles %}
+				<tr>
+					<td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
+					<td>
+						<ul>
+							<li>
+								<a href="{{ path('articles_show', { 'id': article.id }) }}">show</a>
+							</li>
+							<li>
+								<a href="{{ path('articles_edit', { 'id': article.id }) }}">edit</a>
+							</li>
+						</ul>
+					</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+</table>
+	{% for flash in app.session.flashBag.get('notice') %}
+		<div id="notice" class="notice alert alert-notice">
+			{{ flash }}
+</div>
+	{% endfor %}
 {% endblock %}
+
+
+

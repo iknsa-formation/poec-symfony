@@ -39,6 +39,10 @@ class EtudiantsController extends Controller
      */
     public function newAction(Request $request)
     {
+		if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
+            return $this->redirectToRoute('etudiants_index');
+        }
         $etudiant = new Etudiants();
         $form = $this->createForm('Aston\AppBundle\Form\EtudiantsType', $etudiant);
         $form->handleRequest($request);
@@ -46,6 +50,7 @@ class EtudiantsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($etudiant);
+			$post->setUser($this->getUser());
             $em->flush();
 
             return $this->redirectToRoute('etudiants_show', array('id' => $etudiant->getId()));

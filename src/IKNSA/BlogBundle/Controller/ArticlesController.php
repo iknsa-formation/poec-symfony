@@ -38,14 +38,20 @@ class ArticlesController extends Controller
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
-    {
+		{
+
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
+            return $this->redirectToRoute('articles_index');
+        }
         $article = new Articles();
         $form = $this->createForm('IKNSA\BlogBundle\Form\ArticlesType', $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
+			$post->setUser($this->getUser());
+            $em->persist($articles);
             $em->flush();
 
             return $this->redirectToRoute('articles_show', array('id' => $article->getId()));
