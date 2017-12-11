@@ -1,21 +1,22 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('bundles/framework/css/listeposte.css') }}" type="text/css" />
-	{% endblock %}
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/Liste.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('bundles/framework/css/main.css') }}" type="text/css" />
+			{% endblock %}
 
 {% block body %}
 	
     <h1 class="textliste">liste des postes</h1>
 
-    <table id="table">
+    <table id="table" class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Summary</th>
-                <th>Content</th>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Summary</th>
+                <th scope="col">Content</th>
                 <th>Createdat</th>
-                <th>Author</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -28,8 +29,13 @@
                 <td>{{ post.summary }}</td>
                 <td>{{ post.content }}</td>
                 <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ post.author }}</td>
-                <td>{{ post.image }}</td>
+                <td>
+                    {% if post.getImage %}
+                        <img src="{{ asset('uploads/pictures/' ~ post.getImage) }}" style="width:75px;max-height:75px;">
+                    {% else %}
+                        <i>null</i>
+                    {% endif %}
+                </td>
                 <td>
                     <ul>
                         <li>
