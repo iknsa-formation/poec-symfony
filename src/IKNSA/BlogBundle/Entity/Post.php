@@ -4,11 +4,16 @@ namespace IKNSA\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * Post
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="IKNSA\BlogBundle\Repository\PostRepository")
+ * @Vich\Uploadable
  */
 class Post
 {
@@ -57,9 +62,13 @@ class Post
 	private $author;
 
 	/**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @Assert\File(
+     *     maxSize="1M",
+     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
+     * )
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="titre")
+     * @ORM\Column(name="image", type="string", length=255, nullable=true))
+     * @var File $image
      */
 	private $image;
 
@@ -252,4 +261,26 @@ class Post
 	{
 		return $this->user;
 	}
+    
+    public function upload()
+    {
+        if (null === $this->getFile()) {
+            return;
+        }
+        // check if we have an old image
+        if (isset($this->temp)) {
+            // delete the old image
+            unlink($this->temp);
+            // clear the temp image path
+            $this->temp = null;
+        }
+        // you must throw an exception here if the file cannot be moved
+        // so that the entity is not persisted to the database
+        // which the UploadedFile move() method does
+        $this->getFile()->move(
+            $this->getUploadRootDir(),
+            $this->id.'.'.$this->getFile()->guessExtension()
+        );
+        $this->setFile(null);
+    }
 }

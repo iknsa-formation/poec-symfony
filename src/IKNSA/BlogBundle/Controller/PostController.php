@@ -33,13 +33,19 @@ class PostController extends Controller
      */
     public function newAction(Request $request)
     {
+
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
+            return $this->redirectToRoute('post_index');
+        }
+
         $post = new Post();
         $form = $this->createForm('IKNSA\BlogBundle\Form\PostType', $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-			$post->setUser($this->getUser());
+            $post->setUser($this->getUser());
             $em->persist($post);
             $em->flush();
 
@@ -99,6 +105,7 @@ class PostController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $advert->getImage()->upload();
             $em = $this->getDoctrine()->getManager();
             $em->remove($post);
             $em->flush();
@@ -120,6 +127,6 @@ class PostController extends Controller
             ->setAction($this->generateUrl('post_delete', array('id' => $post->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }
