@@ -1,3 +1,11 @@
+iknsa_blog_user:
+        resource: "@IKNSABlogBundle/Resources/config/routing/user.yml"
+        prefix:   /user
+
+iknsa_blog_posts:
+    resource: "@IKNSABlogBundle/Resources/config/routing/posts.yml"
+    prefix:   /posts
+
 iknsa_blog_homepage:
     path:     /
     defaults: { _controller: IKNSABlogBundle:Default:index }
