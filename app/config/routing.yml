@@ -1,3 +1,7 @@
+tpsfb_blog:
+    resource: "@TPSFBBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 aston_app:
     resource: "@AstonAppBundle/Resources/config/routing.yml"
     prefix:   /
@@ -10,3 +14,5 @@ intro_crud:
     resource: "@introCrudBundle/Resources/config/routing.yml"
     prefix:   /
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

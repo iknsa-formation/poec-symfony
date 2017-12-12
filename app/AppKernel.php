@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new intro\CrudBundle\introCrudBundle(),
             new IKNSA\AppBundle\IKNSAAppBundle(),
             new Aston\AppBundle\AstonAppBundle(),
+            new TPSFB\BlogBundle\TPSFBBlogBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
