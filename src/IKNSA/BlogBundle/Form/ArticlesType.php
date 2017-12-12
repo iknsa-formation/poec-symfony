@@ -17,6 +17,9 @@ class ArticlesType extends AbstractType
         $builder->add('auteur')->add('titre');
     }
 	
+	/**
+     * {@inheritdoc}
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

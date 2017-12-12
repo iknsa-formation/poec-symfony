@@ -50,8 +50,7 @@ class ArticlesController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-			$post->setUser($this->getUser());
-            $em->persist($articles);
+            $em->persist($article);
             $em->flush();
 
             return $this->redirectToRoute('articles_show', array('id' => $article->getId()));

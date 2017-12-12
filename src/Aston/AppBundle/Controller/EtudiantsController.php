@@ -50,7 +50,6 @@ class EtudiantsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($etudiant);
-			$post->setUser($this->getUser());
             $em->flush();
 
             return $this->redirectToRoute('etudiants_show', array('id' => $etudiant->getId()));

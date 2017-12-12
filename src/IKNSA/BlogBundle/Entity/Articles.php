@@ -24,14 +24,14 @@ class Articles
 	/**
      * @var string
      *
-     * @ORM\Column(name="auteur", type="string", length=255)
+     * @ORM\Column(name="auteur", type="string", length=255 ,nullable=true)
      */
     private $auteur;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=255)
+     * @ORM\Column(name="titre", type="string", length=255 ,nullable=true)
      */
     private $titre;
 

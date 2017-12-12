@@ -13,26 +13,29 @@
 			<tr class="table table-warning table-bordered">
 				<th>auteur</th>
 				<th>titre</th>
+				<th>action</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for article in articles %}
 				<tr>
-					<td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-					<td>
-						<ul style="list-style-type: none;">
-							<li>
-								<a href="{{ path('articles_show', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
-							</li>
-							<li>
-								<a href="{{ path('articles_edit', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
-							</li>
-						</ul>
-					</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-</table>
+					<td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a>
+					<td>{{ article.auteur }}</td>
+					<td>{{ article.titre }}</td>
+		<td>
+			<ul style="list-style-type: none;">
+				<li>
+					<a href="{{ path('articles_show', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
+				</li>
+				<li>
+					<a href="{{ path('articles_edit', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
+				</li>
+			</ul>
+		</td>
+		</tr>
+{% endfor %}
+	</tbody>
+	</table>
 	{% for flash in app.session.flashBag.get('notice') %}
 		<div id="notice" class="notice alert alert-notice">
 			{{ flash }}
