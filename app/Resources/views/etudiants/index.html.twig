@@ -9,7 +9,7 @@
 {% block body %}
     <h1 id="text">Etudiants liste</h1>
 
-    <table class="table table-info table-bordered">
+    <table class="table table-info table-bordered" style=" border-collapse: separate;border-spacing: 20px 32px;">
         <thead>
             <tr class="table-warning">
                 <th>Id</th>
@@ -27,12 +27,12 @@
                 <td>{{ etudiant.firstname }}</td>
                 <td>{{ etudiant.email }}</td>
                 <td>
-                    <ul>
+                    <ul style="list-style-type: none;">
                         <li>
-                            <a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}">show</a>
+                            <a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
                         </li>
                         <li>
-                            <a href="{{ path('etudiants_edit', { 'id': etudiant.id }) }}">edit</a>
+                            <a href="{{ path('etudiants_edit', { 'id': etudiant.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
                         </li>
                     </ul>
                 </td>

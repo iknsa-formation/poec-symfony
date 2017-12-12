@@ -8,16 +8,16 @@
 	
     <h1 id="text">liste des postes</h1>
 
-    <table id="table" class="table table-info table-bordered">
+    <table id="table" class="table table-info table-bordered" style=" border-collapse: separate;border-spacing: 20px 32px;">
         <thead>
             <tr class="table-warning">
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Summary</th>
                 <th scope="col">Content</th>
-                <th>Createdat</th>
-                <th>Image</th>
-                <th>Actions</th>
+                <th scope="col">Createdat</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -36,12 +36,12 @@
                     {% endif %}
                 </td>
                 <td>
-                    <ul>
+                    <ul style="list-style-type: none;" >
                         <li>
                             <a href="{{ path('post_show', { 'id': post.id }) }}"><img id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
                         </li>
                         <li>
-                            <a href="{{ path('post_edit', { 'id': post.id }) }}">edit</a>
+                            <a href="{{ path('post_edit', { 'id': post.id }) }}"><img id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
                         </li>
                     </ul>
                 </td>

@@ -6,9 +6,9 @@
 
 
 {% block body  %}
-	<h1 id="text">Articles list</h1>
+	<h1 id="text">Articles liste</h1>
 
-	<table class="table table-info">
+	<table class="table table-info" style=" border-collapse: separate;border-spacing: 20px 32px;">
 		<thead>
 			<tr class="table table-warning table-bordered">
 				<th>auteur</th>
@@ -20,12 +20,12 @@
 				<tr>
 					<td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
 					<td>
-						<ul>
+						<ul style="list-style-type: none;">
 							<li>
-								<a href="{{ path('articles_show', { 'id': article.id }) }}">show</a>
+								<a href="{{ path('articles_show', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
 							</li>
 							<li>
-								<a href="{{ path('articles_edit', { 'id': article.id }) }}">edit</a>
+								<a href="{{ path('articles_edit', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
 							</li>
 						</ul>
 					</td>
