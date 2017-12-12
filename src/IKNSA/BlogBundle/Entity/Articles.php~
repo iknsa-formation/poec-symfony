@@ -51,11 +51,11 @@ class Articles
      *
      * @param string $auteur
      *
-     * @return Etudiants
+     * @return Article
      */
     public function setAuteur($auteur)
     {
-        $this->name = $auteur;
+        $this->auteur = $auteur;
 
         return $this;
     }
@@ -73,13 +73,13 @@ class Articles
 	/**
      * Set name
      *
-     * @param string $name
+     * @param string $title
      *
-     * @return Etudiants
+     * @return Article
      */
     public function setTitre($titre)
     {
-        $this->name = $titre;
+        $this->titre = $titre;
 
         return $this;
     }
