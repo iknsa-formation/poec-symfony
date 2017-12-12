@@ -22,11 +22,11 @@
         <tbody>
         {% for etudiant in etudiants %}
             <tr>
-                <td><a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}">{{ etudiant.id }}</a></td>
-                <td>{{ etudiant.name }}</td>
-                <td>{{ etudiant.firstname }}</td>
-                <td>{{ etudiant.email }}</td>
-                <td>
+                <td style="background-color:lightblue"><a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}">{{ etudiant.id }}</a></td>
+                <td style="background-color:LightSeaGreen ">{{ etudiant.name }}</td>
+                <td style="background-color:lightblue">{{ etudiant.firstname }}</td>
+                <td style="background-color:LightSeaGreen">{{ etudiant.email }}</td>
+                <td style="background-color:lightblue">
                     <ul style="list-style-type: none;">
                         <li>
                             <a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
