@@ -10,23 +10,38 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     </head>
     <body>
+  {%block flash%}
+    {% for flash in app.session.flashBag.get('notice') %} <div id="notice" class="notice alert alert-notice">
+            {{ flash }}
+        </div>
+  }
+{% endfor %}
+{%endblock%}
     {%block header%}
    ici le block header
     {%endblock%}
       {% block nav %}
 <nav class="nav nav-pills nav-justified">
   <a class="nav-item nav-link active" href="{{ path('app_homepage') }}">Accueil</a>
-  <a class="nav-item nav-link" href="{{ path('post_index') }}">Liste des etudiant</a>
-  <a class="nav-item nav-link" href="{{ path('post_new') }}">Ajouter un etudiants</a>
+  <a class="nav-item nav-link" href="{{ path('post_index') }}">Lister</a>
+  <a class="nav-item nav-link" href="{{ path('post_new') }}">Ajouter</a>
   <a class="nav-item nav-link disabled" href="#">Retour</a>
 </nav>
 {% endblock %}
+
+<div class="container">
+  {% block content %}{% endblock %}
+</div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
    
+   
+   <div class="footer">
    {%block footer%}
-   ici le block footer
-    {%endblock%}
+     kaoutar AIT OUAKRIM
+     {%endblock%}
+   </div>
+    
 
     </body>
 

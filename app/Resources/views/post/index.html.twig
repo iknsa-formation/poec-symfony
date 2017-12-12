@@ -11,7 +11,6 @@
                 <th>Summary</th>
                 <th>Content</th>
                 <th>Createdat</th>
-                <th>Author</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -24,8 +23,12 @@
                 <td>{{ post.summary }}</td>
                 <td>{{ post.content }}</td>
                 <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ post.author }}</td>
-                <td>{{ post.image }}</td>
+                
+                <td> {% if post.getImage %}
+                        <img src="{{ asset('uploads/pictures/' ~ post.getImage) }}" style="width:75px;max-height:75px;">
+                    {% else %}
+                        <i>null</i>
+                    {% endif %}</td>
                 <td>
                     <ul>
                         <li>
@@ -33,6 +36,9 @@
                         </li>
                         <li>
                             <a href="{{ path('post_edit', { 'id': post.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('post_new') }}">Create a new post</a>
                         </li>
                     </ul>
                 </td>
@@ -42,8 +48,6 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('post_new') }}">Create a new post</a>
-        </li>
+        
     </ul>
 {% endblock %}
