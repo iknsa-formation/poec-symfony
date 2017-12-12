@@ -33,12 +33,18 @@ class PostController extends Controller
      */
     public function newAction(Request $request)
     {
+        if(!$this->getUser()) {
+        $this->addFlash('notice', 'Vous devez être identifié pour accéder à cette section');
+        return $this->redirectToRoute('post_index');
+        }
+        
         $post = new Post();
         $form = $this->createForm('IKNSA\BlogBundle\Form\PostType', $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $post->setUser($this->getUser());
             $em->persist($post);
             $em->flush();
 
@@ -71,6 +77,11 @@ class PostController extends Controller
      */
     public function editAction(Request $request, Post $post)
     {
+    if(!$this->getUser()) {
+        $this->addFlash('notice', 'Vous devez être identifié pour accéder à cette section');
+        return $this->redirectToRoute('post_index');
+        }
+
         $deleteForm = $this->createDeleteForm($post);
         $editForm = $this->createForm('IKNSA\BlogBundle\Form\PostType', $post);
         $editForm->handleRequest($request);
@@ -121,4 +132,5 @@ class PostController extends Controller
             ->getForm()
         ;
     }
+
 }

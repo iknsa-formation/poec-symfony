@@ -4,11 +4,16 @@ namespace IKNSA\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * Post
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="IKNSA\BlogBundle\Repository\PostRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Post
 {
@@ -31,14 +36,14 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="summary", type="string", length=255)
+     * @ORM\Column(name="summary", type="string", length=255, nullable=true)
      */
     private $summary;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="content", type="text", length=255)
      */
     private $content;
 
@@ -50,19 +55,27 @@ class Post
     private $createdAt;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="author", type="string", length=255)
-     */
-    private $author;
+    * Just a property which is not a doctrine mapped property
+    */
+    private $temp;
+    /**
+    * @ORM\Column(type="string", length=255, nullable=true)
+    */
+    public $extension;
+    /**
+    * @Assert\File(maxSize="6000000")
+    */
+    private $file;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255)
-     */
-    private $image;
+    * @ORM\ManyToOne(targetEntity="IKNSA\BlogBundle\Entity\User")
+    */
+    protected $user;
 
+    public function __construct()
+    {
+        $this->createdAt = new \Datetime;
+    }
 
     /**
      * Get id
@@ -73,6 +86,7 @@ class Post
     {
         return $this->id;
     }
+
 
     /**
      * Set title
@@ -171,51 +185,151 @@ class Post
     }
 
     /**
-     * Set author
+     * Set user
      *
-     * @param string $author
+     * @param \IKNSA\BlogBundle\Entity\User $user
      *
      * @return Post
      */
-    public function setAuthor($author)
+    public function setUser(\IKNSA\BlogBundle\Entity\User $user = null)
     {
-        $this->author = $author;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get author
+     * Get user
      *
-     * @return string
+     * @return \IKNSA\BlogBundle\Entity\User
      */
-    public function getAuthor()
+    public function getUser()
     {
-        return $this->author;
+        return $this->user;
     }
 
     /**
-     * Set image
+     * Set extension
      *
-     * @param string $image
+     * @param string $extension
      *
      * @return Post
      */
-    public function setImage($image)
+
+    public function setExtension($extension)
     {
-        $this->image = $image;
+        $this->extension = $extension;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get extension
      *
      * @return string
      */
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    /**
+    * Get file.
+    * @return UploadedFile
+    */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+    * Sets file.
+    * @param UploadedFile $file
+    */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file; if (is_file($this->getAbsolutePath())) {
+            $this->temp = $this->getAbsolutePath();
+            $this->extension = null;
+        } else {
+            $this->extension = 'initial';
+        }
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads/pictures';
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->extension
+            ? null
+            : $this->getUploadRootDir().'/'.$this->id.'.'.$this->extension;
+    }
+
+    /**
+    * @ORM\PrePersist()
+    * @ORM\PreUpdate()
+    */
+    public function preUpload()
+    {
+        if (null !== $this->getFile()) {
+            $this->extension = $this->getFile()->guessExtension();
+            }
+        }
+
+    /**
+    * @ORM\PostPersist()
+    * @ORM\PostUpdate()
+    */
+    public function upload()
+    {
+        if (null === $this->getFile()) {
+            return;
+        }
+        if (isset($this->temp)) {
+            // delete the old image
+            unlink($this->temp);
+            // clear the temp image path
+            $this->temp = null;
+        }
+        
+        $this->getFile()->move(
+            $this->getUploadRootDir(),
+            $this->id.'.'.$this->getFile()->guessExtension()
+        );
+        $this->setFile(null);
+    }
+
+    /**
+    * @ORM\PreRemove()
+    */
+    public function storeFilenameForRemove()
+    {
+        $this->temp = $this->getAbsolutePath();
+    }
+
+    /**
+    * @ORM\PostRemove()
+    */
+    public function removeUpload()
+    {
+        if (isset($this->temp)) {
+            unlink($this->temp);
+        }
+    }
+
     public function getImage()
     {
-        return $this->image;
+        return $this->id . '.' . $this->extension;
     }
 }
-

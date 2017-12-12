@@ -10,17 +10,28 @@
     </head>
     <body>
 
-        {% block nav %} 
-          {% include "AstonAppBundle:Default:navigation.html.twig" %}
+    {% block nav %} 
+          {% include "navigation.html.twig" %}
     {% endblock %}
 
     {% block body %}
 
-    {% block form %}
 
-     {% endblock %}
+    {% block form %}  {% endblock %}
 
     {% endblock %}
+    
+    {% block control %} 
+            {% for flash in app.session.flashBag.get('notice') %}
+        <div id="notice" class="notice alert alert-notice">
+            {{ flash }}
+        </div>
+    {% endfor %}
+    {% endblock %} 
+
+   <div class="container">
+         {% block content %} {% endblock %}
+   </div>
 
     {% block javascripts %}{% endblock %}
     </body>

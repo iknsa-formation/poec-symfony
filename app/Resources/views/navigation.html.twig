@@ -1,0 +1,55 @@
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="{{ path('iknsa_blog_homepage')}}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{path('friend_index')}}">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Toto</a>
+  </li> <li class="nav-item">
+    <a class="nav-link" href="#">Tata</a>
+  </li>
+  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Appli
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> 
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Aston
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Home</a>
+          <a class="dropdown-item" href="#">hola</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> 
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Iknsa
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ path('iknsa_blog_homepage')}}">Home</a>
+          <a class="dropdown-item" href="{{ path('iknsa_blog_about')}}">About</a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Articles
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ path('post_index')}}">Liste</a>
+          <a class="dropdown-item" href="{{ path('post_new')}}">Ajouter</a>
+        </div>
+          
+        </div>
+      </li> 
+</ul>

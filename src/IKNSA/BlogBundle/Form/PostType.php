@@ -5,6 +5,8 @@ namespace IKNSA\BlogBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 class PostType extends AbstractType
 {
@@ -13,7 +15,7 @@ class PostType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('summary')->add('content')->add('createdAt')->add('author')->add('image');
+        $builder->add('title')->add('summary')->add('content')->add('createdAt')->add('image');
     }
     
     /**
