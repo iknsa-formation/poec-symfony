@@ -3,8 +3,6 @@
 {% block body %}
     <h1>Posts list</h1>
 
-
-
     <table>
         <thead>
             <tr>
@@ -33,7 +31,7 @@
                     {% endif %}
                 </td>
 
-                <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if post.createdAt %}{{ post.createdAt|date('d-m-Y') }}{% endif %}</td>
                 <td>{{ post.image }}</td>
                 <td>
                     {% if post.getImage %}
