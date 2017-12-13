@@ -5,7 +5,9 @@ namespace IKNSA\BlogBundle\Controller;
 use IKNSA\BlogBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
+use IKNSA\BlogBundle\Entity\Comment;
+use IKNSA\BlogBundle\Form\PostType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 /**
  * Post controller.
  *
@@ -13,22 +15,20 @@ use Symfony\Component\HttpFoundation\Request;
 class PostController extends Controller
 {
     /**
-     * Lists all post entities.
+     * Lists all Post entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $posts = $em->getRepository('IKNSABlogBundle:Post')->findAll();
-
+        $posts = $em->getRepository('IKNSABlogBundle:Post')->getLastInserted('IKNSABlogBundle:Post', 3);
         return $this->render('post/index.html.twig', array(
             'posts' => $posts,
         ));
     }
 
     /**
-     * Creates a new post entity.
+     * Creates a new Post entity.
      *
      */
     public function newAction(Request $request)
@@ -58,25 +58,41 @@ class PostController extends Controller
     }
 
     /**
-     * Finds and displays a post entity.
+     * Finds and displays a Post entity.
      *
      */
-    public function showAction(Post $post)
+     public function showAction(Post $post, Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $comments = $em->getRepository("IKNSABlogBundle:Comment")->findByPost($post);
+        $comment = new Comment();
+        $comment->setPost($post);
+        $comment->setUser($this->getUser());
+        $form = $this->createForm('IKNSA\BlogBundle\Form\CommentType', $comment);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+            return $this->redirect($request->headers->get('referer'));
+        }
         $deleteForm = $this->createDeleteForm($post);
-
         return $this->render('post/show.html.twig', array(
             'post' => $post,
+            "form" => $form->createView(),
             'delete_form' => $deleteForm->createView(),
+            "comments" => $comments
         ));
     }
 
+
     /**
-     * Displays a form to edit an existing post entity.
+     * Displays a form to edit an existing Post entity.
      *
      */
     public function editAction(Request $request, Post $post)
     {
+    
     if(!$this->getUser()) {
         $this->addFlash('notice', 'Vous devez être identifié pour accéder à cette section');
         return $this->redirectToRoute('post_index');
@@ -87,9 +103,10 @@ class PostController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('post_edit', array('id' => $post->getId()));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($post);
+            $em->flush();
+            return $this->redirectToRoute('post_show', array('id' => $post->getId()));
         }
 
         return $this->render('post/edit.html.twig', array(
@@ -133,4 +150,12 @@ class PostController extends Controller
         ;
     }
 
+    public function apiIndexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $posts = $em->getRepository('IKNSABlogBundle:Post')->getLastInserted('IKNSABlogBundle:Post', 3);
+        return new JsonResponse(array(
+            'posts' => $posts
+        ));
+    }
 }

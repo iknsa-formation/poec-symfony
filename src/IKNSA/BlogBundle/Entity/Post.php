@@ -68,9 +68,13 @@ class Post
     private $file;
 
     /**
-    * @ORM\ManyToOne(targetEntity="IKNSA\BlogBundle\Entity\User")
-    */
+     * @ORM\ManyToOne(targetEntity="IKNSA\BlogBundle\Entity\User")
+     */
     protected $user;
+    /**
+     * @ORM\OneToMany(targetEntity="IKNSA\BlogBundle\Entity\Comment", mappedBy="post")
+     */
+    protected $comments;
 
     public function __construct()
     {
@@ -332,4 +336,10 @@ class Post
     {
         return $this->id . '.' . $this->extension;
     }
+
+
+
+
+
+    
 }
