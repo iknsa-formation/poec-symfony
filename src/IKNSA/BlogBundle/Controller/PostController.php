@@ -129,4 +129,11 @@ class PostController extends Controller
             ->getForm()
             ;
     }
+	
+	public function restfulListAction(){
+		$em =$this->getDoctrine()->getManager();
+		$post=$em->getRepository('IKNSABlogBundle:Post')->findAll();
+		
+		return $this->json(["posts"=>$post]);
+	}
 }

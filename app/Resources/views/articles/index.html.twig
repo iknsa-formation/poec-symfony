@@ -6,42 +6,34 @@
 
 
 {% block body  %}
-	<h1 id="text">Articles liste</h1>
+	<h1 id="text" class="color">Articles liste</h1>
 
-	<table class="table table-info" style=" border-collapse: separate;border-spacing: 20px 32px;width:40%;margin-left:30%">
+	<table class="table table-info table-bordered">
 		<thead>
 			<tr class="table table-warning table-bordered">
 				<th>ID</th>
 				<th>auteur</th>
 				<th>titre</th>
 				<th>Action</th>
-				<th>Show/Hidden</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for article in articles %}
 				<tr>
-					<td><a href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a>
+					<td><a  href="{{ path('articles_show', { 'id': article.id }) }}">{{ article.id }}</a>
 					<td>{{ article.auteur }}</td>
 					<td>{{ article.titre }}</td>
 					
 		<td>
 			<ul style="list-style-type: none;">
 				<li>
-					<a href="{{ path('articles_show', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
+					<a href="{{ path('articles_show', { 'id': article.id }) }}"><img id='image' src="{{ asset('bundles/framework/image/oeil.png') }}"></a>
 				</li>
 				<li>
-					<a href="{{ path('articles_edit', { 'id': article.id }) }}"><img style="height: 40px;"  id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
+					<a href="{{ path('articles_edit', { 'id': article.id }) }}"><img id='image' src="{{ asset('bundles/framework/image/edit.png') }}"></a>
 				</li>
 			</ul>
-		</td>
-					<td><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-						<div id="demo" class="collapse in">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div></td>
-				
+		</td>	
 		</tr>
 {% endfor %}
 	</tbody>

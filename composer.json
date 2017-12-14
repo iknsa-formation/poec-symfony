@@ -31,7 +31,8 @@
         "twbs/bootstrap": "^3.3",
         "friendsofSymfony/user-bundle": "~2.0@dev",
         "vich/uploader-bundle": "^1.4",
-        "javiereguiluz/easyadmin-bundle": "^1.17"
+        "javiereguiluz/easyadmin-bundle": "^1.17",
+        "nelmio/cors-bundle": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
