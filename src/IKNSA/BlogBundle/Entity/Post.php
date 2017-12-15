@@ -66,7 +66,7 @@ class Post
 	/**
 	* @Assert\File(maxSize="6000000")
 	*/
-	private $file;
+	public $file;
 
 
 	/**
