@@ -1,0 +1,25 @@
+/*
+Theme Name: blossom-feminine-enfant
+Template:  blossom-feminine
+Theme URI: https://blossomthemes.com/themes/blossom-feminine-free-wordpress-theme
+Author: Blossom Themes
+Author URI: http://blossomthemes.com/
+Description: Blossom Feminine is a free theme for female bloggers with lots features. It is color option so that you can change the color as per your like. It also has 600+ Google font. So you can also change the font to what you like. Download the theme from here: https://blossomthemes.com/themes/blossom-feminine-free-wordpress-theme, check demo here: https://demo.blossomthemes.com/blossom-feminine and read documentation here - https://blossomthemes.com/blossom-feminine-documentation/.
+Version: 1.0.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: blossom-feminine
+Tags: blog, one-column, two-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, custom-header, custom-menu, custom-logo, featured-images, threaded-comments, full-width-template, rtl-language-support, translation-ready, theme-options, photography
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+
+#content{
+	background: green;
+
+}
