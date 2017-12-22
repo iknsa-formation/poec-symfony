@@ -15,8 +15,8 @@
 			</div>
 			<div class="top-nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="index.html">Acueil</a></li>
+					<li><a href="#">A propos</a></li>
 					<li><a href="#">Support</a></li>
 					<li><a href="#">Services</a></li>
 					<li><a href="contact.html">Contact</a></li>
